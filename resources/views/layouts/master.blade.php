@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Psiconet')</title>
-    <link rel="stylesheet" href="{{url('css/app.css')}}">
-    <link rel="stylesheet" href="{{url('css/style.css')}}"> 
-    <script defer src="https://kit.fontawesome.com/851f6f79f7.js"></script>
+    <link rel="stylesheet" href="{{url('css/app.css')}}"> 
+    <link rel="stylesheet" href="{{url('css/style.css')}}">
+    <link rel="stylesheet" href="{{url('css/responsive.css')}}">
+    <link rel="stylesheet" href="{{url('css/fontawesome.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/icofont.css')}}"/>
+    <link rel="icon" type="image/png" href="{{url('img/favicon.png')}}" />
+    <script defer src="{{url('js/app.js')}}"></script>
+    <script defer src="{{url('js/script.js')}}"></script>
+    <script defer src="{{url('js/main.js')}}"></script> 
+    <script defer src="{{url('js/slicknav.min.js')}}"></script>
+    <script defer src="{{url('js/jquery.min.js')}}"></script> 
+    <script defer src="{{url('js/wow-1.3.0.min.js')}}"></script> 
 </head>
 <body>
         <header class="header"> 
@@ -37,5 +46,46 @@
             <main>
                 @yield('content')
             </main> 
+    
+            <!-- footer section start -->
+	<footer class="footer" id="contact">
+		<div class="container">			
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<p class="footer-links">
+						<a href="#about">Como funciona</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#showcase-area">Por que usar</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#pricing">Planos</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#team">Nossos Pisicólogos</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="psicologo.php">Seja um Pisicólogos</a>
+
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="copyright-area">
+						<ul>
+							<li><a href="http://facebook.com" target="_blank"><i class="icofont icofont-social-facebook"></i></a></li>
+							<li><a href="http://instagram.com" target="_blank"><i class="icofont icofont-social-instagram"></i></a></li>
+							<li><a href="http://linkedin.com" target="_blank"><i class="icofont icofont-brand-linkedin"></i></a></li>
+						</ul>
+						<p>Se você estiver em uma situação de perigo, não use este site e procure o atendimento
+							presencial ou ligue para 188 - Centro de valorização da vida <a href="https://www.cvv.org.br/" target="_blank">(https://www.cvv.org.br/)</a></p>
+						<p style="font-size: 12px;">&copy;Copyright &copy;
+							<script>document.write(new Date().getFullYear());</script> PSICONET Terapias | Todos os
+							direitos reservados</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- footer section end -->
+	
+	<a href="#" class="scrollToTop">
+		<i class="icofont icofont-arrow-up"></i>
+    </a>
+    
+
 </body>
 </html>

@@ -588,6 +588,111 @@ input::-webkit-input-placeholder {
 /*--------------------------------------
 ------ TESTIMONIAL AREA CSS START ------
 ---------------------------------------*/
+.crousel-container{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  
+}
+
+
+#carousel{
+    position: relative;
+    height: 400px;
+    top: 50%;
+    transform: translateY(10%);
+    overflow: hidden;
+}
+
+#carousel .testimonial{
+    width: 400px;
+    height: 400px;
+    /* background-color: #1770C1; */
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column; */
+}
+
+#carousel .testimonial img{
+    /* width: 250px;
+    height: 250px;
+    border-radius: 50%; */
+}
+#carousel div{
+    position: absolute;
+    transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+    opacity: 1;
+}
+
+#crousel img{
+      width: 400px;
+      transition: width 1s;
+}
+#carousel .hideLeft{
+    left: 100%;
+    opacity: 0;
+    transform: translateY(50%) translateX(-50%);
+}
+
+
+#carousel .hideRight{
+    left: 100%;
+    opacity: 0;
+    transform: translateY(50%) translateX(-50%);
+}
+
+.hideLeft, .hideRight, .prev, .prevLeftSecond, .next, .nextRightSecond img{
+    width: 200px;
+}
+
+#carousel  .prev{
+    z-index: 5;
+    left: 30%;
+    transform: translateY(50px) translateX(-50%);
+}
+#carousel  .prev, .next img{
+    width: 300px;
+}
+#carousel .prevLeftSecond{
+    z-index: 4;
+    left: 15%;
+    transform: translateY(50%) translateX(-50%);
+    opacity: .7;
+}
+#carousel .selected{
+    z-index: 10;
+    left: 50%;
+    transform: translateY(0px) translateX(-50%);
+}
+
+#carousel .next{
+    z-index: 5;
+    left: 70%;
+    transform: translateY(50px) translateX(-50%);
+}
+
+.next img{
+    width: 300px;
+}
+
+#carousel .nextRightSecond{
+    z-index: 4;
+    left: 85%;
+    transform: translateY(50%) translateX(-50%);
+    opacity: .7;
+
+}
+
+.carousel .buttons{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+}
+
 
 
 .carousel-inner {
