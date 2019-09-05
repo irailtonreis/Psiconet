@@ -97,10 +97,57 @@
 		</div>
 
 	</section>
+	<section class="testemonials">
+		<div class="container">
+
+				<div class="row">
+						<div class="col-lg-12 pt-5">
+							<div class="sec-title">
+								<h2>Depoimentos<span
+										><span></span><span></span><span></span></span></h2>
+								<p>Veja o que o nossos clientes estão falando sobre a Psiconet</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="testemonials-box col-lg-3 col-md-6 col-sm-12 text-center">
+							<div class="profile">
+								<img src="{{url('/img/author1.jpg')}}" class="user" alt="">
+								<blockquote> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quae aspernatur voluptate impedit excepturi nostrum asperiores possimus nisi rerum repellendus laborum harum, totam fugit quidem laboriosam fugiat reiciendis quia temporibus! </blockquote>
+								<h3>Larissa Andrade</h3>
+							</div>
+						</div>
+						<div class="testemonials-box col-lg-3 col-md-6 col-sm-12 text-center">
+								<div class="profile">
+									<img src="{{url('/img/author2.jpg')}}" class="user" alt="">
+									<blockquote> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quae aspernatur voluptate impedit excepturi nostrum asperiores possimus nisi rerum repellendus laborum harum, totam fugit quidem laboriosam fugiat reiciendis quia temporibus! </blockquote>
+									<h3>Marcos Passos</h3>
+								</div>
+							</div>
+							<div class="testemonials-box col-lg-3 col-md-6 col-sm-12 text-center">
+									<div class="profile">
+										<img src="{{url('/img/author3.jpg')}}" class="user" alt="">
+										<blockquote> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quae aspernatur voluptate impedit excepturi nostrum asperiores possimus nisi rerum repellendus laborum harum, totam fugit quidem laboriosam fugiat reiciendis quia temporibus! </blockquote>
+										<h3>Beatriz Souza</h3>
+									</div>
+								</div>
+								<div class="testemonials-box col-lg-3 col-md-6 col-sm-12 text-center">
+										<div class="profile">
+											<img src="{{url('/img/author4.jpg')}}" class="user" alt="">
+											<blockquote> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quae aspernatur voluptate impedit excepturi nostrum asperiores possimus nisi rerum repellendus laborum harum, totam fugit quidem laboriosam fugiat reiciendis quia temporibus! </blockquote>
+											<h3>Cláudio Moreira</h3>
+										</div>
+									</div>
+
+					</div>
+		</div>
+	</section>
+	
 
 
 	
-	<div class="container">
+	{{-- <div class="container">
 			<div class="row">
 					<div class="col-lg-12">
 						<div class="sec-title mt-5 mb-5 py-3">
@@ -161,7 +208,7 @@
 				   <button id="next">Next</button>
 				 </div>
 				</div>
-	</div> 
+	</div>  --}}
 
 	<div class="container custom-duvidas">
 		<div class="text-center py-5">
