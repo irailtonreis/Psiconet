@@ -44,7 +44,6 @@
             <main>
                 @yield('content')
             </main> 
-    
             <!-- footer section start -->
 	<footer class="footer" id="contact">
 		<div class="container">			
