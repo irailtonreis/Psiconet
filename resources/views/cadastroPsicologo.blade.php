@@ -1,60 +1,6 @@
-<!DOCTYPE HTML>
-<html lang="pt-br">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Psiconet - Terapia Online</title>
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" media="all" />
-	<!-- Slick nav CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/slicknav.min.css" media="all" />
-	<!-- Iconfont CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/icofont.css" media="all" />
-	<!-- Slick CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+@extends('layouts.master')
 
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
-	<script defer src="https://kit.fontawesome.com/851f6f79f7.js"></script>
-	<!-- Owl carousel CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css">
-	<!-- Popup CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
-	<!-- Animate CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/animate.min.css">
-	<!-- Main style CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
-	<!-- Responsive CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
-	<!-- Favicon Icon -->
-	<link rel="icon" type="image/png" href="assets/img/favcion.png" />
-</head>
-
-<body data-spy="scroll" data-target=".header" data-offset="50">
-	<!-- Page loader -->
-	<div id="preloader"></div>
-	<!-- header section start -->
-	<header class="header">
-		<div class="container">
-			<div class="row flexbox-center">
-				<div class="col-lg-2 col-md-3 col-6">
-					<div class="logo">
-						<img src="assets/img/logo.png" alt="">
-						<a href="index.html"><span>Psiconet</a>
-					</div>
-				</div>
-				<div class="col-lg-10 col-md-9 col-6">
-					<div class="responsive-menu"></div>
-					<div class="mainmenu">
-						<ul id="primary-menu">
-							<li><h2>Cadastro Psicólogo</h2></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header><!-- header section end -->
+@section('content')
 	<!-- Form contact start -->
     <div class="container-fluid text-center mt-5 py-5">
 		<p class="py-1">Seja bem vindo a Psiconet</p>
@@ -125,26 +71,4 @@
         </form>
     </div>
 	<!-- Form contact end-->
-	
-	
-	<a href="#" class="scrollToTop">
-		<i class="icofont icofont-arrow-up"></i>
-	</a>
-
-	<!-- jquery main JS -->
-	<script src="assets/js/jquery.min.js"></script>
-	<!-- Bootstrap JS -->
-	<script src="assets/js/bootstrap.min.js"></script>
-	<!-- Slick nav JS -->
-	<script src="assets/js/jquery.slicknav.min.js"></script>
-	<!-- Slick JS -->
-	<script src="assets/js/slick.min.js"></script>
-	<!-- owl carousel JS -->
-	<script src="assets/js/owl.carousel.min.js"></script>
-	<!-- wow- JS -->
-	<script src="assets/js/wow-1.3.0.min.js"></script>
-	<!-- main JS -->
-	<script src="assets/js/main.js"></script>
-</body>
-
-</html>
+@endsection

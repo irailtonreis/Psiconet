@@ -17,8 +17,8 @@ Route::get('/cadastroPsicologo', function () {
     return view('cadastroPsicologo');
 });
 
-Route::get('/sejaPsicologo', function () {
-    return view('sejaPsicologo');
+Route::get('/paraPsicologo', function () {
+    return view('paraPsicologo');
 });
 
 Route::get('/psicologoLogado', function () {
