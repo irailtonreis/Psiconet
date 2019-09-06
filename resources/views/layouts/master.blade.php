@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Psiconet')</title>
+    <link rel="icon" type="image/png" href="{{url('img/favicon.png')}}" />
     <link rel="stylesheet" href="{{url('css/app.css')}}"> 
     <link rel="stylesheet" href="{{url('css/style.css')}}">
     <link rel="stylesheet" href="{{url('css/responsive.css')}}">
-    <link rel="stylesheet" href="{{url('css/fontawesome.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{url('css/icofont.css')}}"/>
-    <link rel="icon" type="image/png" href="{{url('img/favicon.png')}}" />
-    <script defer src="{{url('js/app.js')}}"></script>
-    <script defer src="{{url('js/script.js')}}"></script>
-    <script defer src="{{url('js/main.js')}}"></script> 
-    <script defer src="{{url('js/slicknav.min.js')}}"></script>
-    <script defer src="{{url('js/jquery.min.js')}}"></script> 
-    <script defer src="{{url('js/wow-1.3.0.min.js')}}"></script> 
+    <link rel="stylesheet" href="{{url('css/responsive.css')}}">
 </head>
-<body>
-        <header class="header"> 
+<body data-spy="scroll" data-target=".header" data-offset="50">
+
+       
+
+         <header class="header"> 
                 <div class="container">
                     <div class="row flexbox-center">
                         <div class="col-lg-2 col-md-3 col-6">
@@ -58,7 +56,6 @@
 						<a href="#pricing">Planos</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
 						<a href="#team">Nossos Pisicólogos</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
 						<a href="psicologo.php">Seja um Pisicólogos</a>
-
 					</p>
 				</div>
 			</div>
@@ -86,6 +83,15 @@
 		<i class="icofont icofont-arrow-up"></i>
     </a>
     
+
+    <script  src="{{url('js/app.js')}}"></script>
+    <script  src="{{url('js/app.js')}}"></script>
+    <script  src="{{url('js/jquery.min.js')}}"></script> 
+    <script  src="{{url('js/jquery.slicknav.min.js')}}"></script>
+    <script  src="{{url('js/main.js')}}"></script> 
+    <script  src="{{url('js/owl.carousel.min.js')}}"></script>
+    <script  src="{{url('js/slick.min.js')}}"></script>
+    <script  src="{{url('js/wow-1.3.0.min.js')}}"></script> 
 
 </body>
 </html>

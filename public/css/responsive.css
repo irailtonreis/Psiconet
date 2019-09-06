@@ -1,4 +1,5 @@
 @media only screen and (max-width: 1199px){
+	
 	.mainmenu li a {
 		padding: 5px 8px;
 	}
@@ -7,6 +8,7 @@
 	}
 	.mainmenu li a.appao-btn {
 		margin-left: 30px;
+		
 	}
 	.single-counter-box p {
 		font-size: 18px;
@@ -16,8 +18,10 @@
 	}
 }
 @media only screen and (max-width: 991px){
+
 	.mainmenu {
 		display: none;
+		
 	}
 	.responsive-menu,
 	.slicknav_menu {
@@ -37,7 +41,9 @@
 		margin-top: 8px;
 	}
 	.slicknav_menu .slicknav_menutxt {
-		display: none;
+		/* display: none; */
+		float: right;
+		color: white;
 	}
 	.slicknav_menu .slicknav_icon {
 		margin: 0;
