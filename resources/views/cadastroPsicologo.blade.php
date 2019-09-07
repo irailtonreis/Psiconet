@@ -3,7 +3,7 @@
 @section('content')
 	<!-- Form contact start -->
     <div class="container-fluid text-center mt-5 py-5">
-		<p class="py-1">Seja bem vindo a Psiconet</p>
+		<p class="py-4">Seja bem vindo a Psiconet</p>
 		<h2 class="py-4">Vamos Começar</h2>
     </div>
         <form action="" class="container">
