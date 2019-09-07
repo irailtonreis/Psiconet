@@ -1,33 +1,32 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/',  'IndexController@index');
 
-Route::get('/index', function () {
-    return view('index');
-});
+Route::get('/index', 'IndexController@index');
 
-Route::get('/cadastroCliente', function () {
-    return view('cadastroCliente');
+Route::get('/cadastroCliente', 'ClienteController@cadastroCliente');
+Route::post('/cadastroCliente', 'ClienteController@salvandoCliente');
+
+Route::get('/clienteLogado', function () {
+    return view('clienteLogado');
 });
 
 Route::get('/cadastroPsicologo', function () {
     return view('cadastroPsicologo');
 });
 
-Route::get('/paraPsicologo', function () {
-    return view('paraPsicologo');
-});
-
 Route::get('/psicologoLogado', function () {
     return view('psicologoLogado');
 });
 
-Route::get('/clienteLogado', function () {
-    return view('clienteLogado');
+Route::get('/paraPsicologo', function () {
+    return view('paraPsicologo');
 });
+
+
+
+
 
 
 

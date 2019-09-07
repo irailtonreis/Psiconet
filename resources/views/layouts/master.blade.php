@@ -60,7 +60,6 @@
 					</button>
 				</div>
 				<div class="modal-body">
-	
 					<div class="login-container d-flex align-items-start justify-content-center">
 						<form class="login-form text-center">
 							<h2 class="title-login mb-4 font-weight-light ">Login</h2>
@@ -89,8 +88,9 @@
 							
 							<button class="button-form btn btn-primary btn-block btn-lg mt-4" id="">Login</button>
 							<div class="resgister d-flex align-items-center justify-content-around mt-4">
-							<p class="font-weight-normal">Não tem conta!</p>
-							<p><a class="alert-link" href="/cadastroCliente">Registre-se agora</a></p>
+							{{-- <p class="font-weight-normal">Não tem conta!</p> --}}
+                            <p><a class="alert-link" href="/cadastroCliente">Registre-se Cliente</a></p>
+                            <p><a class="alert-link" href="/cadastroPsicologo">Registre-se Psicologo</a></p>
 							</div>
 						</form>
 					</div>
