@@ -32,8 +32,8 @@
                                 <ul id="primary-menu">
                                     <li><a class="nav-link" href="#">Como Funciona</a></li>
                                     <li><a class="nav-link" href="#">Para Você</a></li>
-                                    <li><a class="nav-link" href="#">Para Psicólogo</a></li>
-                                    <li><a class="nav-link" href="#">Dúvidas</a></li>
+                                    <li><a class="nav-link" href="">Para Psicólogo</a></li>
+                                    <li><a class="nav-link" href="">Dúvidas</a></li>
                                     <li><a class="appao-btn" href="#" data-toggle="modal" data-target="#sitModal">Login</a></li>
                                 </ul>
                             </div>
