@@ -11,12 +11,10 @@
     <link rel="stylesheet" href="{{url('css/responsive.css')}}">
     <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{url('css/icofont.css')}}"/>
-    <link rel="stylesheet" href="{{url('css/responsive.css')}}">
+	<link rel="stylesheet" href="{{url('css/responsive.css')}}">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
-<body data-spy="scroll" data-target=".header" data-offset="50">
-
-       
-
+<body data-spy="scroll" data-target=".header" >
          <header class="header"> 
                 <div class="container">
                     <div class="row flexbox-center">
@@ -32,7 +30,7 @@
                                 <ul id="primary-menu">
                                     <li><a class="nav-link" href="#">Como Funciona</a></li>
                                     <li><a class="nav-link" href="#">Para Você</a></li>
-                                    <li><a class="nav-link" href="">Para Psicólogo</a></li>
+                                    <li><a class="nav-link" href="paraPsicologo">Para Psicólogo</a></li>
                                     <li><a class="nav-link" href="">Dúvidas</a></li>
                                     <li><a class="appao-btn" href="#" data-toggle="modal" data-target="#sitModal">Login</a></li>
                                 </ul>
@@ -52,7 +50,7 @@
 			<div class="modal-content">
 				<div class="modal-header text-center">
 					<div class="modal-title w-100 d-flex align-items-center justify-content-center">
-						<img src="assets/img/logo.png" alt="">
+						<img src="img/logo.png" alt="">
 						<h2>PSICONET</h2>
 					</div>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">

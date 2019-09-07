@@ -7,7 +7,7 @@
 				<div class="col-lg-7">
 					<div class="hero-area-content">
 						<h2>Esqueça a burocracia e preocupe-se com o que realmente importa: os pacientes</h2>
-						<a href="cadastroPsicologo.html" class=""><button type="button"
+						<a href="/cadastroPsicologo" class=""><button type="button"
 								class="btn btn-primary btn-lg btn-block py-2 my-5 w-75  badge-pill">Cadastrar meu
 								Consultório</button></a>
 					</div>
@@ -72,7 +72,7 @@
 					</div>
 				</div>
 			</div>
-			</di>
+			</div>
 	</section>
 	<!--Section seja Psicólogo inicio-->
 	<section class="psicologo-duvida py-3">
@@ -122,21 +122,18 @@
 				</div>
 			</div>
 			<div class="mb-5"><button type="button" class="btn btn-primary btn-lg btn-block py-0 w-50 m-auto"
-					id="btn"><a class="nav-link" href="cadastroPsicologo.html">Quero aderir</a></button></div>
-
+					id="btn"><a class="nav-link" href="/cadastroPsicologo">Quero aderir</a></button></div>
 		</div>
-
 		</div>
-
 	</section>
 	<section>
 		<section class="psicologo-preco ptb-90" id="pricing">
-			<div class="row">
+			<div class="row mr-0">
 				<div class="col-lg-12 text-center">
 					<div class="sec-title">
-						<h2>Nossos Planos e Preços<span
+						<h2 class="text-white">Nossos Planos e Preços<span
 								class="sec-title-border"><span></span><span></span><span></span></span></h2>
-						<p>Escolha o plano mais adequado para as suas necessidades.</p>
+						<p class="text-white">Escolha o plano mais adequado para as suas necessidades.</p>
 					</div>
 				</div>
 			</div>
@@ -181,8 +178,9 @@
 								</div>
 							</div>
 						</div>
-						<div><button type="button"
-								class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></div>
+						<div>
+							<a href="/cadastroPsicologo"><button type="button" class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></a>
+						</div>
 					</div>
 					<div class="col-lg-4 mt-2">
 						<div class="preco-box h-100">
@@ -223,9 +221,10 @@
 								</div>
 							</div>
 						</div>
-						<div><button type="button"
-								class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></div>
-					</div>
+						<div>
+							<a href="/cadastroPsicologo"><button type="button" class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></a>
+						</div>
+						</div>
 					<div class="col-lg-4 mt-2">
 						<div class="preco-box h-100">
 							<div class="preco-top">
@@ -265,8 +264,9 @@
 								</div>
 							</div>
 						</div>
-						<div><button type="button"
-								class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></div>
+						<div>
+							<a href="/cadastroPsicologo"><button type="button" class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></a>
+						</div>
 					</div>
 
 				</div>

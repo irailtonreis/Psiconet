@@ -964,7 +964,7 @@ h4.post-title a {
     height: 450px;
 }
 .footer {
-    background: url(../img/team1.jpg) no-repeat center / cover;
+    background: url(../img/footer-bg.jpg) no-repeat center / cover;
     position: relative;
     z-index: 1;
     padding-bottom: 35px;
@@ -1464,7 +1464,7 @@ h4.post-title a {
     margin-top: 3rem;
 
 }
-.custom-duvidas a {
+ .custom-duvidas .row .alert-link{
     border-top: 1px solid #005db5;
     width: 100%;
     padding: 5px 5px;

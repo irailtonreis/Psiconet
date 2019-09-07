@@ -2,11 +2,14 @@
 
 @section('content')
 	<!-- Form contact start -->
-    <div class="container-fluid text-center mt-5 py-5">
+    <div class="container-fluid text-center mt-5 pt-5">
 		<p class="py-4">Seja bem vindo a Psiconet</p>
-		<h2 class="py-4">Vamos Começar</h2>
-    </div>
-        <form action="" class="container">
+		<h2 class="py-1 pb-2">Vamos Começar</h2>
+	</div>
+	<div class="container">
+
+		<form   action="/cadastroPsicologo" method="POST" enctype="multipart/form-data">
+			@csrf{{ method_field('POST') }}
 			<div class="row">
 				<div class="form-group w-100  d-flex flex-wrap">
 					<div class="col-lg-6 col-md-6 col-sm-12 py-2">
@@ -44,7 +47,7 @@
 					<input class="form-control cpf-mask" type="text"  id="input-crp" name="crp" placeholder="CRP">
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 py-2">
-					<input class="form-control form-control-lg" type="file"  id="inpu-img" name="img" placeholder=""> 
+					<input class="form-control form-control-lg" type="file"  id="inpu-foto" name="foto" placeholder=""> 
 				</div>
 				</div>
 			</div>
@@ -69,6 +72,7 @@
 				<button type="submit" class="btn btn-primary btn-block btn-lg mt-4 w-50" id="button-form">Começar Agora</button>
 			</div>
         </form>
+	</div>
     </div>
 	<!-- Form contact end-->
 @endsection

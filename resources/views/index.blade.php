@@ -403,7 +403,7 @@
 				<div class="col-lg-3 col-sm-6">
 					<div class="single-team-member">
 						<div class="team-member-img">
-						<img src="{{url('img/team1.jpg')}}" alt="team">
+						<img src="img/team1.jpg" alt="team">
 							<div class="team-member-icon">
 								<div class="display-table">
 									<div class="display-tablecell">
@@ -472,7 +472,7 @@
 				<div class="col-lg-3 col-sm-6">
 					<div class="single-team-member">
 						<div class="team-member-img">
-							<img src="{{url('img/team4.jpg')}}" alt="team">
+							<img src="img/team4.jpg" alt="team">
 							<div class="team-member-icon">
 								<div class="display-table">
 									<div class="display-tablecell">
@@ -495,6 +495,6 @@
 			</div>
 		</div>
 	</section><!-- team section end -->
-	
+
 
 @endsection
