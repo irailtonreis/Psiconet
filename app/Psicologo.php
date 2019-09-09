@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Psicologo extends Model
 {
-    protected $table = "psicologo";
+    protected $table = "psicologos";
     protected $primaryKey = "id";
-    protected $fillable = ['nome', 'usuario', 'crp', 'cpf', 'email' , 'senha', 'telefone', 'id_plano', 'foto', 'valor_sessao', 'sobre'];
+    protected $fillable = ['nome', 'usuario', 'crp', 'cpf', 'email','foto', 'valor_sessao', 'senha', 'sobre', 'telefone', 'id_plano'];
 
-    public function plano(){
+    public function planos(){
         return $this->hasOne(Plano::class, 'id', 'id_plano');
     }
 
