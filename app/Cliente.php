@@ -8,7 +8,7 @@ class Cliente extends Model
 {
     protected $table = "cliente";
     protected $primaryKey = "id";
-    protected $fillable = ['nome', 'usuario', 'email', 'senha', 'cpf', 'telefone', 'foto'];
+    protected $fillable = ['nome', 'usuario', 'email', 'senha', 'cpf', 'telefone'];
 
     public function histCliente(){
         return $this->hasMany(HistCliente::class, 'cliente_id', 'id');
@@ -16,4 +16,6 @@ class Cliente extends Model
     public function histPsicologo(){
         return $this->hasMany(HistPsicologo::class, 'cliente_id', 'id');
     }
+
+    public $timestamps = false;
 }

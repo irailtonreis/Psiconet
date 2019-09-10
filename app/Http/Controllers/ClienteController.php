@@ -14,19 +14,29 @@ class ClienteController extends Controller
 
     public function salvandoCliente(Request $request){
         $request->validate([
-
-        ]);
-
-    }
-
-    public function salvandoFilme(Request $request){
-        $request->validate([
             "nome" => "required",
             "usuario" => "required",
-            "email" => "required",
-            "senha" => "required",
             "cpf" => "required",
             "telefone" => "required",
-            "foto" => "required"
+            "email" => "required",
+            "conf-email" => "required",
+            "password" => "required",
+            "conf-password" => "required"
         ]);
+        
+
+        $cliente = Cliente::create([
+            "nome" => $request->input("nome"),
+            "usuario" => $request->input("usuario"),
+            "email" => $request->input("email"),
+            "senha" => $request->input("password"),
+            "cpf" => $request->input("cpf"),
+            "telefone" => $request->input("telefone")
+        ]);
+
+        $cliente->save();
+
+        return redirect('/cadastroCliente');
+    }
+        
 }
