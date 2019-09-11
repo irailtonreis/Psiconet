@@ -40,8 +40,7 @@ class PsicologoController extends Controller
             "plano.required"=>'O campo plano é obrigatório',
             "senha.required"=>'O campo senha é obrigatório',
             "conf-senha.required"=>'O campo confirme sua senha é obrigatório'
-            
-            
+
         ]);
         
         $arquivo = $request->file('foto');
