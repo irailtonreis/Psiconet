@@ -7,14 +7,18 @@
 		<p class="py-3">Seja bem vindo a Psiconet</p>
 		<h2 class="py-4">Vamos Começar</h2>
     </div>
-        <form method="POST" action="" class="container">
+		<form method="POST" action="/cadastroCliente" class="container">
+			
+			@csrf
+            {{ method_field('POST') }}
+
 			<div class="row">
 				<div class="form-group w-100  d-flex flex-wrap">
 					<div class="col-lg-6 col-md-6 col-sm-12 py-2">
 						<input class="form-control form-control-lg" type="text"  id="input-nome" name="nome" placeholder="Nome completo"> 
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-12 py-2">
-						<input class="form-control form-control-lg" type="text"  id="input-ident" name="nome-usuario" placeholder="Nome de usuário"> 
+						<input class="form-control form-control-lg" type="text"  id="input-ident" name="usuario" placeholder="Nome de usuário"> 
 					</div>
 				</div>
 			</div>
@@ -43,10 +47,10 @@
 			<div class="row">
 				<div class="form-group d-flex flex-wrap w-100">
 				<div class="col-lg-6 col-md-6 col-sm-12 py-2">
-                    <input class="form-control form-control-lg" type="password"  id="input-password" placeholder="Digite sua senha">
+                    <input class="form-control form-control-lg" type="password"  id="input-password" name="password" placeholder="Digite sua senha">
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 py-2">
-					<input class="form-control form-control-lg" type="password" class="form-control" id="confi-password" placeholder="Confirme sua senha">
+					<input class="form-control form-control-lg" type="password" class="form-control" id="conf-password" name="conf-password" placeholder="Confirme sua senha">
 				</div>
 				</div>
 			</div>
