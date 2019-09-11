@@ -1673,7 +1673,13 @@ h4.post-title a {
 
 /*=== Página psicólogos fim ==== */
 
-/*=== Página Cadastro psicólogos Início ==== */
+/*=== Página  psicólogoLogado Início ==== */
 
-
-/*=== Página Cadastro psicólogos Início ==== */
+.team-area  .form-group .avatar{
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+}
+/*=== Página  psicólogoLogado Fim ==== */

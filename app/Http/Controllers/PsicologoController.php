@@ -14,9 +14,13 @@ class PsicologoController extends Controller
         return view('cadastroPsicologo', compact('planos', $planos));   
     }
 
-    public function listarPlanos(){
+    public function psicologoLogado($id){
+        $psicologo = Psicologo::find($id);
 
+        return view ('psicologoLogado', compact('psicologo', $psicologo));
     }
+
+   
     public function salvandoPsicologo(Request $request){
         $request->validate([
             "nome" => "required|max:50",
@@ -26,7 +30,7 @@ class PsicologoController extends Controller
             "email" => "required",
             "conf-email" => "required",
             "foto"=> "required",
-            "plano" => "required",
+            "planos" => "required",
             "senha" =>"required",
             "conf-senha"=> "required"
         ], [
@@ -37,7 +41,7 @@ class PsicologoController extends Controller
             "email.required"=>'O campo email é obrigatório',
             "conf-email.required"=>'O campo confirme seu email é obrigatório',
             "foto.required"=>'O campo foto é obrigatório',
-            "plano.required"=>'O campo plano é obrigatório',
+            "planos.required"=>'O campo plano é obrigatório',
             "senha.required"=>'O campo senha é obrigatório',
             "conf-senha.required"=>'O campo confirme sua senha é obrigatório'
 
@@ -70,7 +74,7 @@ class PsicologoController extends Controller
             "telefone" => $request->input("telefone"),
             "foto"=> $caminhoRelativo,
             "senha" => $request->input("senha"),
-            "id_plano"=> $request->option("value")
+            "id_plano"=> $request->input("planos")
         ]);
 
         $psicologo->save();

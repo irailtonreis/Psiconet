@@ -56,10 +56,10 @@
 					<small class="text-danger">{{ $errors->first('foto') }}</small>
 				</div>
 				<div class="form-group  col-lg-6 col-md-6 col-sm-12 py-2">
-						<select class="form-control">
-							<option value="" {{$errors->has('plano') ? ' has-error' : '' }}>Selecione um Plano</option>
+						<select name="planos" class="form-control">
+							<option name="planos" value="{{ $errors->has('plano') ? ' has-error' : '' }}">Selecione um Plano</option>
 							@foreach ($planos as $plano)
-								<option name="" value="{{$plano->id}}">{{$plano->plano}}</option>
+								<option name="planos" value="{{ $plano->id }}">{{ $plano->plano }}</option>
 							@endforeach
 						</select>
 						<small class="text-danger">{{ $errors->first('plano') }}</small>
