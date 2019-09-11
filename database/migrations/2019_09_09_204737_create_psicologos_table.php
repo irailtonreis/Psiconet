@@ -16,12 +16,11 @@ class CreatePsicologosTable extends Migration
         Schema::create('psicologos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->string('usuario');
-            $table->string('crp');
-            $table->string('cpf');
-            $table->string('email');
-            $table->string('senha');
             $table->string('telefone');
+            $table->string('email');
+            $table->string('cpf');
+            $table->string('crp');
+            $table->string('senha');
             $table->string('foto');
             $table->string('valor_sessao')->nullable();
             $table->string('sobre')->nullable();

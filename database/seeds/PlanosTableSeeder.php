@@ -12,7 +12,7 @@ class PlanosTableSeeder extends Seeder
     public function run()
     {
         DB::table('planos')->insert([
-            'plano' => 'básico',
+            'plano' => 'Básico',
             'valor' =>  239.70
         ]);
 

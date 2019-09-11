@@ -20,6 +20,16 @@ Route::get('/paraPsicologo', function () {
     return view('paraPsicologo');
 });
 
+Route::get('/psicologoLogado', function () {
+    return view('psicologoLogado');
+});
+
+// Route::get('/psicologoLogado', 'IndexController@index');
+
+
+
+
+
 
 
 
