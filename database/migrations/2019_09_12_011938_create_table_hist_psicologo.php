@@ -18,7 +18,6 @@ class CreateTableHistPsicologo extends Migration
             $table->date('data_sessao');
             $table->unsignedBigInteger('psicologo_id');
             $table->decimal('valor_consulta', 8, 2);
-            $table->unsignedBigInteger('psicologo_id');
             $table->charset = 'utf8';
             $table->collation = 'utf8_unicode_ci';
             $table->engine = 'InnoDB';

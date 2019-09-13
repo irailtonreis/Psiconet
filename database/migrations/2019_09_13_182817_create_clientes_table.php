@@ -21,7 +21,7 @@ class CreateClientesTable extends Migration
             $table->string('telefone');
             $table->string('email');
             $table->string('senha');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->charset = 'utf8';
             $table->collation = 'utf8_unicode_ci';
             $table->engine = 'InnoDB';
