@@ -13,6 +13,27 @@
     <link rel="stylesheet" href="{{url('css/icofont.css')}}"/>
 	<link rel="stylesheet" href="{{url('css/responsive.css')}}">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
+
+	<!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Inicio Tentativa mudança -->
+    <link rel="icon" type="image/png" href="{{url('img/favicon.png')}}" />
+    <link rel="stylesheet" href="{{url('css/app.css')}}"> 
+    <link rel="stylesheet" href="{{url('css/style.css')}}">
+    <link rel="stylesheet" href="{{url('css/responsive.css')}}">
+    <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/icofont.css')}}"/>
+	<link rel="stylesheet" href="{{url('css/responsive.css')}}">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body data-spy="scroll" data-target=".header" >
          <header class="header"> 
