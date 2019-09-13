@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cliente extends Model
 {
-    protected $table = "cliente";
+    protected $table = "clientes";
     protected $primaryKey = "id";
-    protected $fillable = ['nome', 'usuario', 'email', 'senha', 'cpf', 'telefone'];
+    protected $fillable = ['nome', 'usuario', 'cpf', 'telefone', 'email', 'senha', 'foto'];
 
     public function histCliente(){
-        return $this->hasMany(HistCliente::class, 'cliente_id', 'id');
+        return $this->hasMany(HistCliente::class, 'clientes_id', 'id');
     }
     public function histPsicologo(){
-        return $this->hasMany(HistPsicologo::class, 'cliente_id', 'id');
+        return $this->hasMany(HistPsicologo::class, 'clientes_id', 'id');
     }
 
     public $timestamps = false;

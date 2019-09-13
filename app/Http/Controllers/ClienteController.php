@@ -16,25 +16,53 @@ class ClienteController extends Controller
         $request->validate([
             "nome" => "required",
             "usuario" => "required",
-            "cpf" => "required",
-            "telefone" => "required",
+            "cpf" => "required|min:11",
+            "telefone" => "required|min:11",
             "email" => "required",
             "conf-email" => "required",
-            "password" => "required",
-            "conf-password" => "required"
+            "senha" => "required",
+            "conf-senha" => "required"
+        ],[
+            "nome.required"=>'O campo nome é obrigatório',
+            "usuario.required"=>'O campo usuário é obrigatório',
+            "cpf.required"=>'O campo CPF é obrigatório',
+            "telefone.required"=>'O campo telefone é obrigatório',
+            "email.required"=>'O campo email é obrigatório',
+            "conf-email.required"=>'O campo confirme seu email é obrigatório',
+            "senha.required"=>'O campo senha é obrigatório',
+            "conf-senha.required"=>'O campo confirme sua senha é obrigatório'
+
         ]);
         
+        // $arquivo = $request->file('foto');
 
-        $cliente = Cliente::create([
+        //if (empty($arquivo)) {
+        //    abort(400, 'Nenhum arquivo foi enviado');
+        //}
+
+    //    $nomePasta = "uploads";
+
+    //    $arquivo->storePublicly($nomePasta);
+
+    //    $caminhoAbsoluto = public_path() . "/storage/$nomePasta";
+
+    //  $nomeArquivo = $arquivo->getClientOriginalName();
+
+    //    $caminhoRelativo = "storage/$nomePasta/$nomeArquivo";
+
+    //    $arquivo->move($caminhoAbsoluto, $nomeArquivo);
+
+        $clientes = Cliente::create([
             "nome" => $request->input("nome"),
             "usuario" => $request->input("usuario"),
-            "email" => $request->input("email"),
-            "senha" => $request->input("password"),
             "cpf" => $request->input("cpf"),
-            "telefone" => $request->input("telefone")
+           "telefone" => $request->input("telefone"),
+            "email" => $request->input("email"),
+            "senha" => $request->input("senha"),
+            "foto" => $request->input("foto")
         ]);
 
-        $cliente->save();
+        $clientes->save();
 
         return redirect('/cadastroCliente');
     }

@@ -47,10 +47,10 @@
 			<div class="row">
 				<div class="form-group d-flex flex-wrap w-100">
 				<div class="col-lg-6 col-md-6 col-sm-12 py-2">
-                    <input class="form-control form-control-lg" type="password"  id="input-password" name="password" placeholder="Digite sua senha">
+                    <input class="form-control form-control-lg" type="senha"  id="input-senha" name="senha" placeholder="Digite sua senha">
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 py-2">
-					<input class="form-control form-control-lg" type="password" class="form-control" id="conf-password" name="conf-password" placeholder="Confirme sua senha">
+					<input class="form-control form-control-lg" type="senha" class="form-control" id="conf-senha" name="conf-senha" placeholder="Confirme sua senha">
 				</div>
 				</div>
 			</div>
