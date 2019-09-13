@@ -23,8 +23,10 @@
                                 <img src="{{url('img/logo.png')}}" alt="">
                                 <a href="/index"><span>Psiconet</a>
                             </div>
-                        </div>
-                        <div class="col-lg-10 col-md-9 col-6">
+						</div>
+						
+						
+                        <div class="col-lg-10 col-md-9 col-6 ">
                             <div class="responsive-menu"></div>
                             <div class="mainmenu">
                                 <ul id="primary-menu">
@@ -33,6 +35,7 @@
                                     <li><a class="nav-link" href="paraPsicologo">Para Psicólogo</a></li>
                                     <li><a class="nav-link" href="">Dúvidas</a></li>
 									{{-- <li><a class="appao-btn" href="/login" >Login</a></li> --}}
+									
 									<!-- Authentication Links -->
 										@guest
 											<li class="nav-item">
