@@ -61,6 +61,16 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                            <label for="cliente"  class="col-md-4 col-form-label text-md-right">{{ __('cliente') }}</label>
+                            <input type="radio" name="type" id="cliente" value="0"><br>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="psicologo" class="col-md-4 col-form-label text-md-right">{{ __('psicologo') }}</label>
+                                <input type="radio" name="type" id="psicologo" value="1"><br>
+                            </div>
+                        </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
