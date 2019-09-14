@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Psicologo;
 use App\Plano;
-
+use App\User;
 class PsicologoController extends Controller
 {
     public function cadastroPsicologo(){
@@ -14,10 +14,13 @@ class PsicologoController extends Controller
         return view('cadastroPsicologo', compact('planos', $planos));   
     }
 
-    public function psicologoLogado($id){
-        $psicologo = Psicologo::find($id);
-
+    public function psicologoLogado(){
+        
+        if(auth()->user()){
+        $psicologo = User::find(auth()->user()->id);
         return view ('psicologoLogado', compact('psicologo', $psicologo));
+        }
+       
     }
 
    

@@ -9,7 +9,7 @@
                     <div class="row">
                     <div class="form-group w-100 d-flex flex-wrap">
                             <div class="col-lg-4 col-md-4 col-sm-12 py-2">
-                                <img src="{{url($psicologo->foto)}}" alt="Avatar" class="avatar">
+                                {{-- <img src="{{url($psicologo->foto)}}" alt="Avatar" class="avatar"> --}}
                             </div>
                         </div>
                     </div>             
@@ -17,11 +17,11 @@
                         <div class="form-group w-100 d-flex flex-wrap">
                             <div class="col-lg-4 col-md-4 col-sm-12 py-2">
                                 <p>Nome</p>
-                            <input class="form-control form-control-lg" type="text"  id="input-nome" name="nome" value="{{$psicologo->nome}}">
+                            {{-- <input class="form-control form-control-lg" type="text"  id="input-nome" name="nome" value="{{$psicologo->nome}}"> --}}
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 py-2 ">
                                 <p>Usuário</p>
-                                <input class="form-control form-control-lg" type="text"  id="input-ident" name="nome-usuario" value="{{$psicologo->nome}}"> 
+                                {{-- <input class="form-control form-control-lg" type="text"  id="input-ident" name="nome-usuario" value="{{$psicologo->nome}}">  --}}
                             </div>
                         </div>
                     </div>
@@ -30,11 +30,11 @@
                         <div class="form-group d-flex flex-wrap w-100">
                             <div class="col-lg-4 col-md-4 col-sm-12 py-2">
                                 <p>CPF</p>
-                            <input class="form-control form-control-lg" type="text"  id="input-nome" name="cpf" value="{{$psicologo->cpf}}">
+                            {{-- <input class="form-control form-control-lg" type="text"  id="input-nome" name="cpf" value="{{$psicologo->cpf}}"> --}}
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 py-2">
                             <p>Telefone</p>
-                            <input class="form-control form-control-lg" type="text"  id="telefone" name="telefone" value="{{$psicologo->telefone}}"> 
+                            {{-- <input class="form-control form-control-lg" type="text"  id="telefone" name="telefone" value="{{$psicologo->telefone}}">  --}}
                         </div>
                         </div>
                     </div>
@@ -42,11 +42,11 @@
                         <div class="form-group d-flex flex-wrap w-100">
                             <div class="col-lg-4 col-md-4 col-sm-12 py-2">
                                 <p>E-mail</p>
-                            <input class="form-control form-control-lg" type="email"  id="input-email" name="email" value="{{$psicologo->email}}"> 
+                            {{-- <input class="form-control form-control-lg" type="email"  id="input-email" name="email" value="{{$psicologo->email}}">  --}}
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 py-2">
                             <p>CRP</p>
-                            <input class="form-control form-control-lg" type="text"  id="crp" name="crp" value="{{$psicologo->crp}}"> 
+                            {{-- <input class="form-control form-control-lg" type="text"  id="crp" name="crp" value="{{$psicologo->crp}}">  --}}
                         </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                         <div class="form-group d-flex flex-wrap w-100">
                         <div class="col-lg-4 col-md-4 col-sm-12 py-2">
                             <p>Plano</p>
-                            <input class="form-control form-control-lg" type="text"  id="input-plano" value="{{$psicologo->planos->plano}}">
+                            {{-- <input class="form-control form-control-lg" type="text"  id="input-plano" value="{{$psicologo->planos->plano}}"> --}}
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 py-2">
                             <p>Foto</p>

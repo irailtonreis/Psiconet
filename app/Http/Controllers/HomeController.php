@@ -25,6 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        return view('home');
+       
+        if(auth()->user()->type == 0){
+            return view('clienteLogado');
+            
+        }elseif(auth()->user()->type == 1){
+            return view('psicologoLogado');
+        }
     }
 }
