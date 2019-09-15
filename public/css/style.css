@@ -1677,9 +1677,29 @@ h4.post-title a {
 
 .team-area  .form-group .avatar{
     vertical-align: middle;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
+    /* background-image: url(../img/avatar.png) no-repeat / cover;      */
+}
+
+.list-cadastro{
+    background-color: #eeee;
     
 }
+
+.list-cadastro:nth-child(1){
+    background-color: #eeee;
+    border-right: 1px solid rgba(0,115,216, 0.5);       
+}
+.list-cadastro a{
+  color: #000;
+  line-height: 2.5em;
+
+}
+.list-cadastro .active{
+    background-color: rgba(0,115,216, 0.5); 
+    
+}
+ 
 /*=== Página  psicólogoLogado Fim ==== */

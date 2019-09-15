@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Psicologo;
 use App\Cliente;
-
+use App\plano;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -30,7 +30,9 @@ class HomeController extends Controller
             return view('clienteLogado');
             
         }elseif(auth()->user()->type == 1){
-            return view('psicologoLogado');
+            $planos = Plano::orderBy('id', 'ASC')->get();
+            return view('psicologoLogado', compact('planos', $planos));
+
         }
     }
 }
