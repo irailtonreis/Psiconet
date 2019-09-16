@@ -27,12 +27,12 @@ class HomeController extends Controller
     {   
        
         if(auth()->user()->type == 0){
-            return view('clienteLogado');
+            return view('concluirCadastroCliente');
             
         }elseif(auth()->user()->type == 1){
             $planos = Plano::orderBy('id', 'ASC')->get();
           
-            return view('psicologoLogado', compact('planos', $planos));
+            return view('concluirCadastroPsicologo', compact('planos', $planos));
 
         }
     }

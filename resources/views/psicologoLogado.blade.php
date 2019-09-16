@@ -79,7 +79,7 @@
         </form>
 
     </div> --}}
-    .<div class="container d-flex justify-content-center">
+    <div class="container d-flex justify-content-center">
         <div class="row">
         <button class="btn btn-primary btn-lg btn-block py-2 my-5 w-100  badge-pill"><a href="/editarCadastroPsicologo/{{auth()->user()->id}}">Editar Cadastro</a></button>
         </div>   
@@ -100,7 +100,7 @@
                     <div class="row">
                         <div class="form-group w-100 d-flex flex-wrap align-items-center">
                             <div class="col-lg-12 pull-lg-12 text-center">
-                            <img src="{{$psicologo->foto}}" class="m-x-auto img-fluid rounded-circle" alt="avatar" />
+                            {{-- <img src="{{$psicologo->foto}}" class="m-x-auto img-fluid rounded-circle" alt="avatar" /> --}}
                                 <h6 class="m-t-2 py-3">Carregar foto de Perfil</h6>
                                 <label class="custom-file w-50 py-2" {{ $errors->has('foto') ? ' has-error' : '' }} >
                                   <input type="file" id="file" name="foto" class="custom-file-input">
@@ -182,6 +182,7 @@
                     </div>
             </div>
         </form>
+    </div>
 
         <div class="container mt-4">
 
