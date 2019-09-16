@@ -31,6 +31,7 @@ class HomeController extends Controller
             
         }elseif(auth()->user()->type == 1){
             $planos = Plano::orderBy('id', 'ASC')->get();
+          
             return view('psicologoLogado', compact('planos', $planos));
 
         }

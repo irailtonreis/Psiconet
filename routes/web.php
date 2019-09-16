@@ -13,6 +13,9 @@ Route::post('/cadastroPsicologo', 'PsicologoController@salvandoPsicologo');
 
 Route::get('/psicologoLogado/{id}', 'PsicologoController@psicologoLogado');
 
+Route::get('/editarCadastroPsicologo/{id}', 'PsicologoController@editarCadastroPsicologo');
+Route::post('/editarCadastroPsicologo/{id}', 'PsicologoController@alterarCadastroPsicologo');
+
 Route::get('/clienteLogado', function () {
     return view('clienteLogado');
 });
