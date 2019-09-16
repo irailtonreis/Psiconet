@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
         <div class="cadastro text-center py-3">
             <h2>Concluir cadastro</h2>
         </div>
-        <form method="POST"  action="/cadastroPsicologo" class="py-3" enctype="multipart/form-data">
+        <form method="POST"  action="/salvandoCliente" class="py-3" enctype="multipart/form-data">
             @csrf
             {{ method_field('POST') }}
             <ul class="nav nav-tabs">
@@ -34,62 +34,24 @@
                     <p>Email</p>
                     <input class="form-control form-control-lg" type="email" id="input-email" name="email"
                         value="{{auth()->user()->email}} " disabled>
+                    <div class=" {{ $errors->has('usuario') ? ' has-error' : '' }}">
+                        <p>Usuário</p>
+                        <input class="form-control form-control-lg" type="text" id="usuario" name="usuario" value="">
+                        <small class="text-danger">{{ $errors->first('usuario') }}</small>
+                    </div>
                     <div class=" {{ $errors->has('cpf') ? ' has-error' : '' }}">
                         <p>CPF</p>
                         <input class="form-control form-control-lg" type="text" id="cpf" name="cpf" value="">
                         <small class="text-danger">{{ $errors->first('cpf') }}</small>
                     </div>
                     <div class=" {{ $errors->has('telefone') ? ' has-error' : '' }}">
-                    <p>Telefone</p>
-                    <input class="form-control form-control-lg" type="text" id="tefelfone" name="telefone" value="">
-                    <small class="text-danger">{{ $errors->first('telefone') }}</small>
+                        <p>Telefone</p>
+                        <input class="form-control form-control-lg" type="text" id="tefelfone" name="telefone" value="">
+                        <small class="text-danger">{{ $errors->first('telefone') }}</small>
                     </div>
-                    <div class=" {{ $errors->has('cidade') ? ' has-error' : '' }}">
-                    <p>Cidade</p>
-                    <input class="form-control form-control-lg" type="text" id="cidade" name="cidade" value="">
-                    <small class="text-danger">{{ $errors->first('cidade') }}</small>
-                    </div>
-                    {{-- <div class="">
-                        <p>Estado</p>
-                        <select name="planos" class="form-control form-control-lg">
-                            <option name="estado" value="{{ $errors->has('estado') ? ' has-error' : '' }}">Estado</option>
-                            @foreach ($estados as $estado)
-                            <option name="estado" value="{{ $estado->id }}">{{ $estado->title }}</option>
-                            @endforeach
-                        </select>
-                        <small class="text-danger">{{ $errors->first('estado') }}</small>
-                    </div>                 --}}
-                    <div class=" {{ $errors->has('crp') ? ' has-error' : '' }}">
-                        <p>Registro CRP</p>
-                        <input class="form-control form-control-lg" type="text" id="CRP" name="crp" value="">
-                        <small class="text-danger">{{ $errors->first('crp') }}</small>
-                    </div>
-                    <div class=" {{ $errors->has('valor_sessao') ? ' has-error' : '' }}">
-                        <p>Valor Sessão</p>
-                        <input class="form-control form-control-lg" type="text" id="valor_sessao" name="valor_sessao"
-                            value="">
-                            <small class="text-danger">{{ $errors->first('valor_sessao') }}</small>
-                    </div>
-                    <div class="">
-                        <p>Plano</p>
-                        <select name="plano" class="form-control form-control-lg">
-                            <option name="plano" value="{{ $errors->has('plano') ? ' has-error' : '' }}">Selecione um
-                                Plano</option>
-                            @foreach ($planos as $plano)
-                            <option name="plano" value="{{ $plano->id }}">{{ $plano->plano }}</option>
-                            @endforeach
-                        </select>
-                        <small class="text-danger">{{ $errors->first('plano') }}</small>
-                    </div>
-                    <div class="form-group {{ $errors->has('sobre') ? ' has-error' : '' }}">
-                            <label for="exampleFormControlTextarea1">Sobre</label>
-                            <textarea class="form-control" name="sobre" id="exampleFormControlTextarea1"
-                                placeholder="Descrição Profissional" rows="3"></textarea>
-                            <small class="text-danger">{{ $errors->first('sobre') }}</small>
-                        </div>
-                        <div class="user">
+                    <div class="user">
                         <input type="text" value="{{(auth()->user()->id)}}" name="user">
-                        </div>
+                    </div>
                     <div class="row">
                             <div class="col-md-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary btn-block" id="button-form"><a href="#menu1"></a>Concluir</button>
