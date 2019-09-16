@@ -8,7 +8,7 @@ class Psicologo extends Model
 {
     protected $table = "psicologos";
     protected $primaryKey = "id";
-    protected $fillable = ['nome','crp', 'cpf', 'email','foto', 'valor_sessao', 'senha', 'sobre', 'telefone', 'id_plano'];
+    protected $fillable = ['foto', 'cpf', 'telefone', 'cidade', 'crp', 'valor_sessao', 'sobre', 'id_plano', 'id_user'];
 
     public function planos(){
         return $this->hasOne(Plano::class, 'id', 'id_plano');
@@ -20,5 +20,9 @@ class Psicologo extends Model
 
     public function histCliente (){
         return $this->hasMany(HistCliente::class, 'psicologo_id', 'id');
+    }
+
+    public function user(){
+        return $this->hasOne(User::class, 'id_user', 'id');
     }
 }

@@ -15,16 +15,15 @@ class CreatePsicologosTable extends Migration
     {
         Schema::create('psicologos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
-            $table->string('telefone');
-            $table->string('email');
-            $table->string('cpf');
-            $table->string('crp');
-            $table->string('senha');
             $table->string('foto');
+            $table->string('cpf');
+            $table->string('telefone');
+            $table->string('cidade');
+            $table->string('crp');
             $table->string('valor_sessao')->nullable();
             $table->string('sobre')->nullable();
             $table->unsignedBigInteger('id_plano');
+            $table->unsignedBigInteger('id_user');
             $table->charset = 'utf8';
             $table->collation = 'utf8_unicode_ci';
             $table->engine = 'InnoDB';

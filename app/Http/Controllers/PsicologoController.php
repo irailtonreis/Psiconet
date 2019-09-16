@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Psicologo;
 use App\Plano;
+use App\State;
 use App\User;
 class PsicologoController extends Controller
 {
@@ -16,38 +17,37 @@ class PsicologoController extends Controller
 
     public function psicologoLogado(){
         
+        
         if(auth()->user()){
-        $psicologo = User::find(auth()->user()->id);
-        return view ('psicologoLogado', compact('psicologo', $psicologo));
+        $user = User::find(auth()->user()->id);
+    
+        $estados = State::orderBy('id', 'ASC')->get();
+        
+
+        return view('psicologoLogado')->with(['user' => $user]);
+        // return view ('psicologoLogado', compact('psicologo', 'estados', $psicologo, $estados));
         }
        
     }
 
-   
+
     public function salvandoPsicologo(Request $request){
         $request->validate([
-            "nome" => "required|max:50",
-            "telefone" => "required|min:11",
-            "cpf" => "required|min:11",
-            "crp" => "required",
-            "email" => "required",
-            "conf-email" => "required",
             "foto"=> "required",
-            "planos" => "required",
-            "senha" =>"required",
-            "conf-senha"=> "required"
+            "cpf" => "required",
+            "telefone" => "required",
+            "cidade" => "required",
+            "crp" => "required",
+            'valor_sessao'=>'required',
+            "plano" => "required",
+            "sobre" =>"required",
         ], [
-            "nome.required"=>'O campo nome é obrigatório',
-            "cpf.required"=>'O campo CPF é obrigatório',
-            "crp.required"=>'O campo CRP é obrigatório',
-            "telefone.required"=>'O campo telefone é obrigatório',
-            "email.required"=>'O campo email é obrigatório',
-            "conf-email.required"=>'O campo confirme seu email é obrigatório',
             "foto.required"=>'O campo foto é obrigatório',
-            "planos.required"=>'O campo plano é obrigatório',
-            "senha.required"=>'O campo senha é obrigatório',
-            "conf-senha.required"=>'O campo confirme sua senha é obrigatório'
-
+            "cpf.required"=>'O campo CPF é obrigatório',
+            "telefone.required"=>'O campo telefone é obrigatório',
+            "cidade.required"=>'O campo cidade é obrigatório',
+            "crp.required"=>'O campo CRP é obrigatório',
+            "plano.required"=>'O campo plano é obrigatório',
         ]);
         
         $arquivo = $request->file('foto');
@@ -69,17 +69,16 @@ class PsicologoController extends Controller
         $arquivo->move($caminhoAbsoluto, $nomeArquivo);
 
         $psicologo = Psicologo::create([
-            "nome" => $request->input("nome"),
-            // "usuario" => $request->input("usuario"),
-            "crp" => $request->input("crp"),
-            "cpf" => $request->input("cpf"),
-            "email" => $request->input("email"),
-            "telefone" => $request->input("telefone"),
             "foto"=> $caminhoRelativo,
-            "senha" => $request->input("senha"),
-            "id_plano"=> $request->input("planos")
+            "cpf" => $request->input("cpf"),
+            "telefone" => $request->input("telefone"),
+            "cidade" => $request->input("cidade"),
+            "crp" => $request->input("crp"),
+            "valor_sessao"=> $request->input('valor_sessao'),
+            "sobre"=> $request->input('sobre'),
+            "id_plano"=> $request->input("plano"),
+            "id_user"=> $request->input("user")
         ]);
-
         $psicologo->save();
         
        return redirect('/psicologoLogado');

@@ -14,7 +14,8 @@ class AdicionandoFkPsicologos extends Migration
     public function up()
     {
         Schema::table('psicologos', function (Blueprint $table) {
-            $table->foreign('id_plano')->references('id')->on('planos');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_plano')->references('id')->on('planos')->onDelete('cascade');
         });
     }
 
@@ -26,7 +27,8 @@ class AdicionandoFkPsicologos extends Migration
     public function down()
     {
         Schema::table('psicologos', function (Blueprint $table) {
-            $table->foreign('id_plano')->references('id')->on('planos');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_plano')->references('id')->on('planos')->onDelete('cascade');
         });
     }
 }

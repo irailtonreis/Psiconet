@@ -1689,8 +1689,7 @@ h4.post-title a {
 }
 
 .list-cadastro:nth-child(1){
-    background-color: #eeee;
-    border-right: 1px solid rgba(0,115,216, 0.5);       
+    background-color: #eeee;   
 }
 .list-cadastro a{
   color: #000;
@@ -1701,5 +1700,27 @@ h4.post-title a {
     background-color: rgba(0,115,216, 0.5); 
     
 }
+
+.custom-file-control{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    height: 2.5rem;
+    padding: .5rem 1rem;
+    line-height: 1.5;
+    color: #555;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+}
  
+.user{
+    display: none;
+}
 /*=== Página  psicólogoLogado Fim ==== */
