@@ -17,5 +17,9 @@ class Cliente extends Model
         return $this->hasMany(HistPsicologo::class, 'clientes_id', 'id');
     }
 
+    public function user(){
+        return $this->hasOne(Ator::class, 'id', 'id_user');
+    }
+
     public $timestamps = false;
 }
