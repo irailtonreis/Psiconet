@@ -32,7 +32,7 @@ class HomeController extends Controller
         }elseif(auth()->user()->type == 1){
             $planos = Plano::orderBy('id', 'ASC')->get();
           
-            return view('concluirCadastroPsicologo', compact('planos', $planos));
+            return view('concluirCadastroCliente', compact('planos', $planos));
 
         }
     }

@@ -22,14 +22,12 @@ class PsicologoController extends Controller
         $psicologo = Psicologo::find(auth()->user()->id);
         // $estados = State::orderBy('id', 'ASC')->get();
     
-       
         return view('/psicologoLogado', compact('psicologo', $psicologo));
          // return view('/psicologoLogado')->with(['user' => $user]);
         // return view ('psicologoLogado', compact('psicologo', 'estados', $psicologo, $estados));
         }
        
     }
-
 
     public function salvandoPsicologo(Request $request){
         $request->validate([
@@ -94,7 +92,6 @@ class PsicologoController extends Controller
         $psicologo = Psicologo::find($id);
 
         $request->validate([
-            "foto"=> "required",
             "cpf" => "required",
             "telefone" => "required",
             "cidade" => "required",
@@ -129,8 +126,8 @@ class PsicologoController extends Controller
         $psicologo->cidade= $request->input('cidade');
         $psicologo->crp= $request->input('crp');
         $psicologo->valor_sessao= $request->input('valor_sessao');
-        $psicologo->plano= $request->input('plano');
-        $psicologo->plano= $request->input('sobre');
+        $psicologo->id_plano= $request->input('plano');
+        $psicologo->sobre= $request->input('sobre');
 
         $psicologo->save();
 

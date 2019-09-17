@@ -16,7 +16,7 @@
                             <img src="{{url($psicologo->foto)}}" class="m-x-auto img-fluid rounded-circle" alt="avatar" />
                                 <h6 class="m-t-2 py-3">Carregar foto de Perfil</h6>
                                 <label class="custom-file w-50 py-2" {{ $errors->has('foto') ? ' has-error' : '' }} >
-                                  <input type="file" id="file" name="foto" class="custom-file-input">
+                                <input type="file" id="file" name="foto" class="custom-file-input" value="{{url($psicologo->foto)}}">
                                   <span class="custom-file-control">Escolher arquivo</span>
                                   <small class="text-danger">{{ $errors->first('foto') }}</small>
                                 </label>
