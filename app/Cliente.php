@@ -8,7 +8,7 @@ class Cliente extends Model
 {
     protected $table = "clientes";
     protected $primaryKey = "id";
-    protected $fillable = ['nome', 'usuario', 'cpf', 'telefone', 'email', 'senha', 'foto'];
+    protected $fillable = ['usuario', 'cpf', 'telefone', 'foto', 'id_user'];
 
     public function histCliente(){
         return $this->hasMany(HistCliente::class, 'clientes_id', 'id');
