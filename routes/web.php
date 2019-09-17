@@ -20,7 +20,6 @@ Route::get('/clienteLogado', function () {
     return view('clienteLogado');
 });
 
-
 Route::get('/paraPsicologo', function () {
     return view('paraPsicologo');
 });
@@ -30,18 +29,6 @@ Route::get('/psicologoLogado', function () {
 });
 
 // Route::get('/psicologoLogado', 'IndexController@index');
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Auth::routes();
