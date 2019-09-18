@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use App\Psicologo;
 use App\Cliente;
 use App\plano;
 use Illuminate\Http\Request;
+use PHPUnit\Framework\MockObject\Stub\ReturnStub;
 
 class HomeController extends Controller
 {
@@ -30,9 +32,18 @@ class HomeController extends Controller
             return view('concluirCadastroCliente');
             
         }elseif(auth()->user()->type == 1){
+            $iduser = auth()->user()->id;
+            // dd($iduser); 
+            $verifica = Psicologo::select('id')->where('id_user', '=' , $iduser)->get();
+            //  $verifica = Psicologo::select('id')->where($iduser , '=' , 'id_user')->get();
+
             $planos = Plano::orderBy('id', 'ASC')->get();
-          
-            return view('concluirCadastroPsicologo', compact('planos', $planos));
+            $user = Auth::user();
+            if($verifica){
+                return view('concluirCadastroPsicologo', compact('planos', $planos, 'user', $user));
+            }else{
+                return view('psicologoLogado');
+            }
 
         }
     }
