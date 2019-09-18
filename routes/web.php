@@ -11,6 +11,8 @@ Route::post('/cadastroCliente', 'ClienteController@salvandoCliente');
 Route::get('/cadastroPsicologo', 'PsicologoController@cadastroPsicologo');
 Route::post('/cadastroPsicologo', 'PsicologoController@salvandoPsicologo');
 
+
+
 Route::get('/psicologoLogado/{id}', 'PsicologoController@psicologoLogado');
 
 Route::get('/editarCadastroPsicologo/{id}', 'PsicologoController@editarCadastroPsicologo');
