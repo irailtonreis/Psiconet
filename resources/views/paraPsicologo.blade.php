@@ -74,7 +74,7 @@
 			</div>
 			</div>
 	</section>
-	<!--Section seja Psicólogo inicio-->
+	{{-- <!--Section seja Psicólogo inicio-->
 	<section class="psicologo-duvida py-3">
 		<div class="container">
 			<div class="text-center py-5">
@@ -125,7 +125,7 @@
 					id="btn"><a class="nav-link" href="/cadastroPsicologo">Quero aderir</a></button></div>
 		</div>
 		</div>
-	</section>
+	</section> --}}
 	<section>
 		<section class="psicologo-preco ptb-90" id="pricing">
 			<div class="row mr-0">

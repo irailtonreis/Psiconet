@@ -51,10 +51,10 @@
                             <div class="responsive-menu"></div>
                             <div class="mainmenu">
                                 <ul id="primary-menu">
-                                    <li><a class="nav-link" href="#">Como Funciona</a></li>
-                                    <li><a class="nav-link" href="#">Para Você</a></li>
+                                    <li><a class="nav-link" href="/comofunciona">Como Funciona</a></li>
+                                    <li><a class="nav-link" href="/">Para Você</a></li>
                                     <li><a class="nav-link" href="paraPsicologo">Para Psicólogo</a></li>
-                                    <li><a class="nav-link" href="">Dúvidas</a></li>
+                                    {{-- <li><a class="nav-link" href="">Dúvidas</a></li> --}}
 									{{-- <li><a class="appao-btn" href="/login" >Login</a></li> --}}
 									
 									<!-- Authentication Links -->

@@ -210,7 +210,7 @@
 				</div>
 	</div>  --}}
 
-	<div class="container custom-duvidas">
+	{{-- <div class="container custom-duvidas" id="duvidas">
 		<div class="text-center py-5">
 		<h2>Perguntas Frequentes</h2>
 		<h4>Veja porque o Psiconet é a melhor opção para você</h4>
@@ -383,7 +383,7 @@
 				</p>
 			</div>
         </div>
-	</div>
+	</div> --}}
 	
 	<!-- Section Psicólogos inicio-->
 	<!-- team section start -->
