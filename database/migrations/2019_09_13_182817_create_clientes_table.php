@@ -25,6 +25,7 @@ class CreateClientesTable extends Migration
             $table->engine = 'InnoDB';
             $table->timestamps();
         });
+
     }
 
     /**

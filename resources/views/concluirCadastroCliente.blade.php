@@ -1,11 +1,14 @@
 @extends('layouts.master')
 
 @section('content')
+
     <div class="container mt-5 pt-5">
         <div class="cadastro text-center py-3">
             <h2>Concluir cadastro</h2>
         </div>
         <form method="POST"  action="/cadastroCliente" class="py-3" enctype="multipart/form-data">
+
+        <form method="POST"  action="/salvandoCliente" class="py-3" enctype="multipart/form-data">
             @csrf
             {{ method_field('POST') }}
             <ul class="nav nav-tabs">
@@ -34,11 +37,17 @@
                     <p>Email</p>
                         <input class="form-control form-control-lg" type="email" id="input-email" name="email"
                         value="{{auth()->user()->email}} " disabled>
+                    <div class=" {{ $errors->has('usuario') ? ' has-error' : '' }}">
+                        <p>Usuário</p>
+                        <input class="form-control form-control-lg" type="text" id="usuario" name="usuario" value="">
+                        <small class="text-danger">{{ $errors->first('usuario') }}</small>
+                    </div>
                     <div class=" {{ $errors->has('cpf') ? ' has-error' : '' }}">
                         <p>CPF</p>
                         <input class="form-control form-control-lg" type="text" id="cpf" name="cpf" value="">
                         <small class="text-danger">{{ $errors->first('cpf') }}</small>
                     </div>
+
                     <div class=" {{ $errors->has('usuario') ? ' has-error' : '' }}">
                         <p>Usuário</p>
                         <input class="form-control form-control-lg" type="text" id="usuario" name="usuario" value="">
@@ -51,6 +60,9 @@
                     </div>
                     <div class="user">
                         <input type="text" value="{{(auth()->user()->id)}}" name="id_user">
+
+                    <div class="user">
+                        <input type="text" value="{{(auth()->user()->id)}}" name="user">
                     </div>
                     <div class="row">
                             <div class="col-md-12 d-flex justify-content-end">
