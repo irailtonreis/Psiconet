@@ -38,4 +38,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function Psicologo(){
+        return $this->hasOne(Psicologo::class, 'id_user', 'id');
+    }
 }

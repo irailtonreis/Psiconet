@@ -22,28 +22,24 @@ Route::get('/clienteLogado', function () {
     return view('clienteLogado');
 });
 
-
 Route::get('/paraPsicologo', function () {
     return view('paraPsicologo');
 });
 
-Route::get('/psicologoLogado', function () {
-    return view('psicologoLogado');
+Route::get('/comofunciona', function () {
+    return view('comoFunciona');
 });
 
+Route::get('/faqCliente', function () {
+    return view('faqCliente');
+});
+
+Route::get('/faqPsicologo', function () {
+    return view('faqPsicologo');
+});
+
+
 // Route::get('/psicologoLogado', 'IndexController@index');
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Auth::routes();

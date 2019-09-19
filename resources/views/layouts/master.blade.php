@@ -51,10 +51,10 @@
                             <div class="responsive-menu"></div>
                             <div class="mainmenu">
                                 <ul id="primary-menu">
-                                    <li><a class="nav-link" href="#">Como Funciona</a></li>
-                                    <li><a class="nav-link" href="#">Para Você</a></li>
+                                    <li><a class="nav-link" href="/comofunciona">Como Funciona</a></li>
+                                    <li><a class="nav-link" href="/">Para Você</a></li>
                                     <li><a class="nav-link" href="paraPsicologo">Para Psicólogo</a></li>
-                                    <li><a class="nav-link" href="">Dúvidas</a></li>
+                                    {{-- <li><a class="nav-link" href="">Dúvidas</a></li> --}}
 									{{-- <li><a class="appao-btn" href="/login" >Login</a></li> --}}
 									
 									<!-- Authentication Links -->
@@ -73,7 +73,12 @@
 													{{ Auth::user()->name }} <span class="caret"></span>
 												</a>
 				
-												<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+												<div class="dropdown-menu dropdown-menu-right bg-primary" aria-labelledby="navbarDropdown">
+												<a class="dropdown-item" href="/editarCadastroPsicologo/{{auth::user()->id}}"
+													   onclick="event.preventDefault();
+																	 document.getElementById('editarCadastroPsicologo').submit();">
+														{{ __('Editar Perfil') }}
+													</a>
 													<a class="dropdown-item" href="{{ route('logout') }}"
 													   onclick="event.preventDefault();
 																	 document.getElementById('logout-form').submit();">
@@ -81,6 +86,9 @@
 													</a>
 				
 													<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+														@csrf
+													</form>
+													<form id="editarCadastroPsicologo" action="/editarCadastroPsicologo/{{auth::user()->id}}" method="POST" style="display: none;">
 														@csrf
 													</form>
 												</div>
