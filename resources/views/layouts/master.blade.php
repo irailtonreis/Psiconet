@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{url('css/icofont.css')}}"/>
 	<link rel="stylesheet" href="{{url('css/responsive.css')}}">
+	<link rel="stylesheet" href="{{url('css/auth.css')}}">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- Scripts -->
