@@ -85,16 +85,17 @@
 																	 document.getElementById('logout-form').submit();">
 														{{ __('Logout') }}
 													</a>
-				
+													
 													<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 														@csrf
 													</form>
-													<form id="editarCadastroPsicologo" action="/editarCadastroPsicologo/{{auth::user()->id}}" method="POST" style="display: none;">
+													<form id="editarCadastroPsicologo" action="/editarCadastroPsicologo/" method="POST" style="display: none;">
 														@csrf
 													</form>
 												</div>
 											</li>
 										@endguest
+										
 								
                                 </ul>
 							</div>

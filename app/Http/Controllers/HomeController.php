@@ -38,18 +38,20 @@ class HomeController extends Controller
             }
             
         }elseif(auth()->user()->type == 1){
-            $iduser = auth()->user()->id;
-            // dd($iduser); 
-            $verifica = Psicologo::select('id')->where('id_user', '=' , $iduser)->get();
-            //  $verifica = Psicologo::select('id')->where($iduser , '=' , 'id_user')->get();
 
-            $planos = Plano::orderBy('id', 'ASC')->get();
-            $user = Auth::user();
-            if($verifica){
-                return view('concluirCadastroPsicologo', compact('planos', $planos, 'user', $user));
-            }else{
-                return view('psicologoLogado');
-            }
+            return view('psicologoLogado');
+            // $iduser = auth()->user()->id;
+            // // dd($iduser); 
+            // $verifica = Psicologo::select('id')->where('id_user', '=' , $iduser)->get();
+            // //  $verifica = Psicologo::select('id')->where($iduser , '=' , 'id_user')->get();
+
+            // $planos = Plano::orderBy('id', 'ASC')->get();
+            // $user = Auth::user();
+            // if($verifica){
+            //     return view('concluirCadastroPsicologo', compact('planos', $planos, 'user', $user));
+            // }else{
+            //     return view('psicologoLogado');
+            // }
 
         }
     }

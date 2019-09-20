@@ -79,7 +79,9 @@ class PsicologoController extends Controller
         ]);
         $psicologo->save();
         
-       return redirect('/psicologoLogado');
+    
+      
+       return redirect('psicologoLogado');
         
     }
     public function editarCadastroPsicologo($id){
@@ -100,27 +102,27 @@ class PsicologoController extends Controller
             "plano" => "required",
             "sobre" =>"required",
         ]);
+        if($request->hasFile('foto')){
 
-        $arquivo = $request->file('foto');
-
-        if (empty($arquivo)) {
-            abort(400, 'Nenhum arquivo foi enviado');
+            $arquivo = $request->file('foto');
+    
+            $nomePasta = "uploads";
+    
+            $arquivo->storePublicly($nomePasta);
+    
+            $caminhoAbsoluto = public_path() . "/storage/$nomePasta";
+    
+            $nomeArquivo = $arquivo->getClientOriginalName();
+    
+            $caminhoRelativo = "storage/$nomePasta/$nomeArquivo";
+    
+            $arquivo->move($caminhoAbsoluto, $nomeArquivo);
+            
+            $psicologo->foto = $caminhoRelativo;
         }
 
-        $nomePasta = "uploads";
-
-        $arquivo->storePublicly($nomePasta);
-
-        $caminhoAbsoluto = public_path() . "/storage/$nomePasta";
-
-        $nomeArquivo = $arquivo->getClientOriginalName();
-
-        $caminhoRelativo = "storage/$nomePasta/$nomeArquivo";
-
-        $arquivo->move($caminhoAbsoluto, $nomeArquivo);
-
-
-        $psicologo->foto = $caminhoRelativo;
+        
+        
         $psicologo->cpf = $request->input('cpf');
         $psicologo->telefone= $request->input('telefone');
         $psicologo->cidade= $request->input('cidade');
