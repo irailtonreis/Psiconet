@@ -36,7 +36,7 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
-<body data-spy="scroll" data-target=".header" >
+<body  >
          <header class="header"> 
                 <div class="container">
                     <div class="row flexbox-center">
