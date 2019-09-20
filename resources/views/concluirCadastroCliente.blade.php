@@ -26,7 +26,7 @@
                                 <span class="custom-file-control">Escolher arquivo</span>
                                 <small class="text-danger">{{ $errors->first('foto') }}</small>
                                 </label>
-                        </div>
+                            </div>
                             <div class="col-md-12 col-sm-12">
                                 <p>Nome</p>
                                 <input class="form-control form-control-lg" type="text" id="input-nome" name="nome"
@@ -47,12 +47,6 @@
                         <input class="form-control form-control-lg" type="text" id="cpf" name="cpf" value="">
                         <small class="text-danger">{{ $errors->first('cpf') }}</small>
                     </div>
-
-                    <div class=" {{ $errors->has('usuario') ? ' has-error' : '' }}">
-                        <p>Usuário</p>
-                        <input class="form-control form-control-lg" type="text" id="usuario" name="usuario" value="">
-                        <small class="text-danger">{{ $errors->first('usuario') }}</small>
-                    </div>
                     <div class=" {{ $errors->has('telefone') ? ' has-error' : '' }}">
                         <p>Telefone</p>
                         <input class="form-control form-control-lg" type="text" id="telefone" name="telefone" value="">
@@ -60,11 +54,11 @@
                     </div>
                     <div class="user">
                         <input type="text" value="{{(auth()->user()->id)}}" name="id_user">
-
+                    </div>
                     <div class="user">
                         <input type="text" value="{{(auth()->user()->id)}}" name="user">
                     </div>
-                    <div class="row">
+                        <div class="row">
                             <div class="col-md-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary btn-block" id="button-form"><a href="#menu1"></a>Concluir</button>
                             </div>
