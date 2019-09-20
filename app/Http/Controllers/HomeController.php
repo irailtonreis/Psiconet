@@ -28,8 +28,14 @@ class HomeController extends Controller
     public function index()
     {   
        
-        if(auth()->user()->type == 0){
-            return view('concluirCadastroCliente');
+        if(auth()->user()->type == 0){ 
+            $cliente = Cliente::find(auth()->user()->id);
+
+            if(isset($cliente->id_user)){
+                return view('clienteLogado');
+            } else {
+                return view('concluirCadastroCliente');
+            }
             
         }elseif(auth()->user()->type == 1){
             $iduser = auth()->user()->id;
