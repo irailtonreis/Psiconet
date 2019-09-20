@@ -8,6 +8,8 @@
 	background: -webkit-linear-gradient(left, #000529 1%,#002055 24%,#005db5 67%,#0074d9 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, #000529 1%,#002055 24%,#005db5 67%,#0074d9 100%);
     color: #fff;
+    padding: 2px;
+   
 }
 
 .card-header{

@@ -78,7 +78,7 @@
                       
                         
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-6">
                                 <button type="submit" class="btn btn-primary btn-auth px-5 py-2">
                                     {{ __('Confirmar') }}
                                 </button>

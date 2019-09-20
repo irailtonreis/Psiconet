@@ -180,5 +180,20 @@ $("#profile-img").change(function(){
 });
 
 
+$(document).ready(function(){
+	$("#flip").click(function(){
+	  $("#panel").slideDown(5000);
+	});
+	$("#stop").click(function(){
+	  $("#panel").stop();
+	});
+  });
+
+
+  ScrollReveal (). revelar ( ' .headline ' );
+
+  ScrollReveal().reveal('.tagline', { delay: 500 });
+ScrollReveal().reveal('.punchline', { delay: 2000 });
+
 
 
