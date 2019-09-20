@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{url('css/icofont.css')}}"/>
 	<link rel="stylesheet" href="{{url('css/responsive.css')}}">
+	<link rel="stylesheet" href="{{url('css/auth.css')}}">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- Scripts -->
@@ -35,7 +36,7 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
-<body data-spy="scroll" data-target=".header" >
+<body  >
          <header class="header"> 
                 <div class="container">
                     <div class="row flexbox-center">
@@ -84,16 +85,17 @@
 																	 document.getElementById('logout-form').submit();">
 														{{ __('Logout') }}
 													</a>
-				
+													
 													<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 														@csrf
 													</form>
-													<form id="editarCadastroPsicologo" action="/editarCadastroPsicologo/{{auth::user()->id}}" method="POST" style="display: none;">
+													<form id="editarCadastroPsicologo" action="/editarCadastroPsicologo/" method="POST" style="display: none;">
 														@csrf
 													</form>
 												</div>
 											</li>
 										@endguest
+										
 								
                                 </ul>
 							</div>
@@ -201,8 +203,8 @@
 	<a href="#" class="scrollToTop">
 		<i class="icofont icofont-arrow-up"></i>
     </a>
-    
-
+	
+	
     <script  src="{{url('js/app.js')}}"></script>
     <script  src="{{url('js/app.js')}}"></script>
     <script  src="{{url('js/jquery.min.js')}}"></script> 

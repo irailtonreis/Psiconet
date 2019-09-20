@@ -82,7 +82,7 @@
     <div class="container d-flex justify-content-center">
         <div class="row">
         <button class="btn btn-primary btn-lg btn-block py-2 my-5 w-100  badge-pill"><a href="/editarCadastroPsicologo/{{auth()->user()->id}}">Editar Cadastro</a></button>
-        </div>   
+        </div>  
     </div>
         <div class="container mt-4">
 

@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('content')
-
 <section class="hero-area">
 		<div class="container">
 			<div class="row">
@@ -28,18 +27,18 @@
 				</div>
 			</div>
 			<div class="row">
-					<div class="col-lg-4 text-justify">
+					<div class="col-lg-4 text-justify punchline">
 						<div class="single-about-box py-4 my-2">
 								<p>Psiconet é formada por um grupo de pessoas apaixonadas por pessoas. Acreditamos que podemos facilitar o acesso a melhores condições de saúde e bem-estar através de soluções tecnológicas e inovadoras por meio da internet.</p>
 						</div>
 					</div>
-					<div class="col-lg-4 text-justify">
+					<div class="col-lg-4 text-justify punchline">
 						<div class="single-about-box py-4 my-2">
 								<p>Nosso trabalho é proporcionar a todos um serviço de alta qualidade, eficiente e seguro. Oferecer facilidade e comodidade para os clientes que precisam de um bom serviço e para os psicólogos que desejam aumentar sua renda através da internet. prestando um bom serviço.</p>
 						</div>
 					</div>
 					<div class="col-lg-4 text-justify">
-						<div class="single-about-box py-4 my-2">
+						<div class="single-about-box py-4 my-2 punchline">
 								<p>Todos os nossos psicólogos online são licenciados e passam por um processo seguro de verificação e credenciamento, além de aderirem a rigorosos códigos de ética e sigilo. Os profissionais da Psiconet são capacitados a ajudá-lo a fazer mudanças positivas em sua vida.</p>
 						</div>
 					</div>
@@ -495,6 +494,4 @@
 			</div>
 		</div>
 	</section><!-- team section end -->
-
-
 @endsection
