@@ -64,15 +64,26 @@
                         <div class="col-md-10">
                             <div class="form-group d-flex justify-content-around align-items-center mb-0">
                                 <div class=" d-flex align-items-center">
-                                    <label for="cliente"  class="px-2 py-3">{{ __('Cliente') }}</label>
-                                    <input type="radio"  name="type" id="cliente" value="0">
+                                    <label for="cliente"  class="px-2 py-3 ">{{ __('Cliente') }}</label>
+                                    <input type="radio" class="@error('type') is-invalid @enderror"  name="type" id="cliente" value="0">
+                                    @error('type')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class=" d-flex align-items-center">
                                     <label for="psicologo" class="px-2 py-3">{{ __('Psicologo') }}</label>
-                                    <input type="radio" name="type" id="psicologo" value="1">
+                                    <input type="radio" class="@error('type') is-invalid @enderror"  name="type" id="psicologo" value="1">
+                                   
                                 </div>
-                              
+                               
                             </div>
+                            @error('type')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
 
                       

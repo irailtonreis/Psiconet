@@ -8,8 +8,8 @@
 						<h1>Terapia Online e uma nova maneira cuidar da sua saúde e inteligência emocional</h1>
 						<p>A Psiconet está aqui para conectar Psicólogos a milhares de pessoas que desejam melhorar o
 							seu bem-estar.</p>
-						<a href="#" class="appao-btn">Consulta online</a>
-						<a href="#" class="appao-btn">Seja um Psicólogo</a>
+						<a href="login" class="appao-btn">Consulta online</a>
+						<a href="paraPsicologo" class="appao-btn">Seja um Psicólogo</a>
 
 					</div>
 				</div>
@@ -26,7 +26,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row px-3">
 					<div class="col-lg-4 text-justify punchline">
 						<div class="single-about-box py-4 my-2">
 								<p>Psiconet é formada por um grupo de pessoas apaixonadas por pessoas. Acreditamos que podemos facilitar o acesso a melhores condições de saúde e bem-estar através de soluções tecnológicas e inovadoras por meio da internet.</p>
@@ -57,8 +57,8 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="d-flex flex-wrap justify-content-around">
-						<div class="col-lg-5  card mb-3">
+					<div class="d-flex flex-wrap justify-content-around mx-5 px-2">
+						<div class="col-lg-5  card mb-4">
 								<div class="card-header text-center"><h4>Acessibilidade</h4></div>
 								<div class="card-body">
 									<p class="card-text">Terapia online é bastante acessível e conveniente. Uma vez que você tem a possibilidade de
@@ -66,7 +66,7 @@
 										para os horários mais convenientes para você.</p>
 								</div>
 								</div>
-								<div class="col-lg-5   card mb-3">
+								<div class="col-lg-5   card mb-4">
 								<div class="card-header text-center"><h4>Psicólogo Ideal</h4></div>
 								<div class="card-body">
 									<p class="card-text">Você tem acesso a profissionais qualificados independente da distância. Encontre o Psicólogo
@@ -74,14 +74,14 @@
 										perfil.</p>
 								</div>
 								</div>
-								<div class="col-lg-5  card mb-3">
+								<div class="col-lg-5  card mb-4">
 								<div class="card-header text-center"><h4>Preço acessível</h4></div>
 								<div class="card-body">
 									<p class="card-text">Você não precisa pagar caro para se cuidar. Fale com um psicólogo on-line, sem pesar no
 										bolso. Disponibilizamos planos acessíveis para atender suas necessidades.</p>
 								</div>
 								</div>
-								<div class="col-lg-5  card mb-3">
+								<div class="col-lg-5  card mb-4">
 								<div class="card-header text-center"><h4>Horário Flexivel</h4></div>
 								<div class="card-body">
 									<p class="card-text">Quem tem uma agenda cheia sabe como pode ser difícil marcar uma consulta. Porém, por ser

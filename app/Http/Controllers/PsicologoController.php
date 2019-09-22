@@ -20,6 +20,7 @@ class PsicologoController extends Controller
         if(auth()->user()){
         // $user = User::find(auth()->user()->id);
         $psicologo = Psicologo::find(auth()->user()->id);
+       
         // $estados = State::orderBy('id', 'ASC')->get();
     
         return view('/psicologoLogado', compact('psicologo', $psicologo));
@@ -81,14 +82,14 @@ class PsicologoController extends Controller
         
     
       
-       return redirect('psicologoLogado');
+       return redirect('psicologoLogado', $psicologo);
         
     }
     public function editarCadastroPsicologo($id){
         $planos = Plano::orderBy('id', 'ASC')->get();
-        $psicologo = Psicologo::find($id);
-        $plano = Plano::find($psicologo->id_plano);
-        return view('editarCadastroPsicologo', compact('planos', 'psicologo', 'plano'));
+        $psicologo = Psicologo::where('id_user', $id)->first();
+        // dd($plano);
+        return view('editarCadastroPsicologo', compact('planos', 'psicologo'));
     }
     public function alterarCadastroPsicologo(Request $request, $id){
         $psicologo = Psicologo::find($id);
@@ -132,6 +133,8 @@ class PsicologoController extends Controller
         $psicologo->sobre= $request->input('sobre');
 
         $psicologo->save();
+        $psicologo = Psicologo::find($id);
+        // dd($psicologo);
 
         return redirect('psicologoLogado');
 

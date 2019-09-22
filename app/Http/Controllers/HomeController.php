@@ -29,9 +29,12 @@ class HomeController extends Controller
     {   
        
         if(auth()->user()->type == 0){ 
-            $cliente = Cliente::find(auth()->user()->id);
+            
+            $iduser = auth()->user()->id;
+           
+            $cliente = Cliente::where('id_user', $iduser)->first();
 
-            if(isset($cliente->id_user)){
+            if($cliente){
                 return view('clienteLogado');
             } else {
                 return view('concluirCadastroCliente');
@@ -39,19 +42,16 @@ class HomeController extends Controller
             
         }elseif(auth()->user()->type == 1){
 
-            return view('psicologoLogado');
-            // $iduser = auth()->user()->id;
-            // // dd($iduser); 
-            // $verifica = Psicologo::select('id')->where('id_user', '=' , $iduser)->get();
-            // //  $verifica = Psicologo::select('id')->where($iduser , '=' , 'id_user')->get();
-
-            // $planos = Plano::orderBy('id', 'ASC')->get();
-            // $user = Auth::user();
-            // if($verifica){
-            //     return view('concluirCadastroPsicologo', compact('planos', $planos, 'user', $user));
-            // }else{
-            //     return view('psicologoLogado');
-            // }
+            $iduser = auth()->user()->id;
+           
+            $psicologo = Psicologo::where('id_user', $iduser)->first();
+           
+            if($psicologo){
+                return view('/psicologoLogado', compact('psicologo', $psicologo));
+            }else{
+                $planos = Plano::orderBy('id', 'ASC')->get();
+                return view('concluirCadastroPsicologo', compact('planos', $planos));
+            }
 
         }
     }

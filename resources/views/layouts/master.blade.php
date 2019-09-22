@@ -86,12 +86,20 @@
 														{{ __('Logout') }}
 													</a>
 													
+													
 													<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 														@csrf
 													</form>
-													<form id="editarCadastroPsicologo" action="/editarCadastroPsicologo/" method="POST" style="display: none;">
+													@if(auth()->user()->type == 1)
+												<form id="editarCadastroPsicologo" action="/editarCadastroPsicologo/{{auth()->user()->id}}" method="GET" style="display: none;">
 														@csrf
 													</form>
+													@elseif(auth()->user()->type == 0)
+													<form id="editarCadastroCliente" action="/editarCadastroCliente/{{auth()->user()->id}}" method="GET" style="display: none;">
+														@csrf
+													</form>
+													@endif
+											
 												</div>
 											</li>
 										@endguest
