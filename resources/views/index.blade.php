@@ -26,7 +26,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row px-3">
 					<div class="col-lg-4 text-justify punchline">
 						<div class="single-about-box py-4 my-2">
 								<p>Psiconet é formada por um grupo de pessoas apaixonadas por pessoas. Acreditamos que podemos facilitar o acesso a melhores condições de saúde e bem-estar através de soluções tecnológicas e inovadoras por meio da internet.</p>
@@ -57,7 +57,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="d-flex flex-wrap justify-content-around">
+					<div class="d-flex flex-wrap justify-content-around mx-5 px-2">
 						<div class="col-lg-5  card mb-3">
 								<div class="card-header text-center"><h4>Acessibilidade</h4></div>
 								<div class="card-body">

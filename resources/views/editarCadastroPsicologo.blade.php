@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<div class="container mt-5 py-5">
+<div class="container mt-5 py-5">>
   
         <form method="POST"  action="/editarCadastroPsicologo/{{$psicologo->id}}" class="py-3" enctype="multipart/form-data">
             @csrf

@@ -39,19 +39,17 @@ class HomeController extends Controller
             
         }elseif(auth()->user()->type == 1){
 
-            return view('psicologoLogado');
-            // $iduser = auth()->user()->id;
-            // // dd($iduser); 
-            // $verifica = Psicologo::select('id')->where('id_user', '=' , $iduser)->get();
-            // //  $verifica = Psicologo::select('id')->where($iduser , '=' , 'id_user')->get();
+            $iduser = auth()->user()->id;
+            // dd($iduser); 
+            $verifica = Psicologo::select('id')->where('id_user', '=' , $iduser)->get();
+        
+            $planos = Plano::orderBy('id', 'ASC')->get();
 
-            // $planos = Plano::orderBy('id', 'ASC')->get();
-            // $user = Auth::user();
-            // if($verifica){
-            //     return view('concluirCadastroPsicologo', compact('planos', $planos, 'user', $user));
-            // }else{
-            //     return view('psicologoLogado');
-            // }
+            if($verifica == null){
+                return view('concluirCadastroPsicologo', compact('planos', $planos));
+            }else{
+                return view('psicologoLogado');
+            }
 
         }
     }
