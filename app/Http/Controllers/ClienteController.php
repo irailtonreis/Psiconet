@@ -12,6 +12,13 @@ class ClienteController extends Controller
         return view('cadastroCliente');
     }
 
+    public function clienteLogado(){
+        if(auth()->user()){
+            $cliente = Cliente::find(auth()->user()->id);
+            return view('/psicologoLogado', compact('cliente', $cliente ));
+        }
+    }
+
     public function salvandoCliente(Request $request){
         $request->validate([
             "usuario" => "required",
@@ -55,6 +62,47 @@ class ClienteController extends Controller
         $clientes->save();
 
         return redirect('/clienteLogado');
+    }
+
+    public function editarCadastroCliente($id){
+        $cliente = Cliente::where('id_user', $id)->first();
+        return view('editarCadastroCliente', compact('cliente'));
+    }
+
+    public function alterarCadastroCliente(Request $request, $id){
+        $cliente = Cliente::find($id);
+        $request->validate([
+            "usuario" => "required",
+            "cpf" => "required|min:11",
+            "telefone" => "required|min:11",
+        ]);
+
+        if($request->hasFile('foto')){
+
+            $arquivo = $request->file('foto');
+    
+            $nomePasta = "uploads";
+    
+            $arquivo->storePublicly($nomePasta);
+    
+            $caminhoAbsoluto = public_path() . "/storage/$nomePasta";
+    
+            $nomeArquivo = $arquivo->getClientOriginalName();
+    
+            $caminhoRelativo = "storage/$nomePasta/$nomeArquivo";
+    
+            $arquivo->move($caminhoAbsoluto, $nomeArquivo);
+            
+            $cliente->foto = $caminhoRelativo;
+        }
+            $cliente->usuario = $request->input("usuario");
+            $cliente->cpf = $request->input("cpf");
+            $cliente->telefone = $request->input("telefone");
+     
+        $cliente->save();
+
+        return redirect('clienteLogado');
+
     }
         
 }

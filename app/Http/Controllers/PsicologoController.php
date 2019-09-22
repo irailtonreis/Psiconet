@@ -40,15 +40,7 @@ class PsicologoController extends Controller
             'valor_sessao'=>'required',
             "plano" => "required",
             "sobre" =>"required",
-        ], [
-            "foto.required"=>'O campo foto é obrigatório',
-            "cpf.required"=>'O campo CPF é obrigatório',
-            "telefone.required"=>'O campo telefone é obrigatório',
-            "cidade.required"=>'O campo cidade é obrigatório',
-            "crp.required"=>'O campo CRP é obrigatório',
-            "plano.required"=>'O campo plano é obrigatório',
         ]);
-        
         $arquivo = $request->file('foto');
 
         if (empty($arquivo)) {
@@ -88,7 +80,6 @@ class PsicologoController extends Controller
     public function editarCadastroPsicologo($id){
         $planos = Plano::orderBy('id', 'ASC')->get();
         $psicologo = Psicologo::where('id_user', $id)->first();
-        // dd($plano);
         return view('editarCadastroPsicologo', compact('planos', 'psicologo'));
     }
     public function alterarCadastroPsicologo(Request $request, $id){

@@ -75,11 +75,19 @@
 												</a>
 				
 												<div class="dropdown-menu dropdown-menu-right bg-primary" aria-labelledby="navbarDropdown">
+													@if(auth()->user()->type == 1)
 												<a class="dropdown-item" href="/editarCadastroPsicologo/{{auth::user()->id}}"
 													   onclick="event.preventDefault();
 																	 document.getElementById('editarCadastroPsicologo').submit();">
 														{{ __('Editar Perfil') }}
 													</a>
+													@else
+													<a class="dropdown-item" href=""
+														onclick="event.preventDefault();
+																	  document.getElementById('editarCadastroCliente').submit();">
+														 {{ __('Editar Perfil') }}
+													 </a>
+													 @endif
 													<a class="dropdown-item" href="{{ route('logout') }}"
 													   onclick="event.preventDefault();
 																	 document.getElementById('logout-form').submit();">
