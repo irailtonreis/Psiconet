@@ -22,9 +22,5 @@ class Cliente extends Model
         return $this->hasOne(User::class, 'id', 'id_user');
     }
 
-    public function user(){
-        return $this->hasOne(Ator::class, 'id', 'id_user');
-    }
-
     public $timestamps = false;
 }
