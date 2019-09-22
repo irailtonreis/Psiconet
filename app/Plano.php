@@ -11,6 +11,6 @@ class Plano extends Model
     protected $fillable = ['plano', 'valor'];
 
     public function psicologo(){
-        return $this->hasMany(Psicologo::class,'id_plano', 'id');
+        return $this->hasOne(Psicologo::class,'id_plano', 'id');
     }
 }

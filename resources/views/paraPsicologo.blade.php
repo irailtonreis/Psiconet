@@ -7,7 +7,7 @@
 				<div class="col-lg-7">
 					<div class="hero-area-content">
 						<h2>Esqueça a burocracia e preocupe-se com o que realmente importa: os pacientes</h2>
-						<a href="/cadastroPsicologo" class=""><button type="button"
+						<a href="/register"><button type="button"
 								class="btn btn-primary btn-lg btn-block py-2 my-5 w-75  badge-pill">Cadastrar meu
 								Consultório</button></a>
 					</div>
@@ -179,7 +179,7 @@
 							</div>
 						</div>
 						<div>
-							<a href="/cadastroPsicologo"><button type="button" class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></a>
+							<a href="/register"><button type="button" class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></a>
 						</div>
 					</div>
 					<div class="col-lg-4 mt-2">
@@ -222,7 +222,7 @@
 							</div>
 						</div>
 						<div>
-							<a href="/cadastroPsicologo"><button type="button" class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></a>
+							<a href="/register"><button type="button" class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></a>
 						</div>
 						</div>
 					<div class="col-lg-4 mt-2">
@@ -265,7 +265,7 @@
 							</div>
 						</div>
 						<div>
-							<a href="/cadastroPsicologo"><button type="button" class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></a>
+							<a href="/register"><button type="button" class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></a>
 						</div>
 					</div>
 
