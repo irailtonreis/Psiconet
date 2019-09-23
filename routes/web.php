@@ -7,16 +7,15 @@ Route::get('/index', 'IndexController@index');
 
 // Route::get('/cadastroCliente', 'ClienteController@cadastroCliente');
 Route::post('/cadastroCliente', 'ClienteController@salvandoCliente');
+Route::get('/editarCadastroCliente/{id}', 'ClienteController@editarCadastroCliente');
+Route::post('/editarCadastroCliente/{id}', 'ClienteController@alterarCadastroCliente');
+
 
 Route::get('/cadastroPsicologo', 'PsicologoController@cadastroPsicologo');
 Route::post('/cadastroPsicologo', 'PsicologoController@salvandoPsicologo');
-
-
-
-Route::get('/psicologoLogado', 'PsicologoController@psicologoLogado');
-
 Route::get('/editarCadastroPsicologo/{id}', 'PsicologoController@editarCadastroPsicologo');
 Route::post('/editarCadastroPsicologo/{id}', 'PsicologoController@alterarCadastroPsicologo');
+Route::get('/psicologoLogado', 'PsicologoController@psicologoLogado');
 
 Route::get('/clienteLogado', function () {
     return view('clienteLogado');

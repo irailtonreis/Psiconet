@@ -75,11 +75,19 @@
 												</a>
 				
 												<div class="dropdown-menu dropdown-menu-right bg-primary" aria-labelledby="navbarDropdown">
+													@if(auth()->user()->type == 1)
 												<a class="dropdown-item" href="/editarCadastroPsicologo/{{auth::user()->id}}"
 													   onclick="event.preventDefault();
 																	 document.getElementById('editarCadastroPsicologo').submit();">
 														{{ __('Editar Perfil') }}
 													</a>
+													@else
+													<a class="dropdown-item" href=""
+														onclick="event.preventDefault();
+																	  document.getElementById('editarCadastroCliente').submit();">
+														 {{ __('Editar Perfil') }}
+													 </a>
+													 @endif
 													<a class="dropdown-item" href="{{ route('logout') }}"
 													   onclick="event.preventDefault();
 																	 document.getElementById('logout-form').submit();">
@@ -90,11 +98,12 @@
 													<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 														@csrf
 													</form>
-													@if(auth()->user()->type == 1)
+													@if(auth()->user()->type == 1 && isset($psicologo))
 												<form id="editarCadastroPsicologo" action="/editarCadastroPsicologo/{{auth()->user()->id}}" method="GET" style="display: none;">
 														@csrf
 													</form>
-													@elseif(auth()->user()->type == 0)
+													@elseif(auth()->user()->type == 0 && isset($cliente))
+													
 													<form id="editarCadastroCliente" action="/editarCadastroCliente/{{auth()->user()->id}}" method="GET" style="display: none;">
 														@csrf
 													</form>

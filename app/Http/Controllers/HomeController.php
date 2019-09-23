@@ -35,7 +35,7 @@ class HomeController extends Controller
             $cliente = Cliente::where('id_user', $iduser)->first();
 
             if($cliente){
-                return view('clienteLogado');
+                return view('clienteLogado',  compact('cliente', $cliente));
             } else {
                 return view('concluirCadastroCliente');
             }
