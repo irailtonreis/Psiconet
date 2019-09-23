@@ -84,7 +84,9 @@ class PsicologoController extends Controller
     }
     public function alterarCadastroPsicologo(Request $request, $id){
         $psicologo = Psicologo::find($id);
-
+        if($_REQUEST){
+            
+        }
         $request->validate([
             "cpf" => "required",
             "telefone" => "required",
