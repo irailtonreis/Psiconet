@@ -68,6 +68,7 @@ class ClienteController extends Controller
         $cliente = Cliente::where('id_user', $id)->first();
         return view('editarCadastroCliente', compact('cliente'));
     }
+    
 
     public function concluirCadastroCliente() {
         return view('concluirCadastroCliente');
