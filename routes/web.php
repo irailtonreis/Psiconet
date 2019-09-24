@@ -22,7 +22,6 @@ Route::get('/clienteLogado', function () {
     return view('clienteLogado');
 });
 
-
 Route::get('/paraPsicologo', function () {
     return view('paraPsicologo');
 });

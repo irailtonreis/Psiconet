@@ -20,8 +20,6 @@
             </div>
         </form>
 
-        
-
         @else
 
         <form method="POST"  action="/editarCadastroCliente/{{$cliente->id}}" class="py-3" enctype="multipart/form-data">
