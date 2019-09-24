@@ -3,12 +3,29 @@
 @section('content')
 
     <div class="container mt-5 pt-5">
+        
         <div class="cadastro text-center py-3">
             <h2>Editar Cadastro</h2>
         </div>
+
+        @if (empty($cliente))
+
+        <form method=""  action="/concluirCadastroCliente" class="py-3">
+            <div class="text-center py-3 pb-5">
+                <h4>Para editar seu perfil é preciso finalizar o cadastro</h4>
+                <p>Clique no botão abaixo e finalize seu cadastro</p>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary btn-block">Concluir cadastro</button>
+                </div>
+            </div>
+        </form>
+
+        @else
+
         <form method="POST"  action="/editarCadastroCliente/{{$cliente->id}}" class="py-3" enctype="multipart/form-data">
             @csrf
             {{ method_field('POST') }}
+
             <ul class="nav nav-tabs">
                 <li class="active  list-cadastro w-100 text-center" id="list1"><a data-toggle="tab" href="#home" class="py-1  px-3 d-block w-100 h-100">Editar Perfil</a></li>
             </ul>
@@ -64,6 +81,8 @@
                     </div>
             </div>
         </form>
+
+        @endif
     </div>
 
 @endsection

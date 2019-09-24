@@ -7,6 +7,7 @@ Route::get('/index', 'IndexController@index');
 
 // Route::get('/cadastroCliente', 'ClienteController@cadastroCliente');
 Route::post('/cadastroCliente', 'ClienteController@salvandoCliente');
+Route::get('/concluirCadastroCliente', 'ClienteController@concluirCadastroCliente');
 Route::get('/editarCadastroCliente/{id}', 'ClienteController@editarCadastroCliente');
 Route::post('/editarCadastroCliente/{id}', 'ClienteController@alterarCadastroCliente');
 

@@ -69,6 +69,10 @@ class ClienteController extends Controller
         return view('editarCadastroCliente', compact('cliente'));
     }
 
+    public function concluirCadastroCliente() {
+        return view('concluirCadastroCliente');
+    }
+
     public function alterarCadastroCliente(Request $request, $id){
         $cliente = Cliente::find($id);
         $request->validate([
