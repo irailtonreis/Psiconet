@@ -73,7 +73,7 @@ class PsicologoController extends Controller
         $psicologo->save();
         
     
-      
+
        return redirect('psicologoLogado', $psicologo);
         
     }
@@ -84,10 +84,12 @@ class PsicologoController extends Controller
     }
     public function alterarCadastroPsicologo(Request $request, $id){
         $psicologo = Psicologo::find($id);
-        if($_REQUEST){
-            
-        }
+        $id_user =  $psicologo->id_user;
+        $user = User::find($id_user);
+        
         $request->validate([
+            "nome" => "required",
+            "email" => "required",
             "cpf" => "required",
             "telefone" => "required",
             "cidade" => "required",
@@ -115,6 +117,7 @@ class PsicologoController extends Controller
             $psicologo->foto = $caminhoRelativo;
         }
 
+
         
         
         $psicologo->cpf = $request->input('cpf');
@@ -126,9 +129,12 @@ class PsicologoController extends Controller
         $psicologo->sobre= $request->input('sobre');
 
         $psicologo->save();
-        $psicologo = Psicologo::find($id);
-        // dd($psicologo);
 
+        $user->name = $request->input('nome');
+        $user->email = $request->input('email');
+
+        $psicologo->save();
+       
         return redirect('psicologoLogado');
 
     }
