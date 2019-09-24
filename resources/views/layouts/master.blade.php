@@ -98,11 +98,11 @@
 													<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 														@csrf
 													</form>
-													@if(auth()->user()->type == 1 && isset($psicologo))
+													@if(auth()->user()->type == 1)
 												<form id="editarCadastroPsicologo" action="/editarCadastroPsicologo/{{auth()->user()->id}}" method="GET" style="display: none;">
 														@csrf
 													</form>
-													@elseif(auth()->user()->type == 0 && isset($cliente))
+													@elseif(auth()->user()->type == 0)
 													
 													<form id="editarCadastroCliente" action="/editarCadastroCliente/{{auth()->user()->id}}" method="GET" style="display: none;">
 														@csrf
