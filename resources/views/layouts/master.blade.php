@@ -81,6 +81,11 @@
 																	 document.getElementById('editarCadastroPsicologo').submit();">
 														{{ __('Editar Perfil') }}
 													</a>
+													<a class="dropdown-item" href="/excluirPerfil/{{auth::user()->id}}"
+														onclick="event.preventDefault();
+																	  document.getElementById('excluirPerfil').submit();">
+														 {{ __('Excluir Perfil') }}
+													 </a>
 													@else
 													<a class="dropdown-item" href=""
 														onclick="event.preventDefault();
@@ -99,7 +104,10 @@
 														@csrf
 													</form>
 													@if(auth()->user()->type == 1)
-												<form id="editarCadastroPsicologo" action="/editarCadastroPsicologo/{{auth()->user()->id}}" method="GET" style="display: none;">
+													<form id="editarCadastroPsicologo" action="/excluirPerfil/{{auth::user()->id}}" method="GET" style="display: none;">
+														@csrf
+													</form>
+													<form id="editarCadastroPsicologo" action="/editarCadastroPsicologo/{{auth()->user()->id}}" method="GET" style="display: none;">
 														@csrf
 													</form>
 													@elseif(auth()->user()->type == 0)
@@ -229,7 +237,7 @@
     <script  src="{{url('js/main.js')}}"></script> 
     <script  src="{{url('js/owl.carousel.min.js')}}"></script>
     <script  src="{{url('js/slick.min.js')}}"></script>
-    <script  src="{{url('js/wow-1.3.0.min.js')}}"></script> 
+	<script  src="{{url('js/wow-1.3.0.min.js')}}"></script> 
 
 </body>
 </html>

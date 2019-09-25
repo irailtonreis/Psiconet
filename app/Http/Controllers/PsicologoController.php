@@ -84,9 +84,9 @@ class PsicologoController extends Controller
     }
     public function alterarCadastroPsicologo(Request $request, $id){
         $psicologo = Psicologo::find($id);
-        $id_user =  $psicologo->id_user;
-        $user = User::find($id_user);
         
+        $user = User::find(auth()->user()->id);
+    
         $request->validate([
             "nome" => "required",
             "email" => "required",
@@ -129,13 +129,18 @@ class PsicologoController extends Controller
         $psicologo->sobre= $request->input('sobre');
 
         $psicologo->save();
+        if($_REQUEST){
+            $user->name = $request->input('nome');
+            $user->email = $request->input('email');
+        }
 
-        $user->name = $request->input('nome');
-        $user->email = $request->input('email');
-
-        $psicologo->save();
+        $user->save();
        
         return redirect('psicologoLogado');
+
+    }
+    public function removendoPsicologo($id){
+        
 
     }
 }

@@ -4,12 +4,12 @@
   
         <form method="POST"  action="/editarCadastroPsicologo/{{$psicologo->id}}" class="py-3" enctype="multipart/form-data">
             @csrf
-            {{ method_field('POST') }}
+            {{ method_field('PUT') }}
             <ul class="nav nav-tabs">
                 <li class="active  list-cadastro w-100 text-center" id="list1"><a data-toggle="tab" href="#home" class="py-1  px-3 d-block w-100 h-100">Editar Perfil</a></li>
             </ul>
             <div class="tab-content pt-3">
-                <div id="home" class="tab-pane fade in active">
+                <div id="home">
                     <div class="row">
                         <div class="form-group w-100 d-flex flex-wrap align-items-center">
                             <div class="col-lg-12 pull-lg-12 text-center">
@@ -32,10 +32,10 @@
                     </div>
                     <p>Email</p>
                     <input class="form-control form-control-lg" type="email" id="input-email" name="email"
-                        value="{{auth()->user()->email}} " disabled>
+                        value="{{auth()->user()->email}} ">
                     <div class=" {{ $errors->has('email') ? ' has-error' : '' }}">
                         <p>CPF</p>
-                    <input class="form-control form-control-lg" type="text" id="cpf" name="cpf" value="{{$psicologo->cpf}}">
+                    <input class="form-control form-control-lg" type="text" id="cpf" name="cpf" id="cpf" value="{{$psicologo->cpf}}">
                         <small class="text-danger">{{ $errors->first('cpf') }}</small>
                     </div>
                     <div class=" {{ $errors->has('telefone') ? ' has-error' : '' }}">
