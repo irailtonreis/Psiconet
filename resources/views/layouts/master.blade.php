@@ -102,7 +102,7 @@
 												<form id="editarCadastroPsicologo" action="/editarCadastroPsicologo/{{auth()->user()->id}}" method="GET" style="display: none;">
 														@csrf
 													</form>
-													@elseif(auth()->user()->type == 0 && isset($cliente))
+													@elseif(auth()->user()->type == 0)
 													
 													<form id="editarCadastroCliente" action="/editarCadastroCliente/{{auth()->user()->id}}" method="GET" style="display: none;">
 														@csrf
