@@ -24,7 +24,7 @@
 
         <form method="POST"  action="/editarCadastroCliente/{{$cliente->id}}" class="py-3" enctype="multipart/form-data">
             @csrf
-            {{ method_field('POST') }}
+            {{ method_field('PUT') }}
 
             <div class="tab-content pt-3">
                 <div id="home">
@@ -48,7 +48,7 @@
                     </div>
                     <p>Email</p>
                         <input class="form-control form-control-lg" type="email" id="input-email" name="email"
-                        value="{{auth()->user()->email}} " disabled>
+                        value="{{auth()->user()->email}} ">
                     <div class=" {{ $errors->has('usuario') ? ' has-error' : '' }}">
                         <p>Usuário</p>
                     <input class="form-control form-control-lg" type="text" id="usuario" name="usuario" value="{{$cliente->usuario}}">
@@ -64,18 +64,15 @@
                         <input class="form-control form-control-lg" type="text" id="telefone" name="telefone" value="{{$cliente->telefone}}">
                         <small class="text-danger">{{ $errors->first('telefone') }}</small>
                     </div>
-                    <div class="user">
-                        <input type="text" value="{{(auth()->user()->id)}}" name="id_user">
-                    </div>
-                    <div class="user">
-                        <input type="text" value="{{(auth()->user()->id)}}" name="user">
-                    </div>
-                        <div class="row">
-                            <div class="col-md-12 d-flex justify-content-end">
-                                <button type="submit" class="btn btn-primary btn-block" id="button-form"><a href="#menu1"></a>Concluir</button>
-                            </div>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary ml-3" id="button-form">
+                            <a href="#menu1"></a>Salvar</button>
+                            <button type="submit" class="btn btn-primary ml-3" id="button-form-delete">
+                            <a href="#menu1"></a>Excluir</button>
                         </div>
                     </div>
+                </div>
             </div>
         </form>
 

@@ -9,7 +9,7 @@ Route::get('/index', 'IndexController@index');
 Route::post('/cadastroCliente', 'ClienteController@salvandoCliente');
 Route::get('/concluirCadastroCliente', 'ClienteController@concluirCadastroCliente');
 Route::get('/editarCadastroCliente/{id}', 'ClienteController@editarCadastroCliente');
-Route::post('/editarCadastroCliente/{id}', 'ClienteController@alterarCadastroCliente');
+Route::put('/editarCadastroCliente/{id}', 'ClienteController@alterarCadastroCliente');
 
 
 Route::get('/cadastroPsicologo', 'PsicologoController@cadastroPsicologo');
