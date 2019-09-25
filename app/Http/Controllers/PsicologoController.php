@@ -74,7 +74,7 @@ class PsicologoController extends Controller
         
     
 
-       return redirect('psicologoLogado', $psicologo);
+       return redirect('/psicologoLogado');
         
     }
     public function editarCadastroPsicologo($id){
@@ -141,6 +141,7 @@ class PsicologoController extends Controller
     }
     public function removendoPsicologo($id){
         
+        return redirect('psicologoLogado');
 
     }
 }

@@ -90,7 +90,8 @@
                         </div>
                     <div class="row">
                             <div class="col-md-12 d-flex justify-content-end">
-                                <button type="submit" class="btn btn-primary btn-block" id="button-form"><a href="#menu1"></a>Salvar</button>
+                                <button type="submit" class="btn btn-primary bg-danger ml-3"><a href="#menu1"></a>Excluir</button>
+                                <button type="submit" class="btn btn-primary  ml-3" id="button-form"><a href="#menu1"></a>Salvar</button>
                             </div>
                         </div>
                     </div>
