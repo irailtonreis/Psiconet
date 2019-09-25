@@ -11,11 +11,9 @@
         <form method="POST"  action="/salvandoCliente" class="py-3" enctype="multipart/form-data">
             @csrf
             {{ method_field('POST') }}
-            <ul class="nav nav-tabs">
-                <li class="active  list-cadastro w-100 text-center" id="list1"><a data-toggle="tab" href="#home" class="py-1  px-3 d-block w-100 h-100">Editar Perfil</a></li>
-            </ul>
+            
             <div class="tab-content pt-3">
-                <div id="home" class="tab-pane fade in active">
+                <div id="home">
                     <div class="row">
                         <div class="form-group w-100 d-flex flex-wrap align-items-center">
                             <div class="col-lg-12 pull-lg-12 text-center">
