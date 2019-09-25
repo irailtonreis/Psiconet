@@ -4,16 +4,16 @@
 
     <div class="container mt-5 pt-5">
         
-        <div class="cadastro text-center py-3">
+        <div class="cadastro text-center py-5 mt-5">
             <h2>Editar Cadastro</h2>
         </div>
 
         @if (empty($cliente))
 
         <form method=""  action="/concluirCadastroCliente" class="py-3">
-            <div class="text-center py-3 pb-5">
-                <h4>Para editar seu perfil é preciso finalizar o cadastro</h4>
-                <p>Clique no botão abaixo e finalize seu cadastro</p>
+            <div class="text-center py-3 pb-5 my-3">
+                <h4 class="my-1">Para editar seu perfil é preciso finalizar o cadastro</h4>
+                <p class="my-1">Clique no botão abaixo e finalize seu cadastro</p>
                 <div class="col-md-12 d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary btn-block">Concluir cadastro</button>
                 </div>
