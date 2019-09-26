@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{url('css/icofont.css')}}"/>
 	<link rel="stylesheet" href="{{url('css/responsive.css')}}">
 	<link rel="stylesheet" href="{{url('css/auth.css')}}">
+	<link rel="stylesheet" href="{{url('css/profile.css')}}">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- Scripts -->
@@ -76,6 +77,11 @@
 				
 												<div class="dropdown-menu dropdown-menu-right bg-primary" aria-labelledby="navbarDropdown">
 													@if(auth()->user()->type == 1)
+													<a class="dropdown-item" href="/psicologoLogado"
+														onclick="event.preventDefault();
+																	  document.getElementById('psicologoLogado').submit();">
+														 {{ __('Perfil') }}
+													 </a>
 												<a class="dropdown-item" href="/editarCadastroPsicologo/{{auth::user()->id}}"
 													   onclick="event.preventDefault();
 																	 document.getElementById('editarCadastroPsicologo').submit();">
@@ -91,14 +97,18 @@
 													<a class="dropdown-item" href="{{ route('logout') }}"
 													   onclick="event.preventDefault();
 																	 document.getElementById('logout-form').submit();">
-														{{ __('Logout') }}
+														{{ __('Sair') }}
 													</a>
 													<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 														@csrf
 													</form>
 													@if(auth()->user()->type == 1)
+													<form id="psicologoLogado" action="/psicologoLogado" method="GET" style="display: none;">
+														@csrf{{ method_field('GET') }}
+													</form>
+
 													<form id="editarCadastroPsicologo" action="/editarCadastroPsicologo/{{auth()->user()->id}}" method="GET" style="display: none;">
-														@csrf
+														@csrf{{ method_field('GET') }}
 													</form>
 													@elseif(auth()->user()->type == 0)
 													

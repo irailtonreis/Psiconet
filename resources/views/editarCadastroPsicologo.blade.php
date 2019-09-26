@@ -1,7 +1,22 @@
 @extends('layouts.master')
 @section('content')
 <div class="container mt-5 py-5">
+    
+        @if (empty($psicologo))
 
+        <form method=""  action="/concluirCadastroPsicologo" class="py-3">
+            <div class="text-center py-3 pb-5 my-3">
+                <h4 class="my-1">Para editar seu perfil é preciso finalizar o cadastro</h4>
+                <p class="my-1">Clique no botão abaixo e finalize seu cadastro</p>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary btn-block">Concluir cadastro</button>
+                </div>
+            </div>
+        </form>
+
+        @else
+
+    
     <form method="POST" action="/editarCadastroPsicologo/{{$psicologo->id}}" class="py-3" enctype="multipart/form-data">
         @csrf
         {{ method_field('PUT') }}
@@ -10,6 +25,7 @@
                     class="py-1  px-3 d-block w-100 h-100">Editar Perfil</a></li>
         </ul>
         <div class="tab-content pt-3">
+            
             <div id="home">
                 <div class="row">
                     <div class="form-group w-100 d-flex flex-wrap align-items-center">
@@ -97,13 +113,25 @@
                 <input type="text" value="{{(auth()->user()->id)}}" name="user">
             </div>
             <div class="row">
-                <div class="col-md-12 d-flex justify-content-end">
-                    <button type="submit" class="btn btn-primary bg-danger ml-3"><a href="#menu1"></a>Excluir</button>
-                    <button type="submit" class="btn btn-primary  ml-3" id="button-form"><a
-                            href="#menu1"></a>Salvar</button>
+                <div class=" col-md-12 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary  ml-3" id="button-form"><a href="#menu1"></a>Salvar
+                        Alterações</button>
                 </div>
             </div>
         </div>
 </div>
 </form>
+
+@if(session('error'))
+<div class="alert alert-danger">
+    {{ session('error') }}
+</div>
+@endif
+
+<form action="/removerPsicologo/{{(auth()->user()->id)}}" method="POST">
+    @csrf{{ method_field('DELETE') }}
+    <button type="submit" class="btn btn-primary bg-danger text-white ml-3">Excluir Conta</button>
+</form>
+@endif
+
 @endsection

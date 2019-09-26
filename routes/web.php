@@ -14,9 +14,10 @@ Route::post('/editarCadastroCliente/{id}', 'ClienteController@alterarCadastroCli
 
 Route::get('/cadastroPsicologo', 'PsicologoController@cadastroPsicologo');
 Route::post('/cadastroPsicologo', 'PsicologoController@salvandoPsicologo');
+Route::get('/concluirCadastroPsicologo', 'PsicologoController@concluirCadastroPsicologo');
 Route::get('/editarCadastroPsicologo/{id}', 'PsicologoController@editarCadastroPsicologo');
 Route::put('/editarCadastroPsicologo/{id}', 'PsicologoController@alterarCadastroPsicologo');
-Route::delete('/excluirPerfilPsicologo/{id}', 'PsicologoController@removendoPsicologo');
+Route::delete('/removerPsicologo/{id}', 'PsicologoController@removendoPsicologo');
 Route::get('/psicologoLogado', 'PsicologoController@psicologoLogado');
 
 Route::get('/clienteLogado', function () {
