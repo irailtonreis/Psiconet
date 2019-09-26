@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Psicologo;
 use App\Plano;
-use App\State;
 use App\User;
 class PsicologoController extends Controller
 {

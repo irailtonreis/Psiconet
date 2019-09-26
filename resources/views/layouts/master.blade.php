@@ -121,8 +121,8 @@
             </header><!-- header section end -->
             <main>
                 @yield('content')
-            </main> 
-            
+			</main> 
+    
 
     <!-- Modal start longin -->
 	<div class="modal fade" id="sitModal" tabindex="-1" role="dialog">
