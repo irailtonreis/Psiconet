@@ -111,30 +111,30 @@
 
 					<div class="row">
 						<div class="testemonials-box col-lg-3 col-md-6 col-sm-12 text-center">
-							<div class="profile">
+							<div class="profile d-flex flex-column justify-content-between">
 								<img src="{{url('/img/author1.jpg')}}" class="user" alt="">
-								<blockquote> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quae aspernatur voluptate impedit excepturi nostrum asperiores possimus nisi rerum repellendus laborum harum, totam fugit quidem laboriosam fugiat reiciendis quia temporibus! </blockquote>
+								<blockquote> " Tive uma experiencia muito boa com o site, obtive a ajuda que precisava e achei as funcionalidades e comodidade site muito legal..." </blockquote>
 								<h3>Larissa Andrade</h3>
 							</div>
 						</div>
 						<div class="testemonials-box col-lg-3 col-md-6 col-sm-12 text-center">
-								<div class="profile">
+								<div class="profile d-flex flex-column justify-content-between">
 									<img src="{{url('/img/author2.jpg')}}" class="user" alt="">
-									<blockquote> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quae aspernatur voluptate impedit excepturi nostrum asperiores possimus nisi rerum repellendus laborum harum, totam fugit quidem laboriosam fugiat reiciendis quia temporibus! </blockquote>
+									<blockquote>" Achei o site muito prático e consegui través da plataforma Psiconet trazer a praticidade de ser atendido a distância e não deixar de fazer minha terapia..." </blockquote>
 									<h3>Marcos Passos</h3>
 								</div>
 							</div>
 							<div class="testemonials-box col-lg-3 col-md-6 col-sm-12 text-center">
-									<div class="profile">
+									<div class="profile d-flex flex-column justify-content-between">
 										<img src="{{url('/img/author3.jpg')}}" class="user" alt="">
-										<blockquote> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quae aspernatur voluptate impedit excepturi nostrum asperiores possimus nisi rerum repellendus laborum harum, totam fugit quidem laboriosam fugiat reiciendis quia temporibus! </blockquote>
+										<blockquote>" Era tudo que eu estava procurando, pois consigo associar minha vida corrida com as minhas terapias, posso ser atendida quando e onde quiser, me ajudou muito... obrigado Psiconet..." </blockquote>
 										<h3>Beatriz Souza</h3>
 									</div>
 								</div>
 								<div class="testemonials-box col-lg-3 col-md-6 col-sm-12 text-center">
-										<div class="profile">
+										<div class="profile d-flex flex-column justify-content-between">
 											<img src="{{url('/img/author4.jpg')}}" class="user" alt="">
-											<blockquote> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quae aspernatur voluptate impedit excepturi nostrum asperiores possimus nisi rerum repellendus laborum harum, totam fugit quidem laboriosam fugiat reiciendis quia temporibus! </blockquote>
+											<blockquote>" Recomendo a plataforma pois possuem profissionais muito bons e com alta qualificação, acredito que pra quem não tem muito tempo é a plataforma ideal..." </blockquote>
 											<h3>Cláudio Moreira</h3>
 										</div>
 									</div>

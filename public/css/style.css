@@ -597,7 +597,7 @@ input::-webkit-input-placeholder {
 .profile{
     padding: 70px 10px 10px;
     background-color: #EEEEEE;
-    
+    height: 350px;
    
 }
 
@@ -618,8 +618,12 @@ input::-webkit-input-placeholder {
 
 .profile h3{
     font-size: 2em;
-    margin-top: 15px;
+    margin: 15px 0;
     color: #005db5;
+}
+
+.profile blockquote {
+    font-style: italic;
 }
 
 .crousel-container{
