@@ -597,7 +597,7 @@ input::-webkit-input-placeholder {
 .profile{
     padding: 70px 10px 10px;
     background-color: #EEEEEE;
-    
+    height: 350px;
    
 }
 
@@ -605,7 +605,7 @@ input::-webkit-input-placeholder {
     top: -60px;
     position: absolute;
     left: calc(50% - 60px);
-    border: 8px solid #0861b5;
+    border: 2px solid #0861b5;
     
 
 }
@@ -618,8 +618,12 @@ input::-webkit-input-placeholder {
 
 .profile h3{
     font-size: 2em;
-    margin-top: 15px;
+    margin: 15px 0;
     color: #005db5;
+}
+
+.profile blockquote {
+    font-style: italic;
 }
 
 .crousel-container{
@@ -1461,10 +1465,10 @@ h4.post-title a {
 ---------CUSTOM-DUVIDAS CSS START-------
 ---------------------------------------*/
 .custom-duvidas{
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 
 }
- .custom-duvidas .row .alert-link{
+.custom-duvidas .row .alert-link{
     border-top: 1px solid #005db5;
     width: 100%;
     padding: 5px 5px;
@@ -1718,10 +1722,6 @@ h4.post-title a {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: .25rem;
-}
- 
-.user{
-    display: none;
 }
 /*=== Página  psicólogoLogado Fim ==== */
 

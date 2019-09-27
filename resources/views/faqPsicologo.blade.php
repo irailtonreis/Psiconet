@@ -3,14 +3,14 @@
     
 @section('content')
 <div class="container pt-5 mt-5">
-    <div class="row">
+    <div class="row d-flex justify-content-center py-3">
             <h1>Como Funciona</h1>
     </div>
 </div>
 <!--Section seja Psicólogo inicio-->
 <section class="psicologo-duvida py-3">
 		<div class="container">
-			<div class="text-center py-5">
+			<div class="text-center py-3">
 				<h2>Como faço para fazer parte?</h2>
 			</div>
 			<div class="py-4 mx-5">

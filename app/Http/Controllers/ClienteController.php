@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cliente;
+use App\User;
 
 class ClienteController extends Controller
 {
@@ -104,6 +105,15 @@ class ClienteController extends Controller
             $cliente->telefone = $request->input("telefone");
      
         $cliente->save();
+    
+        $user = User::find(auth()->user()->id);
+
+        if($_REQUEST){
+            $user->name = $request->input('nome');
+            $user->email = $request->input('email');
+        }
+
+        $user->save();
 
         return redirect('clienteLogado');
 

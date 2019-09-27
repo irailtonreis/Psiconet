@@ -3,13 +3,13 @@
     
 @section('content')
 <div class="container pt-5 mt-5">
-        <div class="row">
+        <div class="row d-flex justify-content-center py-3">
                 <h1>Como Funciona</h1>
-        </div>
+        </div>        
         <div class="container custom-duvidas" id="duvidas">
-                <div class="text-center py-5">
-                <h2>Perguntas Frequentes</h2>
-                <h4>Veja porque o Psiconet é a melhor opção para você</h4>
+                <div class="text-center">
+                <h2 class="mb-2">Perguntas Frequentes</h2>
+                <h4 class="mb-2">Veja porque o Psiconet é a melhor opção para você</h4>
                 </div>
             <div class="row py-3 px-3">
                 <a class="alert-link" data-toggle="collapse" href="#collapseDuvidas" role="button" aria-expanded="false" aria-controls="collapseDuvidas">
