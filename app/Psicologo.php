@@ -8,7 +8,7 @@ class Psicologo extends Model
 {
     protected $table = "psicologos";
     protected $primaryKey = "id";
-    protected $fillable = ['foto', 'cpf', 'telefone', 'cidade', 'crp', 'valor_sessao', 'sobre', 'id_plano', 'id_user'];
+    protected $fillable = ['foto', 'cpf', 'telefone', 'crp', 'valor_sessao', 'descricao', 'id_plano', 'id_user'];
 
     public function planos(){
         return $this->hasMany(Plano::class, 'id', 'id_plano');
