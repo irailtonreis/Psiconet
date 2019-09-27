@@ -103,15 +103,12 @@
                 </select>
                 <small class="text-danger">{{ $errors->first('plano') }}</small>
             </div>
-            <div class="form-group {{ $errors->has('sobre') ? ' has-error' : '' }}">
-                <label for="exampleFormControlTextarea1">Sobre</label>
-                <textarea class="form-control" name="sobre" id="exampleFormControlTextarea1"
-                    placeholder="Descrição Profissional" rows="3" autofocus>{{ ucfirst($psicologo->sobre) }}</textarea>
-                <small class="text-danger">{{ $errors->first('sobre') }}</small>
-            </div>
-            <div class="user">
-                <input type="text" value="{{(auth()->user()->id)}}" name="user">
-            </div>
+            <div class="form-group {{ $errors->has('descricao') ? ' has-error' : '' }}">
+                    <label for="exampleFormControlTextarea1">Sobre</label>
+                    <textarea class="form-control" name="descricao" id="exampleFormControlTextarea1"
+                        placeholder="Descrição Profissional" rows="3"></textarea>
+                    <small class="text-danger">{{ $errors->first('descricao') }}</small>
+                </div>
             <div class="row">
                 <div class=" col-md-12 d-flex justify-content-end">
                     <button type="submit" class="btn btn-primary  ml-3" id="button-form"><a href="#menu1"></a>Salvar

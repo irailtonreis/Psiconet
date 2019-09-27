@@ -3,18 +3,15 @@
    
   
     <div class="container pt-5 mt-5">
-            {{-- @if(count($errors) > 0)
-            <div class="alert alert-danger text-center mt-3">
-                <p>Falha ao inserir dados</p>
-            </div>
-            @endif --}}
-         
-            @if(session('error'))
-            {{Session::get('error')}}
+            @if(count($errors) > 0)
             <div class="alert alert-danger">
-               {{ sessio('error') }}
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
-            @endif
+        @endif
         <form method="POST"  action="/cadastroPsicologo" class="py-3" enctype="multipart/form-data">
             @csrf
             {{ method_field('POST') }}
@@ -54,11 +51,11 @@
                     <input class="form-control form-control-lg" type="text" id="tefelfone" name="telefone" value="">
                     <small class="text-danger">{{ $errors->first('telefone') }}</small>
                     </div>
-                    <div class=" {{ $errors->has('cidade') ? ' has-error' : '' }}">
+                    {{-- <div class=" {{ $errors->has('cidade') ? ' has-error' : '' }}">
                     <p>Cidade</p>
                     <input class="form-control form-control-lg" type="text" id="cidade" name="cidade" value="">
                     <small class="text-danger">{{ $errors->first('cidade') }}</small>
-                    </div>
+                    </div> --}}
                     {{-- <div class="">
                         <p>Estado</p>
                         <select name="planos" class="form-control form-control-lg">
@@ -91,15 +88,13 @@
                         </select>
                         <small class="text-danger">{{ $errors->first('plano') }}</small>
                     </div>
-                    <div class="form-group {{ $errors->has('sobre') ? ' has-error' : '' }}">
+                    <div class="form-group {{ $errors->has('descricao') ? ' has-error' : '' }}">
                             <label for="exampleFormControlTextarea1">Sobre</label>
-                            <textarea class="form-control" name="sobre" id="exampleFormControlTextarea1"
+                            <textarea class="form-control" name="descricao" id="exampleFormControlTextarea1"
                                 placeholder="Descrição Profissional" rows="3"></textarea>
-                            <small class="text-danger">{{ $errors->first('sobre') }}</small>
+                            <small class="text-danger">{{ $errors->first('descricao') }}</small>
                         </div>
-                        <div class="user">
-                        <input type="text" value="{{(auth()->user()->id)}}" name="user">
-                        </div>
+
                     <div class="row">
                             <div class="col-md-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary btn-block" id="button-form"><a href="#menu1"></a>Concluir</button>

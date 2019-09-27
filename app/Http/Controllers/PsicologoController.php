@@ -41,11 +41,10 @@ class PsicologoController extends Controller
             "foto"=> "required",
             "cpf" => "required",
             "telefone" => "required",
-            "cidade" => "required",
             "crp" => "required",
             'valor_sessao'=>'required',
             "plano" => "required",
-            "sobre" =>"required",
+            "descricao" =>"required",
         ]);
         $arquivo = $request->file('foto');
 
@@ -72,7 +71,7 @@ class PsicologoController extends Controller
             "cidade" => $request->input("cidade"),
             "crp" => $request->input("crp"),
             "valor_sessao"=> $request->input('valor_sessao'),
-            "sobre"=> $request->input('sobre'),
+            "descricao"=> $request->input('descricao'),
             "id_plano"=> $request->input("plano"),
             "id_user"=> $request->input("user")
         ]);
@@ -100,11 +99,10 @@ class PsicologoController extends Controller
             "email" => "required",
             "cpf" => "required",
             "telefone" => "required",
-            "cidade" => "required",
             "crp" => "required",
             'valor_sessao'=>'required',
             "plano" => "required",
-            "sobre" =>"required",
+            "descricao" =>"required",
         ]);
         if($request->hasFile('foto')){
 
@@ -130,11 +128,10 @@ class PsicologoController extends Controller
         
         $psicologo->cpf = $request->input('cpf');
         $psicologo->telefone= $request->input('telefone');
-        $psicologo->cidade= $request->input('cidade');
         $psicologo->crp= $request->input('crp');
         $psicologo->valor_sessao= $request->input('valor_sessao');
         $psicologo->id_plano= $request->input('plano');
-        $psicologo->sobre= $request->input('sobre');
+        $psicologo->descricao= $request->input('descricao');
 
         $psicologo->save();
         if($_REQUEST){
