@@ -94,7 +94,9 @@
                                 placeholder="Descrição Profissional" rows="3"></textarea>
                             <small class="text-danger">{{ $errors->first('descricao') }}</small>
                         </div>
-
+                        <div class="user">
+                                <input type="text" value="{{(auth()->user()->id)}}" name="user">
+                            </div>
                     <div class="row">
                             <div class="col-md-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary btn-block" id="button-form"><a href="#menu1"></a>Concluir</button>

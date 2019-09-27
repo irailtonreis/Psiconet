@@ -1,13 +1,25 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container mt-4">
+<div class="container mt-5 pt-3">
+        @if (empty($psicologo))
+        <form method=""  action="/concluirCadastroPsicologo" class="py-3">
+            <div class="text-center py-3 pb-5 my-3">
+                <h4 class="my-1">Para visualizar perfil é preciso finalizar o cadastro</h4>
+                <p class="my-1">Clique no botão abaixo e finalize seu cadastro</p>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary btn-block">Concluir cadastro</button>
+                </div>
+            </div>
+        </form>
+        @else
     <section class="team-area ptb-90" id="team">
         @if(session('success'))
         <div class="alert alert-success text-center">
             {{ session('success') }}
         </div>
         @endif
+       
         <div class="container main-secction pr-0">
             <div class="row ml-0">
                 <div class="col-md-12 col-sm-12 col-xs-12 image-section">
@@ -176,6 +188,7 @@
         </table>
     </div>
 </div>
+@endif
 </section><!-- team section end -->
 
 @endsection
