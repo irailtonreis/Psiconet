@@ -14,9 +14,10 @@ class PsicologoController extends Controller
         return view('cadastroPsicologo', compact('planos', $planos));   
     }
         public function concluirCadastroPsicologo(){
+            $user =auth()->user()->id;
             if(auth()->user()->type = 1){
                 $planos = Plano::orderBy('id', 'ASC')->get();
-                return view('concluirCadastroPsicologo', compact('planos', $planos));
+                return view('concluirCadastroPsicologo', compact('planos', 'user'));
             }
         }
 
@@ -37,6 +38,7 @@ class PsicologoController extends Controller
     }
 
     public function salvandoPsicologo(Request $request){
+        // dd($request);
        $request->validate([
             "foto"=> "required",
             "cpf" => "required",
@@ -45,7 +47,9 @@ class PsicologoController extends Controller
             'valor_sessao'=>'required',
             "plano" => "required",
             "descricao" =>"required",
+            "user" =>"required"
         ]);
+     
         $arquivo = $request->file('foto');
 
         if (empty($arquivo)) {
