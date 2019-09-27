@@ -95,7 +95,7 @@
                             <small class="text-danger">{{ $errors->first('descricao') }}</small>
                         </div>
                         <div class="user">
-                                <input type="text" value="{{(auth()->user()->id)}}" name="user">
+                                <input type="text" value="{{(auth()->user()->id)}}" name="user" style="display: none;">
                             </div>
                     <div class="row">
                             <div class="col-md-12 d-flex justify-content-end">
