@@ -1443,6 +1443,28 @@ h4.post-title a {
     color: #fff;
     border: 2px solid #005db5;
 }
+
+.form-edit{
+    position: relative;
+    z-index: 0;
+}
+
+#button-form.button-form-save{
+    margin: 0 140px 0 0;
+}
+
+.form-delete .button-form-delete{
+    margin-top: -79px;
+    border-width: 2px;
+    border-color: #e3342f;
+}
+
+.form-delete{
+    text-align: right;
+    position: relative;
+    z-index: 1;
+}
+
 .button-form:focus,
 .button-form:hover,
 .button-form:active,

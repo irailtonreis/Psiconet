@@ -10,6 +10,7 @@ Route::post('/cadastroCliente', 'ClienteController@salvandoCliente');
 Route::get('/concluirCadastroCliente', 'ClienteController@concluirCadastroCliente');
 Route::get('/editarCadastroCliente/{id}', 'ClienteController@editarCadastroCliente');
 Route::put('/editarCadastroCliente/{id}', 'ClienteController@alterarCadastroCliente');
+Route::delete('/removerCliente/{id}', 'ClienteController@removendoCliente');
 
 
 Route::get('/cadastroPsicologo', 'PsicologoController@cadastroPsicologo');

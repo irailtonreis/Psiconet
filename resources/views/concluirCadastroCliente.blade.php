@@ -7,8 +7,7 @@
             <h2>Concluir cadastro</h2>
         </div>
         <form method="POST"  action="/cadastroCliente" class="py-3" enctype="multipart/form-data">
-
-        <form method="POST"  action="/salvandoCliente" class="py-3" enctype="multipart/form-data">
+        
             @csrf
             {{ method_field('POST') }}
             
@@ -50,17 +49,15 @@
                         <input class="form-control form-control-lg" type="text" id="telefone" name="telefone" value="">
                         <small class="text-danger">{{ $errors->first('telefone') }}</small>
                     </div>
-                    <div class="user">
-                        <input type="text" value="{{(auth()->user()->id)}}" name="id_user">
+                    <div class="">
+                        <input type="hidden" value="{{(auth()->user()->id)}}" name="id_user">
                     </div>
-                    <div class="user">
-                        <input type="text" value="{{(auth()->user()->id)}}" name="user">
-                    </div>
-                        <div class="row">
-                            <div class="col-md-12 d-flex justify-content-end">
-                                <button type="submit" class="btn btn-primary btn-block" id="button-form"><a href="#menu1"></a>Concluir</button>
-                            </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary btn-block" id="button-form"><a href="#menu1"></a>Concluir</button>
                         </div>
+                    </div>
                     </div>
             </div>
         </form>

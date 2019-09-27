@@ -118,5 +118,21 @@ class ClienteController extends Controller
         return redirect('clienteLogado');
 
     }
+
+    public function removendoCliente($id){
+
+        $cliente = Cliente::where('id_user', $id)->first();
+        $user = User::find($id);
+
+        $deleteC = $cliente->delete();
+        $deleteU =  $user->delete();
+
+        if($deleteC && $deleteU){
+            return redirect('/');
+        }else{
+            return "Erro ao deletar";
+        }
+
+    }
         
 }
