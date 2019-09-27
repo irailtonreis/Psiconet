@@ -22,7 +22,7 @@
 
         @else
 
-        <form method="POST"  action="/editarCadastroCliente/{{$cliente->id}}" class="py-3" enctype="multipart/form-data">
+        <form method="POST"  action="/editarCadastroCliente/{{$cliente->id}}" class="py-3 form-edit" enctype="multipart/form-data">
             @csrf
             {{ method_field('PUT') }}
 
@@ -66,16 +66,16 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary ml-3" id="button-form">
+                            <button type="submit" class="btn btn-primary button-form-save" id="button-form">
                             <a href="#menu1"></a>Salvar</button>
                         </div>              
                     </div>
                 </div>
             </div>
         </form>
-        <form action="/removerCliente/{{(auth()->user()->id)}}" method="POST">
+        <form action="/removerCliente/{{(auth()->user()->id)}}" method="POST" class="form-delete">
             @csrf{{ method_field('DELETE') }}
-            <button type="submit" class="btn btn-primary bg-danger text-white ml-3">Excluir Conta</button>
+            <button type="submit" class="btn btn-primary bg-danger text-white ml-3 button-form-delete">Excluir Conta</button>
         </form>     
 
         @endif
