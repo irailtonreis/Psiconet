@@ -68,13 +68,15 @@
                         <div class="col-md-12 d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary ml-3" id="button-form">
                             <a href="#menu1"></a>Salvar</button>
-                            <button type="submit" class="btn btn-primary ml-3" id="button-form-delete">
-                            <a href="#menu1"></a>Excluir</button>
-                        </div>
+                        </div>              
                     </div>
                 </div>
             </div>
         </form>
+        <form action="/removerCliente/{{(auth()->user()->id)}}" method="POST">
+            @csrf{{ method_field('DELETE') }}
+            <button type="submit" class="btn btn-primary bg-danger text-white ml-3">Excluir Conta</button>
+        </form>     
 
         @endif
     </div>
