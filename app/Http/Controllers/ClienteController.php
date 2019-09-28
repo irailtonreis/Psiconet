@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cliente;
+use App\Psicologo;
 use App\User;
 
 class ClienteController extends Controller
@@ -13,12 +14,13 @@ class ClienteController extends Controller
         return view('cadastroCliente');
     }
 
-    public function clienteLogado(){
-        if(auth()->user()){
-            $cliente = Cliente::find(auth()->user()->id);
-            return view('/psicologoLogado', compact('cliente', $cliente ));
-        }
-    }
+    // public function clienteLogado(){
+        
+    //     if(auth()->user()){
+    //         $cliente = Cliente::find(auth()->user()->id);
+    //         return view('/psicologoLogado', compact('cliente', $cliente, 'psicologo', $psicologo));
+    //     }
+    // }
 
     public function salvandoCliente(Request $request){
         $request->validate([
