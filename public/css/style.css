@@ -1464,6 +1464,14 @@ h4.post-title a {
     position: relative;
     z-index: 1;
 }
+.form-delete-p{
+    margin-top: -49px;
+    margin-right: 180px;
+}
+.form-delete-p button{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 
 .button-form:focus,
 .button-form:hover,

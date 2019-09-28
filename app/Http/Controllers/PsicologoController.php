@@ -164,7 +164,7 @@ class PsicologoController extends Controller
         $deleteU =  $user->delete();
 
         if($deleteP && $deleteU){
-            return redirect('/');
+            return redirect('/')->with('sucess', 'Conta Excluída!');
         }else{
             return "Erro ao deletar";
         }

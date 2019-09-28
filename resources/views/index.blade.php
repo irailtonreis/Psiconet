@@ -1,6 +1,13 @@
 @extends('layouts.master')
 @section('content')
 <section class="hero-area">
+		<div class="success">
+			@if(session('sucess'))
+			<div class="alert alert-success text-center">
+				{{ session('sucess') }}
+			</div>
+			@endif
+		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10">

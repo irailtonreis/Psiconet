@@ -189,6 +189,6 @@ $(document).ready(function(){
 	});
   });
 
-
-
-
+window.onload = function(){
+ $( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+}

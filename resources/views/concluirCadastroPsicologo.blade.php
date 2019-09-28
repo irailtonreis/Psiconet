@@ -98,7 +98,7 @@
                                 <input type="text" value="{{(auth()->user()->id)}}" name="user" style="display: none;">
                             </div>
                     <div class="row">
-                            <div class="col-md-12 d-flex justify-content-end">
+                            <div class="col-md-12 d-flex justify-content-end mt-0">
                                 <button type="submit" class="btn btn-primary btn-block" id="button-form"><a href="#menu1"></a>Concluir</button>
                             </div>
                         </div>
