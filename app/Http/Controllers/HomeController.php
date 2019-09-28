@@ -38,9 +38,11 @@ class HomeController extends Controller
 
             if($cliente){
                 $psicologos = Psicologo::all();
+                $users = User::all();
+                $users = User::orderBy('id', 'ASC')->get();
                 $psicologos = Psicologo::orderBy('id', 'ASC')->get();
-                // dd($psicologo);
-                return view('clienteLogado',  compact('cliente', $cliente, 'psicologos', $psicologos));
+                // dd($psicologos);
+                return view('clienteLogado',  compact('cliente', $cliente, 'psicologos', $psicologos, 'users', $users));
             } else {
                 return view('concluirCadastroCliente');
             }

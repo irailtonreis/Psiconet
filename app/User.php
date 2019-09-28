@@ -40,6 +40,6 @@ class User extends Authenticatable
     ];
 
     public function Psicologo(){
-        return $this->hasOne(Psicologo::class, 'id_user', 'id');
+        return $this->belongsTo(Psicologo::class, 'id_user', 'id');
     }
 }

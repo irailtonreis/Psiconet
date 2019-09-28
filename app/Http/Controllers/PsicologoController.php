@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\HistPsicologo;
 use Illuminate\Http\Request;
 use App\Psicologo;
 use App\Plano;
@@ -169,5 +170,33 @@ class PsicologoController extends Controller
             return "Erro ao deletar";
         }
 
+    }
+    public function psicologo($id){
+        $psicologo = Psicologo::find($id);
+      
+        return view('psicologo', compact('psicologo'));
+    }
+    public function consulta(Request $request, $id){
+
+        $request->validate([
+            "data"=>"required",
+            "valor_consulta"=>"required",
+            "psicologo_id"=>"required"
+        ]);
+            // dd($request);
+        $histPsicologo = HistPsicologo::create([
+            "data_sessao"=> $request->input('data'),
+            "valor_consulta"=> $request->input('valor_consulta'),
+            "psicologo_id"=> $request->input('psicologo_id'),
+            "cliente_id"=> $id
+        ]);
+
+        $histPsicologo->save();
+
+        if ($histPsicologo){
+            return redirect('/clienteLogado')->with('success', 'Cadastro finalizado com sucesso!');
+        }else{
+            return redirect()->back()->with('error', 'Falha ao inserir');
+        }
     }
 }

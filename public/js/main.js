@@ -192,3 +192,8 @@ $(document).ready(function(){
 window.onload = function(){
  $( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 }
+
+window.onload = function(){
+	$( "#marcar-consulta" ).confirm("Marcar Consulta");
+   }
+   

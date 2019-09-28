@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-	{{-- @dd($psicologos); --}}
+	{{-- @dd($users); --}}
 	@if ($psicologos->isEmpty())
 	<section class="row">
 		<header class="col-12">
@@ -13,22 +13,19 @@
 		<div class="container mt-4">
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="sec-title">
-						<h2>Nossos Psicólogos Disponíveis<span class="sec-title-border"><span></span><span></span><span></span></span>
+					<div class="sec-title" style="max-width:800px;">
+						<h2 class="col-lg-12">Nossos Psicólogos Disponíveis<span class="sec-title-border"><span></span><span></span><span></span></span>
 						</h2>
 						<p>Escolha um Profissional e clique em começar</p>
 					</div>
 				</div>
 			</div>
-			<div class="row my-4">
-				<h2>Psicólogos Díponíveis para plano Semanal</h2>
-			</div>
 			<div class="row">
-				<div class="col-lg-3 col-sm-6">
+			@foreach($psicologos as $psicologo)
+				<div class="col-lg-3 col-sm-6 py-3">
 					<div class="single-team-member">
 						<div class="team-member-img">
-							@foreach($psicologos as $psicologo)
-						<img src="{{url($psicologo->foto)}}" alt="team">
+						<img src="{{url($psicologo->foto)}}" class="w-100" alt="team">
 							<div class="team-member-icon">
 								<div class="display-table">
 									<div class="display-tablecell">
@@ -40,17 +37,17 @@
 								</div>
 							</div>
 						</div>
-						<div class="team-member-info">
-							<a href="#">
-							<h4>{{$psicologo->users->name}}</h4>
+						<div class="team-member-info d-flex flex-column flex-1">
+							<a href="/perfilPsicologo/{{$psicologo->id}}">
+							<h4>Nome</h4>
 							</a>
-							<p>Especialista há 15 anos em Psicologia da Saúde</p>
+						<p>{{$psicologo->descricao}}</p>
 						</div>
-						<a class="appao-btn my-2" href="#">Iniciar</a>
+						<a class="btn appao-btn my-2" href="/psicologo/{{$psicologo->id}}">Visualizar</a>
 					</div>
 				</div>
 				@endforeach				
-
+		</div>
 		</div>
 		@endif
 	</section><!-- team section end -->

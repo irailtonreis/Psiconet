@@ -247,7 +247,7 @@ textarea:focus {
     border: 1px solid #fff;
     color: #666;
 }
-.appao-btn2 {
+.appao-btn2, .btn-consulta {
     border: 1px solid transparent;
 	border-radius: 25px;
 	background: #000529; /* Old browsers */
@@ -856,7 +856,13 @@ input::-webkit-input-placeholder {
 .single-team-member {
     text-align: center;
     box-shadow: 0 2px 15px -5px #222;
-    transition: all 0.4s;
+    transition: all 0.4s;  
+}
+.single-team-member p {
+   max-height: 65px;
+   height: 105px;
+   overflow: hidden;
+   
 }
 .team-member-info h4 {
 	font-size: 20px;
@@ -1519,7 +1525,7 @@ h4.post-title a {
 	transition: all 0.4s;
 }
 
-.single-team-member:hover .appao-btn {
+.single-team-member:hover .appao-btn{
     background-color: #000529;
     background-image: -moz-linear-gradient(left, #000529 1%, #002055 24%, #005db5 67%, #0074d9 100%);
     background-image: -webkit-linear-gradient(left, #000529 1%,#002055 24%,#005db5 67%,#0074d9 100%);
