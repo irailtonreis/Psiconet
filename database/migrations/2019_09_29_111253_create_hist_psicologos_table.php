@@ -18,7 +18,7 @@ class CreateHistPsicologosTable extends Migration
             $table->date('data_sessao');
             $table->decimal('valor_consulta', 8, 2);
             $table->unsignedBigInteger('psicologo_id');
-            $table->foreign('psicologo_id')->references('id')->on('psicologo')->onDelete('cascade');
+            $table->foreign('psicologo_id')->references('id')->on('psicologos')->onDelete('cascade');
             $table->unsignedBigInteger('cliente_id');
             $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
             $table->charset = 'utf8';

@@ -29,10 +29,13 @@ class PsicologoController extends Controller
 
         $user = User::find(auth()->user()->id);
         $psicologo = Psicologo::where('id_user', $iduser)->first();
-        // dd($psicologo);
+        
+        $id_psicologo = $psicologo->id;
+        // dd($id_psicologo);
+        
 
-        $histPsicologos = HistPsicologo::where('psicologo_id', $iduser)->get();
-        $histPsicologos  = HistPsicologo::orderBy('id', 'ASC')->get();
+        $histPsicologos = HistPsicologo::where('psicologo_id', $id_psicologo)->get();
+        // dd($histPsicologos);
             
         return view('/psicologoLogado', compact('psicologo', 'user', 'histPsicologos'));
         }

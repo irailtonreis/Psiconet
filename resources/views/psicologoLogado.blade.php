@@ -154,9 +154,9 @@
 
 <div class="container mt-4">
     <div class="my-4">
-        @if (empty($histPsicologos))
+        @if(Empty($histPsicologos))
             <header class="col-12">
-                <h3 class="text-center">Histórico de consultas</h3>
+                <h3 class="text-center">Não há Histórico de consultas</h3>
             </header>
             <div class="row">
                 <table class="table">
@@ -183,6 +183,7 @@
         @else
     </div>
     <div class="row">
+        <h3 class="text-center">Histórico de consultas</h3>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
