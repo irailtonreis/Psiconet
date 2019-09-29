@@ -2,25 +2,25 @@
 
 @section('content')
 <div class="container mt-5 pt-3">
-        @if (empty($psicologo))
-        <form method=""  action="/concluirCadastroPsicologo" class="py-3">
-            <div class="text-center py-3 pb-5 my-3">
-                <h4 class="my-1">Para visualizar perfil é preciso finalizar o cadastro</h4>
-                <p class="my-1">Clique no botão abaixo e finalize seu cadastro</p>
-                <div class="col-md-12 d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary btn-block">Concluir cadastro</button>
-                </div>
+    @if (empty($psicologo))
+    <form method="" action="/concluirCadastroPsicologo" class="py-3">
+        <div class="text-center py-3 pb-5 my-3">
+            <h4 class="my-1">Para visualizar perfil é preciso finalizar o cadastro</h4>
+            <p class="my-1">Clique no botão abaixo e finalize seu cadastro</p>
+            <div class="col-md-12 d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary btn-block">Concluir cadastro</button>
             </div>
-        </form>
-        @else
+        </div>
+    </form>
+    @else
     <section class="team-area ptb-90" id="team">
         <div class="success">
-        @if(session('success'))
-        <div class="alert alert-success text-center">
-            {{ session('success') }}
+            @if(session('success'))
+            <div class="alert alert-success text-center">
+                {{ session('success') }}
+            </div>
+            @endif
         </div>
-        @endif
-      </div>
         <div class="container main-secction pr-0">
             <div class="row ml-0">
                 <div class="col-md-12 col-sm-12 col-xs-12 image-section">
@@ -154,13 +154,39 @@
 
 <div class="container mt-4">
     <div class="my-4">
-        <h3>Histórico de consultas</h3>
+        @if (empty($histPsicologos))
+            <header class="col-12">
+                <h3 class="text-center">Histórico de consultas</h3>
+            </header>
+            <div class="row">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            {{-- <th scope="col">#</th> --}}
+                            <th scope="col">Data da consulta</th>
+                            <th scope="col">Valor da consulta</th>
+                            <th scope="col">Cliente atendido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {{-- <th scope="row">2</th> --}}
+                            <td>15/02/2019</td>
+                            <td>R$ 80,00</td>
+                            <td>Carlos Augusto</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        @else
     </div>
     <div class="row">
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">#</th>
+                    {{-- <th scope="col">#</th> --}}
                     <th scope="col">Data da consulta</th>
                     <th scope="col">Valor da consulta</th>
                     <th scope="col">Cliente atendido</th>
@@ -168,30 +194,18 @@
             </thead>
             <tbody>
                 @foreach ($histPsicologos as $histPsicologo)
-                    
-                @endforeach
                 <tr>
-                    <th scope="row">1</th>
-                     <td>{{$histPsicologo->data_sessao}}</td>
-                    <td>{{$histPsicologo->valor_consulta}}</</td>
+                    {{-- <th >1</th> --}}
+                    <td scope="row">{{$histPsicologo->data_sessao}}</td>
+                    <td>{{$histPsicologo->valor_consulta}}</</td> 
                     <td>{{$histPsicologo->cliente_id}}</td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>15/02/2019</td>
-                    <td>R$ 80,00</td>
-                    <td>Carlos Augusto</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>15/02/2019</td>
-                    <td>R$ 60,00</td>
-                    <td>Flávia Oliveira</td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
 </div>
+@endif
 @endif
 </section><!-- team section end -->
 

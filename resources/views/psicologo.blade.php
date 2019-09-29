@@ -57,7 +57,7 @@
                 <h4 class="text-center pb-3">Selecione uma data para atendimento<h4>
                         <div class="container">
                             <div class="d-flex flex-column align-items-center">
-                                <form action="/consulta/{{auth()->user()->id}}" method="POST">
+                                <form action="/consulta/{{ Auth::user()->id }}" method="POST">
                                     @csrf{{ method_field('POST') }}
                                     <input class="mb-5" id="date" type="date" name="data">
                                     <input class="form-control" type="hidden" name="psicologo_id" value="{{$psicologo->id}}">

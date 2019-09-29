@@ -40,8 +40,8 @@ Route::get('/faqPsicologo', function () {
     return view('faqPsicologo');
 });
 
-Route::get('/psicologo/{id}','PsicologoController@psicologo');
-Route::post('/consulta/{id}','PsicologoController@consulta');
+Route::get('/psicologo/{id}','HistoricoController@psicologo');
+Route::post('/consulta/{id}','HistoricoController@consulta');
 
 
 

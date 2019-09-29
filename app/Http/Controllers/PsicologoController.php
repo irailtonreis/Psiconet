@@ -23,18 +23,18 @@ class PsicologoController extends Controller
         }
 
     public function psicologoLogado(){
-        $histPsicologos = HistPsicologo::all();
-        $histPsicologos  = HistPsicologo::orderBy('id', 'ASC')->get();
+        
         if(auth()->user()){
         $iduser = auth()->user()->id;
+
         $user = User::find(auth()->user()->id);
         $psicologo = Psicologo::where('id_user', $iduser)->first();
-       
-        // $estados = State::orderBy('id', 'ASC')->get();
-    
+        // dd($psicologo);
+
+        $histPsicologos = HistPsicologo::where('psicologo_id', $iduser)->get();
+        $histPsicologos  = HistPsicologo::orderBy('id', 'ASC')->get();
+            
         return view('/psicologoLogado', compact('psicologo', 'user', 'histPsicologos'));
-         // return view('/psicologoLogado')->with(['user' => $user]);
-        // return view ('psicologoLogado', compact('psicologo', 'estados', $psicologo, $estados));
         }
        
     }
@@ -171,34 +171,5 @@ class PsicologoController extends Controller
             return redirect()->back()->with('error', 'Falha ao excluir');
         }
 
-    }
-    public function psicologo($id){
-        $psicologo = Psicologo::find($id);
-      
-        return view('psicologo', compact('psicologo'));
-    }
-    public function consulta(Request $request, $id){
-
-        $request->validate([
-            "data"=>"required",
-            "valor_consulta"=>"required",
-            "psicologo_id"=>"required"
-        ]);
-            // dd($request);
-        $histPsicologo = HistPsicologo::create([
-            "data_sessao"=> $request->input(['data']),
-            "valor_consulta"=> $request->input('valor_consulta'),
-            "psicologo_id"=> $request->input('psicologo_id'),
-            "cliente_id"=> $id
-        ]);
-
-        $histPsicologo->save();
-       
-
-        if ($histPsicologo){
-            return redirect('/clienteLogado')->with('success', 'Agendado com sucesso!');
-        }else{
-            return redirect()->back()->with('error', 'Falha ao inserir');
-        }
     }
 }

@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class HistPsicologo extends Model
 {
-    protected $table = 'hist_psicologo';
+    protected $table = 'hist_psicologos';
     protected $primaryKey = 'id';
     protected $fillable = ['data_sessao', 'valor_consulta', 'psicologo_id', 'cliente_id'];
+    public $timestamps = false;
 
 
     public function psicologo(){
@@ -18,6 +19,10 @@ class HistPsicologo extends Model
     
     public function cliente(){
         return $this->hasOne(Cliente::class, 'id', 'cliente_id');
+
+    }
+    public function users(){
+        return $this->hasOne(User::class, 'id', 'cliente_id');
 
     }
 
