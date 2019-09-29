@@ -139,9 +139,12 @@ class ClienteController extends Controller
 
     }
     public function clienteLogado(){
+        $user = auth()->user()->id;
+        $cliente = Cliente::where('id_user', $user)->first();
+        // dd($cliente);
         $psicologos = Psicologo::all();
         $psicologos = Psicologo::orderBy('id', 'ASC')->get();
-        return view('clienteLogado', compact('psicologos'));
+        return view('clienteLogado', compact('psicologos', 'user', 'cliente'));
     }
         
 }

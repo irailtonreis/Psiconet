@@ -183,7 +183,7 @@
         @else
     </div>
     <div class="row">
-        <h3 class="text-center">Histórico de consultas</h3>
+        <h3 class="m-auto">Histórico de consultas</h3>
         <table class="table">
             <thead class="thead-dark">
                 <tr>

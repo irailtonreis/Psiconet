@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-  {{-- @dd($psicologos) --}}
+
 	@if ($psicologos->isEmpty())
-	<section class="row pt-5">
-		<header class="col-12 pt-5 mt-5">
+	<section class="row">
+		<header class="col-12">
 			<h1 class="col-12 text-center">Não temos Psicólogos disponíveis na plataforma</h1>
 		</header>
 	</section>

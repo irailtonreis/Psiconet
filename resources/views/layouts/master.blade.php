@@ -88,6 +88,11 @@
 														{{ __('Editar Perfil') }}
 													</a>
 													@else
+													<a class="dropdown-item" href="/clienteLogado"
+													onclick="event.preventDefault();
+																  document.getElementById('clienteLogado').submit();">
+													 {{ __('Perfil') }}
+												 </a>
 													<a class="dropdown-item" href=""
 														onclick="event.preventDefault();
 																	  document.getElementById('editarCadastroCliente').submit();">
@@ -111,6 +116,9 @@
 														@csrf{{ method_field('GET') }}
 													</form>
 													@elseif(auth()->user()->type == 0)
+													<form id="clienteLogado" action="/clienteLogado" method="GET" style="display: none;">
+														@csrf{{ method_field('GET') }}
+													</form>
 													
 													<form id="editarCadastroCliente" action="/editarCadastroCliente/{{auth()->user()->id}}" method="GET" style="display: none;">
 														@csrf
