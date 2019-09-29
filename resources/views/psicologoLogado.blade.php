@@ -21,7 +21,6 @@
         </div>
         @endif
       </div>
-       
         <div class="container main-secction pr-0">
             <div class="row ml-0">
                 <div class="col-md-12 col-sm-12 col-xs-12 image-section">
@@ -168,11 +167,14 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($histPsicologos as $histPsicologo)
+                    
+                @endforeach
                 <tr>
                     <th scope="row">1</th>
-                    <td>20/01/2019</td>
-                    <td>R$ 60,00</td>
-                    <td>Mayra Alves</td>
+                     <td>{{$histPsicologo->data_sessao}}</td>
+                    <td>{{$histPsicologo->valor_consulta}}</</td>
+                    <td>{{$histPsicologo->cliente_id}}</td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>

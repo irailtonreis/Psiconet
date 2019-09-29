@@ -116,8 +116,10 @@ class ClienteController extends Controller
         }
 
         $user->save();
-
-        return redirect('clienteLogado');
+        $psicologos = Psicologo::all();
+        $psicologos = Psicologo::orderBy('id', 'ASC')->get();
+        dd($psicologos);
+        return redirect('/clienteLogado', compact('psicologos', $psicologos));
 
     }
 
@@ -135,6 +137,11 @@ class ClienteController extends Controller
             return "Erro ao deletar";
         }
 
+    }
+    public function clienteLogado(){
+        $psicologos = Psicologo::all();
+        $psicologos = Psicologo::orderBy('id', 'ASC')->get();
+        return view('clienteLogado', compact('psicologos'));
     }
         
 }

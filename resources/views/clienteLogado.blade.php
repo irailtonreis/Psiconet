@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-	{{-- @dd($users); --}}
+  {{-- @dd($psicologos) --}}
 	@if ($psicologos->isEmpty())
 	<section class="row">
 		<header class="col-12">
@@ -10,6 +10,13 @@
 	</section>
 	@else
 	<section class="team-area ptb-90" id="team">
+			<div class="success">
+					@if(session('success'))
+					<div class="alert alert-success text-center">
+						{{ session('success') }}
+					</div>
+					@endif
+				</div>
 		<div class="container mt-4">
 			<div class="row">
 				<div class="col-lg-12">

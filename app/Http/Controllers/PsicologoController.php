@@ -23,7 +23,8 @@ class PsicologoController extends Controller
         }
 
     public function psicologoLogado(){
-        
+        $histPsicologos = HistPsicologo::all();
+        $histPsicologos  = HistPsicologo::orderBy('id', 'ASC')->get();
         if(auth()->user()){
         $iduser = auth()->user()->id;
         $user = User::find(auth()->user()->id);
@@ -31,7 +32,7 @@ class PsicologoController extends Controller
        
         // $estados = State::orderBy('id', 'ASC')->get();
     
-        return view('/psicologoLogado', compact('psicologo', 'user'));
+        return view('/psicologoLogado', compact('psicologo', 'user', 'histPsicologos'));
          // return view('/psicologoLogado')->with(['user' => $user]);
         // return view ('psicologoLogado', compact('psicologo', 'estados', $psicologo, $estados));
         }
@@ -165,9 +166,9 @@ class PsicologoController extends Controller
         $deleteU =  $user->delete();
 
         if($deleteP && $deleteU){
-            return redirect('/')->with('sucess', 'Conta Excluída!');
+            return redirect('/')->with('sucess', 'Conta excluída com sucesso!');
         }else{
-            return "Erro ao deletar";
+            return redirect()->back()->with('error', 'Falha ao excluir');
         }
 
     }
@@ -185,16 +186,17 @@ class PsicologoController extends Controller
         ]);
             // dd($request);
         $histPsicologo = HistPsicologo::create([
-            "data_sessao"=> $request->input('data'),
+            "data_sessao"=> $request->input(['data']),
             "valor_consulta"=> $request->input('valor_consulta'),
             "psicologo_id"=> $request->input('psicologo_id'),
             "cliente_id"=> $id
         ]);
 
         $histPsicologo->save();
+       
 
         if ($histPsicologo){
-            return redirect('/clienteLogado')->with('success', 'Cadastro finalizado com sucesso!');
+            return redirect('/clienteLogado')->with('success', 'Agendado com sucesso!');
         }else{
             return redirect()->back()->with('error', 'Falha ao inserir');
         }

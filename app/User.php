@@ -42,4 +42,8 @@ class User extends Authenticatable
     public function Psicologo(){
         return $this->belongsTo(Psicologo::class, 'id_user', 'id');
     }
+    
+    public function histPsicologo(){
+        return $this->hasMany(HistPsicologo::class, 'clientes_id', 'id');
+    }
 }

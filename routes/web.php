@@ -21,9 +21,8 @@ Route::put('/editarCadastroPsicologo/{id}', 'PsicologoController@alterarCadastro
 Route::delete('/removerPsicologo/{id}', 'PsicologoController@removendoPsicologo');
 Route::get('/psicologoLogado', 'PsicologoController@psicologoLogado');
 
-Route::get('/clienteLogado', function () {
-    return view('clienteLogado');
-});
+Route::get('/clienteLogado', 'ClienteController@clientelogado');
+
 
 Route::get('/paraPsicologo', function () {
     return view('paraPsicologo');
