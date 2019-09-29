@@ -65,20 +65,63 @@
                         <small class="text-danger">{{ $errors->first('telefone') }}</small>
                     </div>
                     <div class="row">
+                            <div class="col-md-6 col-12 w-100 py-1">
+                                <button onclick="event.preventDefault()" class="btn btn-primary bg-transparent border-danger text-danger w-100" data-toggle="modal"
+                                data-target="#modal{{$cliente->id}}">
+                                    Excluir Conta
+                                </button>
+                            </div>
+                            <div class="col-md-6 col-12 py-1">
+                                    <button type="submit" class="btn btn-primary bg-primary text-white w-100" style="padding: .375rem .75rem; font-size: .9rem; line-height: 1.6;">
+                                        Salvar Alterações
+                                    </button>
+                            </div>
+                        </div>
+                    {{-- <div class="row">
                         <div class="col-md-12 d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary button-form-save" id="button-form">
                             <a href="#menu1"></a>Salvar</button>
                         </div>              
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </form>
-        <form action="/removerCliente/{{(auth()->user()->id)}}" method="POST" class="form-delete">
+        {{-- <form action="/removerCliente/{{(auth()->user()->id)}}" method="POST" class="form-delete">
             @csrf{{ method_field('DELETE') }}
             <button type="submit" class="btn btn-primary bg-danger text-white ml-3 button-form-delete">Excluir Conta</button>
-        </form>     
+        </form>      --}}
 
         @endif
     </div>
+    <div class="modal fade" id="modal{{$cliente->id}}" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <div class="modal-title w-100 d-flex align-items-center justify-content-center">
+                            <img src="{{url('img/logo.png')}}" alt="">
+                            <h2>PSICONET</h2>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="text-center py-4">Deseja realmente excluir sua conta ?</h4>
+                        <div class="d-flex justify-content-between">
+                            <form action="/removerCliente/{{(auth()->user()->id)}}" method="POST">
+                                @csrf
+                                {{ method_field('DELETE') }}
+                                <button type="submit" class="btn btn-danger">Excluir</button>
+                            </form>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                        </div>
+                    </div>
+            
+                    <div class="modal-footer d-flex align-items-center justify-content-center">
+                        <p class="">Copyright &copy; Psiconet 2019</p>
+                    </div>
+                </div>
+            </div>
+            </div>
 
 @endsection

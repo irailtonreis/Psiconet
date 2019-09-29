@@ -116,10 +116,10 @@ class ClienteController extends Controller
         }
 
         $user->save();
-        $psicologos = Psicologo::all();
-        $psicologos = Psicologo::orderBy('id', 'ASC')->get();
-        dd($psicologos);
-        return redirect('/clienteLogado', compact('psicologos', $psicologos));
+        // $psicologos = Psicologo::all();
+        // $psicologos = Psicologo::orderBy('id', 'ASC')->get();
+        // dd($psicologos);
+        return redirect('/clienteLogado');
 
     }
 

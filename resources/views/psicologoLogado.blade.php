@@ -154,7 +154,7 @@
 
 <div class="container mt-4">
     <div class="my-4">
-        @if(Empty($histPsicologos))
+            @if($histPsicologos->isEmpty())
             <header class="col-12">
                 <h3 class="text-center">Não há Histórico de consultas</h3>
             </header>
