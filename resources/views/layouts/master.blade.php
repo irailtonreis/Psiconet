@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{url('css/icofont.css')}}"/>
 	<link rel="stylesheet" href="{{url('css/responsive.css')}}">
 	<link rel="stylesheet" href="{{url('css/auth.css')}}">
+	<link rel="stylesheet" href="{{url('css/profile.css')}}">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- Scripts -->
@@ -76,17 +77,22 @@
 				
 												<div class="dropdown-menu dropdown-menu-right bg-primary" aria-labelledby="navbarDropdown">
 													@if(auth()->user()->type == 1)
+													<a class="dropdown-item" href="/psicologoLogado"
+														onclick="event.preventDefault();
+																	  document.getElementById('psicologoLogado').submit();">
+														 {{ __('Perfil') }}
+													 </a>
 												<a class="dropdown-item" href="/editarCadastroPsicologo/{{auth::user()->id}}"
 													   onclick="event.preventDefault();
 																	 document.getElementById('editarCadastroPsicologo').submit();">
 														{{ __('Editar Perfil') }}
 													</a>
-													<a class="dropdown-item" href="/excluirPerfil/{{auth::user()->id}}"
-														onclick="event.preventDefault();
-																	  document.getElementById('excluirPerfil').submit();">
-														 {{ __('Excluir Perfil') }}
-													 </a>
 													@else
+													<a class="dropdown-item" href="/clienteLogado"
+													onclick="event.preventDefault();
+																  document.getElementById('clienteLogado').submit();">
+													 {{ __('Perfil') }}
+												 </a>
 													<a class="dropdown-item" href=""
 														onclick="event.preventDefault();
 																	  document.getElementById('editarCadastroCliente').submit();">
@@ -96,21 +102,23 @@
 													<a class="dropdown-item" href="{{ route('logout') }}"
 													   onclick="event.preventDefault();
 																	 document.getElementById('logout-form').submit();">
-														{{ __('Logout') }}
+														{{ __('Sair') }}
 													</a>
-													
-													
 													<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 														@csrf
 													</form>
 													@if(auth()->user()->type == 1)
-													<form id="editarCadastroPsicologo" action="/excluirPerfil/{{auth::user()->id}}" method="GET" style="display: none;">
-														@csrf
+													<form id="psicologoLogado" action="/psicologoLogado" method="GET" style="display: none;">
+														@csrf{{ method_field('GET') }}
 													</form>
+
 													<form id="editarCadastroPsicologo" action="/editarCadastroPsicologo/{{auth()->user()->id}}" method="GET" style="display: none;">
-														@csrf
+														@csrf{{ method_field('GET') }}
 													</form>
 													@elseif(auth()->user()->type == 0)
+													<form id="clienteLogado" action="/clienteLogado" method="GET" style="display: none;">
+														@csrf{{ method_field('GET') }}
+													</form>
 													
 													<form id="editarCadastroCliente" action="/editarCadastroCliente/{{auth()->user()->id}}" method="GET" style="display: none;">
 														@csrf
@@ -121,7 +129,7 @@
 											</li>
 										@endguest
 										
-								
+				
                                 </ul>
 							</div>
 							
@@ -131,8 +139,8 @@
             </header><!-- header section end -->
             <main>
                 @yield('content')
-            </main> 
-            
+			</main> 
+    
 
     <!-- Modal start longin -->
 	<div class="modal fade" id="sitModal" tabindex="-1" role="dialog">

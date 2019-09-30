@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cliente;
+use App\Psicologo;
+use App\User;
 
 class ClienteController extends Controller
 {
@@ -12,12 +14,13 @@ class ClienteController extends Controller
         return view('cadastroCliente');
     }
 
-    public function clienteLogado(){
-        if(auth()->user()){
-            $cliente = Cliente::find(auth()->user()->id);
-            return view('/psicologoLogado', compact('cliente', $cliente ));
-        }
-    }
+    // public function clienteLogado(){
+        
+    //     if(auth()->user()){
+    //         $cliente = Cliente::find(auth()->user()->id);
+    //         return view('/psicologoLogado', compact('cliente', $cliente, 'psicologo', $psicologo));
+    //     }
+    // }
 
     public function salvandoCliente(Request $request){
         $request->validate([
@@ -104,9 +107,43 @@ class ClienteController extends Controller
             $cliente->telefone = $request->input("telefone");
      
         $cliente->save();
+    
+        $user = User::find(auth()->user()->id);
 
-        return redirect('clienteLogado');
+        if($_REQUEST){
+            $user->name = $request->input('nome');
+            $user->email = $request->input('email');
+        }
 
+        $user->save();
+        // $psicologos = Psicologo::all();
+        // $psicologos = Psicologo::orderBy('id', 'ASC')->get();
+        // dd($psicologos);
+        return redirect('/clienteLogado');
+
+    }
+
+    public function removendoCliente($id){
+
+        $cliente = Cliente::where('id_user', $id)->first();
+        $user = User::find($id);
+
+        $deleteC = $cliente->delete();
+        $deleteU =  $user->delete();
+
+        if($deleteC && $deleteU){
+            return redirect('/');
+        }else{
+            return "Erro ao deletar";
+        }
+
+    }
+    public function clienteLogado(){
+        $user = auth()->user()->id;
+        $cliente = Cliente::where('id_user', $user)->first();
+        $psicologos = Psicologo::all();
+        $psicologos = Psicologo::orderBy('id', 'ASC')->get();
+        return view('clienteLogado', compact('psicologos', 'user', 'cliente'));
     }
         
 }

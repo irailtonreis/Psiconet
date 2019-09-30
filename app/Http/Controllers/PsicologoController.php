@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\HistPsicologo;
 use Illuminate\Http\Request;
 use App\Psicologo;
 use App\Plano;
-use App\State;
 use App\User;
 class PsicologoController extends Controller
 {
@@ -14,33 +14,47 @@ class PsicologoController extends Controller
 
         return view('cadastroPsicologo', compact('planos', $planos));   
     }
+        public function concluirCadastroPsicologo(){
+            $user =auth()->user()->id;
+            if(auth()->user()->type = 1){
+                $planos = Plano::orderBy('id', 'ASC')->get();
+                return view('concluirCadastroPsicologo', compact('planos', 'user'));
+            }
+        }
 
     public function psicologoLogado(){
         
         if(auth()->user()){
-        // $user = User::find(auth()->user()->id);
-        $psicologo = Psicologo::find(auth()->user()->id);
-       
-        // $estados = State::orderBy('id', 'ASC')->get();
-    
-        return view('/psicologoLogado', compact('psicologo', $psicologo));
-         // return view('/psicologoLogado')->with(['user' => $user]);
-        // return view ('psicologoLogado', compact('psicologo', 'estados', $psicologo, $estados));
+        $iduser = auth()->user()->id;
+
+        $user = User::find(auth()->user()->id);
+        $psicologo = Psicologo::where('id_user', $iduser)->first();
+        
+        $id_psicologo = $psicologo->id;
+        // dd($id_psicologo);
+        
+
+        $histPsicologos = HistPsicologo::where('psicologo_id', $id_psicologo)->get();
+        // dd($histPsicologos);
+            
+        return view('/psicologoLogado', compact('psicologo', 'user', 'histPsicologos'));
         }
        
     }
 
     public function salvandoPsicologo(Request $request){
-        $request->validate([
+        // dd($request);
+       $request->validate([
             "foto"=> "required",
             "cpf" => "required",
             "telefone" => "required",
-            "cidade" => "required",
             "crp" => "required",
             'valor_sessao'=>'required',
             "plano" => "required",
-            "sobre" =>"required",
+            "descricao" =>"required",
+            "user" =>"required"
         ]);
+     
         $arquivo = $request->file('foto');
 
         if (empty($arquivo)) {
@@ -66,17 +80,19 @@ class PsicologoController extends Controller
             "cidade" => $request->input("cidade"),
             "crp" => $request->input("crp"),
             "valor_sessao"=> $request->input('valor_sessao'),
-            "sobre"=> $request->input('sobre'),
+            "descricao"=> $request->input('descricao'),
             "id_plano"=> $request->input("plano"),
             "id_user"=> $request->input("user")
         ]);
-        $psicologo->save();
-        
-    
 
-       return redirect('psicologoLogado', $psicologo);
-        
+        $psicologo->save();
+        if ($psicologo){
+            return redirect('/psicologoLogado')->with('success', 'Cadastro finalizado com sucesso!');
+        }else{
+            return redirect()->back()->with('error', 'Falha ao inserir');
+        }
     }
+
     public function editarCadastroPsicologo($id){
         $planos = Plano::orderBy('id', 'ASC')->get();
         $psicologo = Psicologo::where('id_user', $id)->first();
@@ -92,11 +108,10 @@ class PsicologoController extends Controller
             "email" => "required",
             "cpf" => "required",
             "telefone" => "required",
-            "cidade" => "required",
             "crp" => "required",
             'valor_sessao'=>'required',
             "plano" => "required",
-            "sobre" =>"required",
+            "descricao" =>"required",
         ]);
         if($request->hasFile('foto')){
 
@@ -122,11 +137,10 @@ class PsicologoController extends Controller
         
         $psicologo->cpf = $request->input('cpf');
         $psicologo->telefone= $request->input('telefone');
-        $psicologo->cidade= $request->input('cidade');
         $psicologo->crp= $request->input('crp');
         $psicologo->valor_sessao= $request->input('valor_sessao');
         $psicologo->id_plano= $request->input('plano');
-        $psicologo->sobre= $request->input('sobre');
+        $psicologo->descricao= $request->input('descricao');
 
         $psicologo->save();
         if($_REQUEST){
@@ -134,13 +148,31 @@ class PsicologoController extends Controller
             $user->email = $request->input('email');
         }
 
-        $user->save();
+        $psicologo->save();
+        $user->save();   
+
+        if($psicologo && $user){
+            return redirect('/psicologoLogado')->with('success', 'Cadastro editado com sucesso!');
+        }else{
+            return back()->with('error', 'Falha ao editar cadastro');
+        }
+
        
-        return redirect('psicologoLogado');
 
     }
     public function removendoPsicologo($id){
-        
+
+        $psicologo = Psicologo::where('id_user', $id)->first();
+        $user = User::find($id);
+
+        $deleteP = $psicologo->delete();
+        $deleteU =  $user->delete();
+
+        if($deleteP && $deleteU){
+            return redirect('/')->with('sucess', 'Conta excluída com sucesso!');
+        }else{
+            return redirect()->back()->with('error', 'Falha ao excluir');
+        }
 
     }
 }

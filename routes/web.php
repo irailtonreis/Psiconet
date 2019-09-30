@@ -9,19 +9,20 @@ Route::get('/index', 'IndexController@index');
 Route::post('/cadastroCliente', 'ClienteController@salvandoCliente');
 Route::get('/concluirCadastroCliente', 'ClienteController@concluirCadastroCliente');
 Route::get('/editarCadastroCliente/{id}', 'ClienteController@editarCadastroCliente');
-Route::post('/editarCadastroCliente/{id}', 'ClienteController@alterarCadastroCliente');
+Route::put('/editarCadastroCliente/{id}', 'ClienteController@alterarCadastroCliente');
+Route::delete('/removerCliente/{id}', 'ClienteController@removendoCliente');
 
 
 Route::get('/cadastroPsicologo', 'PsicologoController@cadastroPsicologo');
 Route::post('/cadastroPsicologo', 'PsicologoController@salvandoPsicologo');
+Route::get('/concluirCadastroPsicologo', 'PsicologoController@concluirCadastroPsicologo');
 Route::get('/editarCadastroPsicologo/{id}', 'PsicologoController@editarCadastroPsicologo');
 Route::put('/editarCadastroPsicologo/{id}', 'PsicologoController@alterarCadastroPsicologo');
-Route::delete('/removerCadastro/{id}', 'PsicologoController@removendoPsicologo');
+Route::delete('/removerPsicologo/{id}', 'PsicologoController@removendoPsicologo');
 Route::get('/psicologoLogado', 'PsicologoController@psicologoLogado');
 
-Route::get('/clienteLogado', function () {
-    return view('clienteLogado');
-});
+Route::get('/clienteLogado', 'ClienteController@clientelogado');
+
 
 Route::get('/paraPsicologo', function () {
     return view('paraPsicologo');
@@ -38,6 +39,10 @@ Route::get('/faqCliente', function () {
 Route::get('/faqPsicologo', function () {
     return view('faqPsicologo');
 });
+
+Route::get('/psicologo/{id}','HistoricoController@psicologo');
+Route::post('/consulta/{id}','HistoricoController@consulta');
+
 
 
 // Route::get('/psicologoLogado', 'IndexController@index');

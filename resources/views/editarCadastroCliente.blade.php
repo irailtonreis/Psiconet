@@ -4,17 +4,17 @@
 
     <div class="container mt-5 pt-5">
         
-        <div class="cadastro text-center py-3">
+        <div class="cadastro text-center py-3 pt-5">
             <h2>Editar Cadastro</h2>
         </div>
 
         @if (empty($cliente))
 
         <form method=""  action="/concluirCadastroCliente" class="py-3">
-            <div class="text-center py-3 pb-5 my-3">
-                <h4 class="my-1">Para editar seu perfil é preciso finalizar o cadastro</h4>
-                <p class="my-1">Clique no botão abaixo e finalize seu cadastro</p>
-                <div class="col-md-12 d-flex justify-content-center">
+            <div class="text-center py-3 pb-5 my-5">
+                <h4 class="my-2">Para editar seu perfil é preciso finalizar o cadastro</h4>
+                <p class="my-2">Clique no botão abaixo e finalize seu cadastro</p>
+                <div class="col-md-12 d-flex justify-content-center my-2">
                     <button type="submit" class="btn btn-primary btn-block">Concluir cadastro</button>
                 </div>
             </div>
@@ -22,9 +22,9 @@
 
         @else
 
-        <form method="POST"  action="/editarCadastroCliente/{{$cliente->id}}" class="py-3" enctype="multipart/form-data">
+        <form method="POST"  action="/editarCadastroCliente/{{$cliente->id}}" class="py-3 form-edit" enctype="multipart/form-data">
             @csrf
-            {{ method_field('POST') }}
+            {{ method_field('PUT') }}
 
             <div class="tab-content pt-3">
                 <div id="home">
@@ -48,7 +48,7 @@
                     </div>
                     <p>Email</p>
                         <input class="form-control form-control-lg" type="email" id="input-email" name="email"
-                        value="{{auth()->user()->email}} " disabled>
+                        value="{{auth()->user()->email}} ">
                     <div class=" {{ $errors->has('usuario') ? ' has-error' : '' }}">
                         <p>Usuário</p>
                     <input class="form-control form-control-lg" type="text" id="usuario" name="usuario" value="{{$cliente->usuario}}">
@@ -64,22 +64,64 @@
                         <input class="form-control form-control-lg" type="text" id="telefone" name="telefone" value="{{$cliente->telefone}}">
                         <small class="text-danger">{{ $errors->first('telefone') }}</small>
                     </div>
-                    <div class="user">
-                        <input type="text" value="{{(auth()->user()->id)}}" name="id_user">
-                    </div>
-                    <div class="user">
-                        <input type="text" value="{{(auth()->user()->id)}}" name="user">
-                    </div>
-                        <div class="row">
-                            <div class="col-md-12 d-flex justify-content-end">
-                                <button type="submit" class="btn btn-primary btn-block" id="button-form"><a href="#menu1"></a>Concluir</button>
+                    <div class="row">
+                            <div class="col-md-6 col-12 w-100 py-1">
+                                <button onclick="event.preventDefault()" class="btn btn-primary bg-transparent border-danger text-danger w-100" data-toggle="modal"
+                                data-target="#modal{{$cliente->id}}">
+                                    Excluir Conta
+                                </button>
+                            </div>
+                            <div class="col-md-6 col-12 py-1">
+                                    <button type="submit" class="btn btn-primary bg-primary text-white w-100" id="button-form"  style="padding: .375rem .75rem; font-size: .9rem; line-height: 1.6;">
+                                        Salvar Alterações
+                                    </button>
                             </div>
                         </div>
-                    </div>
+                    {{-- <div class="row">
+                        <div class="col-md-12 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary button-form-save" id="button-form">
+                            <a href="#menu1"></a>Salvar</button>
+                        </div>              
+                    </div> --}}
+                </div>
             </div>
         </form>
+        {{-- <form action="/removerCliente/{{(auth()->user()->id)}}" method="POST" class="form-delete">
+            @csrf{{ method_field('DELETE') }}
+            <button type="submit" class="btn btn-primary bg-danger text-white ml-3 button-form-delete">Excluir Conta</button>
+        </form>      --}}
 
         @endif
     </div>
+    <div class="modal fade" id="modal{{$cliente->id}}" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <div class="modal-title w-100 d-flex align-items-center justify-content-center">
+                            <img src="{{url('img/logo.png')}}" alt="">
+                            <h2>PSICONET</h2>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="text-center py-4">Deseja realmente excluir sua conta ?</h4>
+                        <div class="d-flex justify-content-between">
+                            <form action="/removerCliente/{{(auth()->user()->id)}}" method="POST">
+                                @csrf
+                                {{ method_field('DELETE') }}
+                                <button type="submit" class="btn btn-danger">Excluir</button>
+                            </form>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                        </div>
+                    </div>
+            
+                    <div class="modal-footer d-flex align-items-center justify-content-center">
+                        <p class="">Copyright &copy; Psiconet 2019</p>
+                    </div>
+                </div>
+            </div>
+            </div>
 
 @endsection

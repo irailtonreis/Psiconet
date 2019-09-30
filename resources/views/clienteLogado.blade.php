@@ -1,26 +1,38 @@
 @extends('layouts.master')
 
 @section('content')
-	
+
+	@if ($psicologos->isEmpty())
+	<section class="row">
+		<header class="col-12">
+			<h1 class="col-12 text-center">Não temos Psicólogos disponíveis na plataforma</h1>
+		</header>
+	</section>
+	@else
 	<section class="team-area ptb-90" id="team">
+			<div class="success">
+					@if(session('success'))
+					<div class="alert alert-success text-center">
+						{{ session('success') }}
+					</div>
+					@endif
+				</div>
 		<div class="container mt-4">
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="sec-title">
-						<h2>Nossos Psicólogos Disponíveis<span class="sec-title-border"><span></span><span></span><span></span></span>
+					<div class="sec-title" style="max-width:800px;">
+						<h2 class="col-lg-12">Nossos Psicólogos Disponíveis<span class="sec-title-border"><span></span><span></span><span></span></span>
 						</h2>
 						<p>Escolha um Profissional e clique em começar</p>
 					</div>
 				</div>
 			</div>
-			<div class="row my-4">
-				<h2>Psicólogos Díponíveis para plano Semanal</h2>
-			</div>
 			<div class="row">
-				<div class="col-lg-3 col-sm-6">
+			@foreach($psicologos as $psicologo)
+				<div class="col-lg-3 col-sm-6 py-3">
 					<div class="single-team-member">
 						<div class="team-member-img">
-							<img src="/img/team1.jpg" alt="team">
+						<img src="{{url($psicologo->foto)}}" class="w-100" alt="team">
 							<div class="team-member-icon">
 								<div class="display-table">
 									<div class="display-tablecell">
@@ -32,297 +44,18 @@
 								</div>
 							</div>
 						</div>
-						<div class="team-member-info">
-							<a href="#">
-								<h4>Maria Joaquina</h4>
+						<div class="team-member-info d-flex flex-column flex-1">
+							<a href="/perfilPsicologo/{{$psicologo->id}}">
+							<h4>Nome</h4>
 							</a>
-							<p>Especialista há 15 anos em Psicologia da Saúde</p>
+						<p>{{$psicologo->descricao}}</p>
 						</div>
-						<a class="appao-btn my-2" href="#">Iniciar</a>
+						<a class="btn appao-btn my-2" href="/psicologo/{{$psicologo->id}}">Visualizar</a>
 					</div>
 				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="single-team-member">
-						<div class="team-member-img">
-							<img src="/img/team2.jpg" alt="team">
-							<div class="team-member-icon">
-								<div class="display-table">
-									<div class="display-tablecell">
-										<a href="#"><i class="icofont icofont-social-facebook"></i></a>
-										<a href="#"><i class="icofont icofont-social-twitter"></i></a>
-										<a href="#"><i class="icofont icofont-brand-linkedin"></i></a>
-										<a href="#"><i class="icofont icofont-social-pinterest"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="team-member-info">
-							<a href="#">
-								<h4>Jaime Palilo</h4>
-							</a>
-							<p>Especialista conceituado em Psicologia Cognitiva</p>
-						</div>
-						<a class="appao-btn my-2" href="#">Iniciar</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="single-team-member">
-						<div class="team-member-img">
-							<img src="/img/team3.jpeg" alt="team">
-							<div class="team-member-icon">
-								<div class="display-table">
-									<div class="display-tablecell">
-										<a ref="#"><i class="icofont icofont-social-facebook"></i></a>
-										<a href="#"><i class="icofont icofont-social-twitter"></i></a>
-										<a href="#"><i class="icofont icofont-brand-linkedin"></i></a>
-										<a href="#"><i class="icofont icofont-social-pinterest"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="team-member-info">
-							<a href="#">
-								<h4>Marcelina Guerra</h4>
-							</a>
-							<p>Profissional conceituada em Psicologia de Desenvolvimento</p>
-						</div>
-						<a class="appao-btn my-2" href="#">Iniciar</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="single-team-member">
-						<div class="team-member-img">
-							<img src="/img/team4.jpg" alt="team">
-							<div class="team-member-icon">
-								<div class="display-table">
-									<div class="display-tablecell">
-										<a href="#"><i class="icofont icofont-social-facebook"></i></a>
-										<a href="#"><i class="icofont icofont-social-twitter"></i></a>
-										<a href="#"><i class="icofont icofont-brand-linkedin"></i></a>
-										<a href="#"><i class="icofont icofont-social-pinterest"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="team-member-info">
-							<a href="#">
-								<h4>Daniel Zapata</h4>
-							</a>
-							<p> Há 10 anos atuando no mercado de Psicologia Social</p>
-						</div>
-						<a class="appao-btn my-2" href="#">Iniciar</a>
-					</div>
-				</div>
-			</div>
+				@endforeach				
 		</div>
-		
-		<div class="container mt-4">
-			<div class="row my-4">
-				<h2>Psicólogos Díponíveis para plano Trimestral</h2>
-			</div>
-			<div class="row">
-				<div class="col-lg-3 col-sm-6">
-					<div class="single-team-member">
-						<div class="team-member-img">
-							<img src="/img/team1.jpg" alt="team">
-							<div class="team-member-icon">
-								<div class="display-table">
-									<div class="display-tablecell">
-										<a href="#"><i class="icofont icofont-social-facebook"></i></a>
-										<a href="#"><i class="icofont icofont-social-twitter"></i></a>
-										<a href="#"><i class="icofont icofont-brand-linkedin"></i></a>
-										<a href="#"><i class="icofont icofont-social-pinterest"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="team-member-info">
-							<a href="#">
-								<h4>Maria Joaquina</h4>
-							</a>
-							<p>Especialista há 15 anos em Psicologia da Saúde</p>
-						</div>
-						<a class="appao-btn my-2" href="#">Iniciar</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="single-team-member">
-						<div class="team-member-img">
-							<img src="/img/team2.jpg" alt="team">
-							<div class="team-member-icon">
-								<div class="display-table">
-									<div class="display-tablecell">
-										<a href="#"><i class="icofont icofont-social-facebook"></i></a>
-										<a href="#"><i class="icofont icofont-social-twitter"></i></a>
-										<a href="#"><i class="icofont icofont-brand-linkedin"></i></a>
-										<a href="#"><i class="icofont icofont-social-pinterest"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="team-member-info">
-							<a href="#">
-								<h4>Jaime Palilo</h4>
-							</a>
-							<p>Especialista conceituado em Psicologia Cognitiva</p>
-						</div>
-						<a class="appao-btn my-2" href="#">Iniciar</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="single-team-member">
-						<div class="team-member-img">
-							<img src="/img/team3.jpeg" alt="team">
-							<div class="team-member-icon">
-								<div class="display-table">
-									<div class="display-tablecell">
-										<a ref="#"><i class="icofont icofont-social-facebook"></i></a>
-										<a href="#"><i class="icofont icofont-social-twitter"></i></a>
-										<a href="#"><i class="icofont icofont-brand-linkedin"></i></a>
-										<a href="#"><i class="icofont icofont-social-pinterest"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="team-member-info">
-							<a href="#">
-								<h4>Marcelina Guerra</h4>
-							</a>
-							<p>Profissional conceituada em Psicologia de Desenvolvimento</p>
-						</div>
-						<a class="appao-btn my-2" href="#">Iniciar</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="single-team-member">
-						<div class="team-member-img">
-							<img src="/img/team4.jpg" alt="team">
-							<div class="team-member-icon">
-								<div class="display-table">
-									<div class="display-tablecell">
-										<a href="#"><i class="icofont icofont-social-facebook"></i></a>
-										<a href="#"><i class="icofont icofont-social-twitter"></i></a>
-										<a href="#"><i class="icofont icofont-brand-linkedin"></i></a>
-										<a href="#"><i class="icofont icofont-social-pinterest"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="team-member-info">
-							<a href="#">
-								<h4>Daniel Zapata</h4>
-							</a>
-							<p> Há 10 anos atuando no mercado de Psicologia Social</p>
-						</div>
-						<a class="appao-btn my-2" href="#">Iniciar</a>
-					</div>
-				</div>
-			</div>
-
-
-			<div class="row my-4">
-				<h2>Psicólogos Díponíveis para plano Trimestral</h2>
-			</div>
-			<div class="row">
-				<div class="col-lg-3 col-sm-6">
-					<div class="single-team-member">
-						<div class="team-member-img">
-							<img src="/img/team1.jpg" alt="team">
-							<div class="team-member-icon">
-								<div class="display-table">
-									<div class="display-tablecell">
-										<a href="#"><i class="icofont icofont-social-facebook"></i></a>
-										<a href="#"><i class="icofont icofont-social-twitter"></i></a>
-										<a href="#"><i class="icofont icofont-brand-linkedin"></i></a>
-										<a href="#"><i class="icofont icofont-social-pinterest"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="team-member-info">
-							<a href="#">
-								<h4>Maria Joaquina</h4>
-							</a>
-							<p>Especialista há 15 anos em Psicologia da Saúde</p>
-						</div>
-						<a class="appao-btn my-2" href="#">Iniciar</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="single-team-member">
-						<div class="team-member-img">
-							<img src="/img/team2.jpg" alt="team">
-							<div class="team-member-icon">
-								<div class="display-table">
-									<div class="display-tablecell">
-										<a href="#"><i class="icofont icofont-social-facebook"></i></a>
-										<a href="#"><i class="icofont icofont-social-twitter"></i></a>
-										<a href="#"><i class="icofont icofont-brand-linkedin"></i></a>
-										<a href="#"><i class="icofont icofont-social-pinterest"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="team-member-info">
-							<a href="#">
-								<h4>Jaime Palilo</h4>
-							</a>
-							<p>Especialista conceituado em Psicologia Cognitiva</p>
-						</div>
-						<a class="appao-btn my-2" href="#">Iniciar</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="single-team-member">
-						<div class="team-member-img">
-							<img src="/img/team3.jpeg" alt="team">
-							<div class="team-member-icon">
-								<div class="display-table">
-									<div class="display-tablecell">
-										<a ref="#"><i class="icofont icofont-social-facebook"></i></a>
-										<a href="#"><i class="icofont icofont-social-twitter"></i></a>
-										<a href="#"><i class="icofont icofont-brand-linkedin"></i></a>
-										<a href="#"><i class="icofont icofont-social-pinterest"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="team-member-info">
-							<a href="#">
-								<h4>Marcelina Guerra</h4>
-							</a>
-							<p>Profissional conceituada em Psicologia de Desenvolvimento</p>
-						</div>
-						<a class="appao-btn my-2" href="#">Iniciar</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="single-team-member">
-						<div class="team-member-img">
-							<img src="/img/team4.jpg" alt="team">
-							<div class="team-member-icon">
-								<div class="display-table">
-									<div class="display-tablecell">
-										<a href="#"><i class="icofont icofont-social-facebook"></i></a>
-										<a href="#"><i class="icofont icofont-social-twitter"></i></a>
-										<a href="#"><i class="icofont icofont-brand-linkedin"></i></a>
-										<a href="#"><i class="icofont icofont-social-pinterest"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="team-member-info">
-							<a href="#">
-								<h4>Daniel Zapata</h4>
-							</a>
-							<p> Há 10 anos atuando no mercado de Psicologia Social</p>
-						</div>
-						<a class="appao-btn my-2" href="#">Iniciar</a>
-					</div>
-				</div>
-			</div>
 		</div>
-
-		</div>
+		@endif
 	</section><!-- team section end -->
 @endsection

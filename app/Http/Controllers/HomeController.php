@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Psicologo;
 use App\Cliente;
 use App\plano;
+use App\User;
+use App\HistPsicologo;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\MockObject\Stub\ReturnStub;
 
@@ -35,7 +37,9 @@ class HomeController extends Controller
             $cliente = Cliente::where('id_user', $iduser)->first();
 
             if($cliente){
-                return view('clienteLogado',  compact('cliente', $cliente));
+                $psicologos = Psicologo::all();
+                $psicologos = Psicologo::orderBy('id', 'ASC')->get();
+                return view('clienteLogado',  compact('cliente', $cliente, 'psicologos', 'histPsicologos'));
             } else {
                 return view('concluirCadastroCliente');
             }
@@ -43,14 +47,13 @@ class HomeController extends Controller
         }elseif(auth()->user()->type == 1){
 
             $iduser = auth()->user()->id;
-           
+            $user = User::find(auth()->user()->id);
             $psicologo = Psicologo::where('id_user', $iduser)->first();
-           
             if($psicologo){
-                return view('/psicologoLogado', compact('psicologo', $psicologo));
+                return redirect('/psicologoLogado');
             }else{
                 $planos = Plano::orderBy('id', 'ASC')->get();
-                return view('concluirCadastroPsicologo', compact('planos', $planos));
+                return view('concluirCadastroPsicologo', compact('planos'));
             }
 
         }

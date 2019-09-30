@@ -18,10 +18,11 @@ class CreatePsicologosTable extends Migration
             $table->string('foto');
             $table->string('cpf');
             $table->string('telefone');
-            $table->string('cidade');
+            $table->string('cidade')->nullable();
+            $table->string('estado')->nullable();
             $table->string('crp');
             $table->string('valor_sessao')->nullable();
-            $table->string('sobre')->nullable();
+            $table->longText('descricao')->nullable();
             $table->unsignedBigInteger('id_plano');
             $table->unsignedBigInteger('id_user');
             $table->charset = 'utf8';
