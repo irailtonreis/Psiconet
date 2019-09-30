@@ -100,7 +100,7 @@
                 </button>
             </div>
             <div class="col-md-6 col-12 py-1">
-                    <button type="submit" class="btn btn-primary bg-primary text-white w-100" style="padding: .375rem .75rem; font-size: .9rem; line-height: 1.6;">
+                    <button type="submit" class="btn btn-primary bg-primary text-white w-100" id="form-button" style="padding: .375rem .75rem; font-size: .9rem; line-height: 1.6;">
                         Salvar Alterações
                     </button>
             </div>

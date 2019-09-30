@@ -168,15 +168,6 @@
                             <th scope="col">Cliente atendido</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            {{-- <th scope="row">2</th> --}}
-                            <td>15/02/2019</td>
-                            <td>R$ 80,00</td>
-                            <td>Carlos Augusto</td>
-                        </tr>
-
-                    </tbody>
                 </table>
             </div>
         </section>
