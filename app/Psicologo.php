@@ -15,7 +15,7 @@ class Psicologo extends Model
     }
 
     public function histPsicologo (){
-        return $this->hasOne(HistPsicologo::class, 'psicologo_id', 'id');
+        return $this->hasOne(HistPsicologo::class, 'id', 'id_psicologo');
     }
 
     public function histCliente (){
@@ -23,6 +23,6 @@ class Psicologo extends Model
     }
 
     public function user(){
-        return $this->hasOne(User::class, 'id_user', 'id');
+        return $this->hasOne(User::class, 'id', 'id_user');
     }
 }

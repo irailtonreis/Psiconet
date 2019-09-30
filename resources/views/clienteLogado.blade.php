@@ -46,7 +46,7 @@
 						</div>
 						<div class="team-member-info d-flex flex-column flex-1">
 							<a href="/perfilPsicologo/{{$psicologo->id}}">
-							<h4>Nome</h4>
+							<h4>{{$psicologo->user->name}}</h4>
 							</a>
 						<p>{{$psicologo->descricao}}</p>
 						</div>

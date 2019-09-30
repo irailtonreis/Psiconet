@@ -20,8 +20,8 @@
                     </div>
                     <div class="team-member-info d-flex flex-column flex-1">
                         <a href="">
-                            <h4>Nome</h4>
-                            <p>{{$psicologo->valor_sessao}}</p>
+                            <h4>{{$psicologo->user->name}}</h4>
+                            <p>{{"R$ ".$psicologo->valor_sessao.",00"}}</p>
                         </a>
                         <span>{{$psicologo->descricao}}</span>
                     </div>
