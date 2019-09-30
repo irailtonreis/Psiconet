@@ -37,9 +37,7 @@ class HomeController extends Controller
             $cliente = Cliente::where('id_user', $iduser)->first();
 
             if($cliente){
-                $psicologos = Psicologo::all();
-                $psicologos = Psicologo::orderBy('id', 'ASC')->get();
-                return view('clienteLogado',  compact('cliente', $cliente, 'psicologos', 'histPsicologos'));
+                return redirect('/clienteLogado');
             } else {
                 return view('concluirCadastroCliente');
             }
