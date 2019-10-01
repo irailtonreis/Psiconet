@@ -85,7 +85,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <label>Descricao:&nbsp;{{$psicologo->descricao}}</label>
+                                                    <label>Descrição:&nbsp;{{$psicologo->descricao}}</label>
                                                 </div>
                                             </div>
                                         </div>
