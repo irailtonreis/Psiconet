@@ -21,10 +21,6 @@ class HistPsicologo extends Model
         return $this->hasOne(Cliente::class, 'id', 'cliente_id');
 
     }
-    public function users(){
-        return $this->hasOne(User::class, 'id', 'cliente_id');
-
-    }
 
    
 }

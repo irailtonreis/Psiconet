@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Cliente;
 use App\Psicologo;
 use App\User;
+use App\histPsicologo;
 
 class ClienteController extends Controller
 {
@@ -141,6 +142,12 @@ class ClienteController extends Controller
     public function clienteLogado(){
         $psicologos = Psicologo::all();
         return view('clienteLogado', compact('psicologos'));
+    }
+
+    public function perfilCliente($id){
+        $clientes = Cliente::where('id_user', $id)->first();
+        $histClientes = HistPsicologo::where('cliente_id', $clientes->id)->get();
+        return view('perfilCliente', compact('clientes', 'histClientes'));
     }
         
 }

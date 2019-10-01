@@ -5,12 +5,14 @@ Route::get('/',  'IndexController@index');
 
 Route::get('/index', 'IndexController@index');
 
-// Route::get('/cadastroCliente', 'ClienteController@cadastroCliente');
 Route::post('/cadastroCliente', 'ClienteController@salvandoCliente');
 Route::get('/concluirCadastroCliente', 'ClienteController@concluirCadastroCliente');
 Route::get('/editarCadastroCliente/{id}', 'ClienteController@editarCadastroCliente');
 Route::put('/editarCadastroCliente/{id}', 'ClienteController@alterarCadastroCliente');
+Route::get('/clienteLogado', 'ClienteController@clientelogado');
 Route::delete('/removerCliente/{id}', 'ClienteController@removendoCliente');
+Route::get('/perfilCliente/{id}', 'ClienteController@perfilCliente');
+
 
 
 Route::get('/cadastroPsicologo', 'PsicologoController@cadastroPsicologo');
@@ -21,7 +23,7 @@ Route::put('/editarCadastroPsicologo/{id}', 'PsicologoController@alterarCadastro
 Route::delete('/removerPsicologo/{id}', 'PsicologoController@removendoPsicologo');
 Route::get('/psicologoLogado', 'PsicologoController@psicologoLogado');
 
-Route::get('/clienteLogado', 'ClienteController@clientelogado');
+
 
 
 Route::get('/paraPsicologo', function () {

@@ -190,7 +190,7 @@
                     {{-- <th >1</th> --}}
                     <td scope="row">{{$histPsicologo->data_sessao}}</td>
                     <td>{{$histPsicologo->valor_consulta}}</</td> 
-                    <td>{{$histPsicologo->cliente_id}}</td>
+                    <td>{{$histPsicologo->cliente->user->name}}</td>
                 </tr>
                 @endforeach
             </tbody>
