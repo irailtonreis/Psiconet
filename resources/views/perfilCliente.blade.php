@@ -122,7 +122,7 @@
                     @foreach ($histClientes as $histCliente)
                     <tr>
                         {{-- <th >1</th> --}}
-                        <td scope="row">{{$histCliente->data_sessao}}</td>
+                        <td scope="row">{{ date('d-m-Y'), strtotime($histCliente->data_sessao)}}</td>
                         <td>{{$histCliente->valor_consulta}}</</td> 
                         <td>{{$histCliente->Psicologo->user->name}}</td>
                     </tr>

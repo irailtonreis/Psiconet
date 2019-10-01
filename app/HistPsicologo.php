@@ -9,6 +9,7 @@ class HistPsicologo extends Model
     protected $table = 'hist_psicologos';
     protected $primaryKey = 'id';
     protected $fillable = ['data_sessao', 'valor_consulta', 'psicologo_id', 'cliente_id'];
+    protected $dates = ['data_sessao']; 
     public $timestamps = false;
 
 

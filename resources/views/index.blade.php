@@ -16,7 +16,10 @@
 					<p>A Psiconet está aqui para conectar Psicólogos a milhares de pessoas que desejam melhorar o
 						seu bem-estar.</p>
 					<a href="login" class="appao-btn">Consulta online</a>
-					<a href="paraPsicologo" class="appao-btn">Seja um Psicólogo</a>
+					@if (!Auth::user())
+						<a href="paraPsicologo" class="appao-btn">Seja um Psicólogo</a>
+					@endif
+					
 				</div>
 			</div>
 		</div>

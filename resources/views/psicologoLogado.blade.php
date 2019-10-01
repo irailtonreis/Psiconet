@@ -174,7 +174,7 @@
         @else
     </div>
     <div class="row">
-        <h3 class="m-auto">Histórico de consultas</h3>
+        <h3 class="m-auto pb-3">Histórico de consultas</h3>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -188,7 +188,7 @@
                 @foreach ($histPsicologos as $histPsicologo)
                 <tr>
                     {{-- <th >1</th> --}}
-                    <td scope="row">{{$histPsicologo->data_sessao}}</td>
+                    <td scope="row">{{ date('d-m-Y'), strtotime($histPsicologo->data_sessao) }}</td>
                     <td>{{$histPsicologo->valor_consulta}}</</td> 
                     <td>{{$histPsicologo->cliente->user->name}}</td>
                 </tr>
