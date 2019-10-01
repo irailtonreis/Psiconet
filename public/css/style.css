@@ -1441,7 +1441,7 @@ h4.post-title a {
     border-color: #1770C1;
     box-shadow: 0 0 0 0.2rem rgba(23, 112, 193, .25);
 }
-.button-form, #button-form, #form-button{
+.button-form, #button-form, #form-button, #marcar-consulta{
     background-color: #000529;
     background: -moz-linear-gradient(left, #000529 1%, #002055 24%, #005db5 67%, #0074d9 100%);
     background: -webkit-linear-gradient(left, #000529 1%,#002055 24%,#005db5 67%,#0074d9 100%);
@@ -1780,4 +1780,23 @@ h4.post-title a {
   #panel {
     padding: 50px;
     display: none;
+  }
+
+  /*========================== */
+  .preco-button{
+        background: #54d854;
+        color: #fff;
+        padding: 10px 10px;
+        display: inline-block;
+        border-radius: 30px;
+        margin-bottom: 10px;
+  }
+
+  .psicologo-member-info p{
+    max-height: 65px;
+  }
+
+  .biografia p{
+      max-width: 800px;
+      overflow-wrap: normal;
   }

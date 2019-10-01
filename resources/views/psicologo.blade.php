@@ -10,24 +10,27 @@
             </ul>
         </div>
     @endif
-    <div class="d-flex justify-content-center align-items-center">
-        <div class="row">
-            <div class="col-lg-6 py-3 m-auto">
+    <div class="row">
+            <div class="py-3 col-md-5 m-auto">
                 <div class="single-team-member">
-                    <div class="pt-5">
+                    <div class="pt-5 col-lg-12">
                         <img src="{{url($psicologo->foto)}}" class="w-75" alt="team">
-
                     </div>
-                    <div class="team-member-info d-flex flex-column flex-1">
-                        <a href="">
-                            <h4>{{$psicologo->user->name}}</h4>
-                            <p>{{"R$ ".$psicologo->valor_sessao.",00"}}</p>
-                        </a>
-                        <span>{{$psicologo->descricao}}</span>
+                    <div class="psicologo-member-info">
+                            <h4 class="pt-2">{{$psicologo->user->name}}</h4>
+                            <span class="preco-button mt-2"> &nbsp;{{"R$ ".$psicologo->valor_sessao.",00"}}</span>
+                            <p> CRP: &nbsp;{{$psicologo->crp}}</p>
                     </div>
+                    <div class="biografia border-success">
+                            <h6>Biografia</h6>
+                            <div class="d-flex justify-content-center flex-wrap w-100">
+                                <p>{{$psicologo->descricao}}</p>
+                            </div>
+                        </div>
+                   
                 </div>
             </div>
-        </div>
+            
     </div>
     <div class="container">
         <div class="d-flex flex-column align-items-center">
