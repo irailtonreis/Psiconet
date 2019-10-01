@@ -53,12 +53,11 @@
                             <div class="responsive-menu"></div>
                             <div class="mainmenu">
                                 <ul id="primary-menu">
-                                    <li><a class="nav-link" href="/comofunciona">Como Funciona</a></li>
-                                    <li><a class="nav-link" href="/">Para Você</a></li>
-                                    <li><a class="nav-link" href="paraPsicologo">Para Psicólogo</a></li>
-                                    {{-- <li><a class="nav-link" href="">Dúvidas</a></li> --}}
-									{{-- <li><a class="appao-btn" href="/login" >Login</a></li> --}}
-									
+									@if (!Auth::user())
+										<li><a class="nav-link" href="/comofunciona">Como Funciona</a></li>
+										<li><a class="nav-link" href="/">Para Você</a></li>
+										<li><a class="nav-link" href="paraPsicologo">Para Psicólogo</a></li>
+									@endif
 									<!-- Authentication Links -->
 										@guest
 											<li class="nav-item">
@@ -70,6 +69,15 @@
 												</li>
 											@endif
 										@else
+											@if(Auth::user())
+												<li class="navitem dropdown mr-5">
+													<h4 class="text-white">Seja bem vindo ao Psiconet</h4>
+												</li>
+												@if(auth()->user()->type == 0)
+												<li><a class="nav-link" href="clienteLogado">Consulte-se agora</a></li>
+												@endif
+											@endif
+
 											<li class="nav-item dropdown">
 												<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 													{{ Auth::user()->name }} <span class="caret"></span>
@@ -82,22 +90,17 @@
 																	  document.getElementById('psicologoLogado').submit();">
 														 {{ __('Perfil') }}
 													 </a>
-												<a class="dropdown-item" href="/editarCadastroPsicologo/{{auth::user()->id}}"
-													   onclick="event.preventDefault();
-																	 document.getElementById('editarCadastroPsicologo').submit();">
-														{{ __('Editar Perfil') }}
-													</a>
 													@else
-													<a class="dropdown-item" href="/clienteLogado"
+													<a class="dropdown-item" href="/perfilCliente/{{auth::user()->id}}"
 													onclick="event.preventDefault();
-																  document.getElementById('clienteLogado').submit();">
+																  document.getElementById('perfilCliente').submit();">
 													 {{ __('Perfil') }}
-												 </a>
-													<a class="dropdown-item" href=""
+												 	</a>
+													<!-- <a class="dropdown-item" href=""
 														onclick="event.preventDefault();
 																	  document.getElementById('editarCadastroCliente').submit();">
 														 {{ __('Editar Perfil') }}
-													 </a>
+													 </a> -->
 													 @endif
 													<a class="dropdown-item" href="{{ route('logout') }}"
 													   onclick="event.preventDefault();
@@ -116,7 +119,7 @@
 														@csrf{{ method_field('GET') }}
 													</form>
 													@elseif(auth()->user()->type == 0)
-													<form id="clienteLogado" action="/clienteLogado" method="GET" style="display: none;">
+													<form id="perfilCliente" action="/perfilCliente/{{auth::user()->id}}" method="GET" style="display: none;">
 														@csrf{{ method_field('GET') }}
 													</form>
 													

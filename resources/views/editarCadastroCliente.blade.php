@@ -3,10 +3,6 @@
 @section('content')
 
     <div class="container mt-5 pt-5">
-        
-        <div class="cadastro text-center py-3 pt-5">
-            <h2>Editar Cadastro</h2>
-        </div>
 
         @if (empty($cliente))
 
@@ -21,6 +17,11 @@
         </form>
 
         @else
+        <ul class="nav nav-tabs mt-2">
+            <li class="active  list-cadastro w-100 text-center" id="list1">
+                <a data-toggle="tab" href="#home" class="py-1  px-3 d-block w-100 h-100">Editar Perfil</a>
+            </li>
+        </ul>
 
         <form method="POST"  action="/editarCadastroCliente/{{$cliente->id}}" class="py-3 form-edit" enctype="multipart/form-data">
             @csrf
