@@ -29,14 +29,8 @@ class PsicologoController extends Controller
 
         $user = User::find(auth()->user()->id);
         $psicologo = Psicologo::where('id_user', $iduser)->first();
-        
-        $id_psicologo = $psicologo->id;
-        // dd($id_psicologo);
-        
-
-        $histPsicologos = HistPsicologo::where('psicologo_id', $id_psicologo)->get();
-        // dd($histPsicologos);
-            
+        $histPsicologos = HistPsicologo::where('psicologo_id', $psicologo->id)->get();
+              
         return view('/psicologoLogado', compact('psicologo', 'user', 'histPsicologos'));
         }
        

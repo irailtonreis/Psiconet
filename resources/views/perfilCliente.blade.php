@@ -91,9 +91,7 @@
 <div class="container mt-4">
     <div class="my-4">
         @if($histClientes->isEmpty())
-            <header class="col-12">
-                <h3 class="text-center">Não há Histórico de consultas</h3>
-            </header>
+            
             <div class="row">
                 <table class="table">
                     <thead class="thead-dark">
@@ -105,6 +103,9 @@
                         </tr>
                     </thead>
                 </table>
+                <header class="col-12">
+                    <h3 class="text-center">Não há histórico de consultas</h3>
+                </header>
             </div>
         @else
         <div class="row">

@@ -83,7 +83,7 @@
                             <option name="plano" value="{{ $errors->has('plano') ? ' has-error' : '' }}">Selecione um
                                 Plano</option>
                             @foreach ($planos as $plano)
-                            <option name="plano" value="{{ $plano->id }}">{{ $plano->plano }}</option>
+                                <option name="plano" value="{{ $plano->id }}">{{ $plano->plano }} - {{"R$: ". $plano->valor }}</option>
                             @endforeach
                         </select>
                         <small class="text-danger">{{ $errors->first('plano') }}</small>

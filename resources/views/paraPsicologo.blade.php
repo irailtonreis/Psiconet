@@ -179,7 +179,7 @@
 							</div>
 						</div>
 						<div>
-							<a href="/register"><button type="button" class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></a>
+							<a href="/register"><button type="button" class="align-self-start btn btn-success btn-lg btn-block text-uppercase">Assinar</button></a>
 						</div>
 					</div>
 					<div class="col-lg-4 mt-2">
@@ -222,7 +222,7 @@
 							</div>
 						</div>
 						<div>
-							<a href="/register"><button type="button" class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></a>
+							<a href="/register"><button type="button" class="align-self-start btn btn-success btn-lg btn-block text-uppercase">Assinar</button></a>
 						</div>
 						</div>
 					<div class="col-lg-4 mt-2">
@@ -265,7 +265,7 @@
 							</div>
 						</div>
 						<div>
-							<a href="/register"><button type="button" class="align-self-start btn btn-success btn-lg btn-block">Assinar</button></a>
+							<a href="/register"><button type="button" class="align-self-start btn btn-success btn-lg btn-block text-uppercase">Assinar</button></a>
 						</div>
 					</div>
 

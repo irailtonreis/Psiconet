@@ -11,11 +11,11 @@ class Psicologo extends Model
     protected $fillable = ['foto', 'cpf', 'telefone', 'crp', 'valor_sessao', 'descricao', 'id_plano', 'id_user'];
 
     public function planos(){
-        return $this->hasMany(Plano::class, 'id', 'id_plano');
+        return $this->hasOne(Plano::class, 'id', 'id_plano');
     }
 
     public function histPsicologo (){
-        return $this->hasOne(HistPsicologo::class, 'id', 'id_psicologo');
+        return $this->hasMany(HistPsicologo::class, 'id', 'id_psicologo');
     }
 
     public function histCliente (){

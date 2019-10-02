@@ -49,7 +49,7 @@
                             <div class="col-md-12 profile-header">
                                 <div class="row">
                                     <div class="col-md-8 col-sm-6 col-xs-6 profile-header-section1 pull-left">
-                                        <h5>{{$user->name}}</h5>
+                                        <h3>{{$user->name}}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -85,6 +85,11 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
+                                                    <label>Plano:&nbsp;{{$psicologo->planos->plano}} - {{"R$: " . $psicologo->planos->valor}}</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
                                                     <label>Descrição:&nbsp;{{$psicologo->descricao}}</label>
                                                 </div>
                                             </div>
@@ -99,7 +104,7 @@
         </div>
 
         <div class="my-4">
-            <h3>Horários de Atendimento</h3>
+            <h3>Dias de Atendimento</h3>
         </div>
         <div>
             <div class="form-check">
@@ -154,10 +159,8 @@
 
 <div class="container mt-4">
     <div class="my-4">
-            @if($histPsicologos->isEmpty())
-            <header class="col-12">
-                <h3 class="text-center">Não há Histórico de consultas</h3>
-            </header>
+        @if($histPsicologos->isEmpty())
+            
             <div class="row">
                 <table class="table">
                     <thead class="thead-dark">
@@ -169,8 +172,11 @@
                         </tr>
                     </thead>
                 </table>
+                <header class="col-12">
+                    <h3 class="text-center">Não há histórico de consultas</h3>
+                </header>
             </div>
-        </section>
+</section>
         @else
     </div>
     <div class="row">
