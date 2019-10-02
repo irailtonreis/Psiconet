@@ -49,7 +49,7 @@
 						</div>
 						
 						
-                        <div class="col-lg-10 col-md-9 col-6 ">
+                        <div class="col-lg-10 col-md-9 col-6">
                             <div class="responsive-menu"></div>
                             <div class="mainmenu">
                                 <ul id="primary-menu">

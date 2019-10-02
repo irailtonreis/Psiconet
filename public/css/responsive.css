@@ -52,6 +52,11 @@
 		border: 1px solid transparent;
 		margin: 8px 3px 0;
 		display: block;
+		color: #fff;
+	}
+
+	.slicknav_nav li h4 {
+		display: none;
 	}
 	.slicknav_nav a:hover {
 		background: transparent;
