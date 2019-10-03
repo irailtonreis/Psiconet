@@ -239,10 +239,7 @@
 	<a href="#" class="scrollToTop">
 		<i class="icofont icofont-arrow-up"></i>
     </a>
-	
-	
-    <script  src="{{url('js/app.js')}}"></script>
-    <script  src="{{url('js/app.js')}}"></script>
+    
     <script  src="{{url('js/jquery.min.js')}}"></script> 
     <script  src="{{url('js/jquery.slicknav.min.js')}}"></script>
     <script  src="{{url('js/main.js')}}"></script> 

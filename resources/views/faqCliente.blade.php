@@ -1,4 +1,5 @@
 @extends('layouts.master')
+
 @section('title', 'Faq Cliente')
     
 @section('content')
@@ -7,16 +8,15 @@
                 <h1>Como Funciona</h1>
         </div>        
         <div class="container custom-duvidas" id="duvidas">
-                <div class="text-center">
+            <div class="text-center">
                 <h2 class="mb-2">Perguntas Frequentes</h2>
                 <h4 class="mb-2">Veja porque o Psiconet é a melhor opção para você</h4>
-                </div>
+            </div>
             <div class="row py-3 px-3">
                 <a class="alert-link" data-toggle="collapse" href="#collapseDuvidas" role="button" aria-expanded="false" aria-controls="collapseDuvidas">
                 O que é a Psiconet?
                 </a>
-                <div data-toggle="collapse" data-target="#collapseDuvidas" aria-expanded="false" aria-controls="collapseDuvidas">
-                </div>
+                
             
                 <div class="collapse" id="collapseDuvidas">
                     <div class="px-3 text-left">
@@ -180,7 +180,7 @@
                     </div>
                 </div>
             </div>
-   
+        </div>
 </div>
 
     
