@@ -875,6 +875,17 @@ input::-webkit-input-placeholder {
     z-index: 1;
     overflow: hidden;
 }
+
+.team-member-img .member-img {
+    width: 255px;
+    height: 255px;
+    background-size: cover;
+}
+
+.team-member-img.no-hover:before {
+    display: none;
+}
+
 .team-member-icon {
     position: absolute;
     top: 0;
@@ -1533,6 +1544,7 @@ h4.post-title a {
     color: #fff;
     border: 2px solid #005db5;
 }
+
 
 
 /*=== Página psicólogos início==== */

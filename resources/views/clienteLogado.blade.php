@@ -31,18 +31,9 @@
 			@foreach($psicologos as $psicologo)
 				<div class="col-lg-3 col-sm-6 py-3">
 					<div class="single-team-member">
-						<div class="team-member-img">
-						<img src="{{url($psicologo->foto)}}" class="w-100" alt="team">
-							<div class="team-member-icon">
-								<div class="display-table">
-									<div class="display-tablecell">
-										<a href="#"><i class="icofont icofont-social-facebook"></i></a>
-										<a href="#"><i class="icofont icofont-social-twitter"></i></a>
-										<a href="#"><i class="icofont icofont-brand-linkedin"></i></a>
-										<a href="#"><i class="icofont icofont-social-pinterest"></i></a>
-									</div>
-								</div>
-							</div>
+						<div class="team-member-img no-hover">
+							<div style="background-image: url({{url($psicologo->foto)}})" class="w-100 member-img"></div>
+							
 						</div>
 						<div class="team-member-info d-flex flex-column flex-1">
 							<a href="/perfilPsicologo/{{$psicologo->id}}">
@@ -50,7 +41,7 @@
 							</a>
 						<p>{{$psicologo->descricao}}</p>
 						</div>
-						<a class="btn appao-btn my-2" href="/psicologo/{{$psicologo->id}}">Visualizar</a>
+						<a class="btn appao-btn my-2" href="/psicologo/{{$psicologo->id}}">Consulte Agora</a>
 					</div>
 				</div>
 				@endforeach				
