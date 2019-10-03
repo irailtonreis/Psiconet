@@ -135,7 +135,7 @@ class ClienteController extends Controller
         if($deleteC && $deleteU){
             return redirect('/');
         }else{
-            return "Erro ao deletar";
+            return redirect()->back()->with('error', 'Falha ao excluir');
         }
 
     }

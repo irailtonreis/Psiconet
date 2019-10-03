@@ -108,13 +108,13 @@
                     </div>
                     <div class="modal-body">
                         <h4 class="text-center py-4">Deseja realmente excluir sua conta ?</h4>
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between flex-column mx-3">
                             <form action="/removerCliente/{{(auth()->user()->id)}}" method="POST">
                                 @csrf
                                 {{ method_field('DELETE') }}
-                                <button type="submit" class="btn btn-danger">Excluir</button>
+                                <button type="submit" class="py-2 btn btn-danger bg-danger text-white w-100">Excluir</button>
                             </form>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary py-2" data-dismiss="modal">Cancelar</button>
                         </div>
                     </div>
             
