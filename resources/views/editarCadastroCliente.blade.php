@@ -78,20 +78,9 @@
                                     </button>
                             </div>
                         </div>
-                    {{-- <div class="row">
-                        <div class="col-md-12 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary button-form-save" id="button-form">
-                            <a href="#menu1"></a>Salvar</button>
-                        </div>              
-                    </div> --}}
                 </div>
             </div>
         </form>
-        {{-- <form action="/removerCliente/{{(auth()->user()->id)}}" method="POST" class="form-delete">
-            @csrf{{ method_field('DELETE') }}
-            <button type="submit" class="btn btn-primary bg-danger text-white ml-3 button-form-delete">Excluir Conta</button>
-        </form>      --}}
-
         @endif
     </div>
     <div class="modal fade" id="modal{{$cliente->id}}" tabindex="-1" role="dialog">
@@ -108,13 +97,13 @@
                     </div>
                     <div class="modal-body">
                         <h4 class="text-center py-4">Deseja realmente excluir sua conta ?</h4>
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between flex-column mx-3">
                             <form action="/removerCliente/{{(auth()->user()->id)}}" method="POST">
                                 @csrf
                                 {{ method_field('DELETE') }}
-                                <button type="submit" class="btn btn-danger">Excluir</button>
+                                <button type="submit" class="py-2 btn btn-danger bg-danger text-white w-100">Excluir</button>
                             </form>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary py-2" data-dismiss="modal">Cancelar</button>
                         </div>
                     </div>
             

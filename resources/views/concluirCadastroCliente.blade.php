@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="form-group w-100 d-flex flex-wrap align-items-center">
                             <div class="col-lg-12 pull-lg-12 text-center">
-                                 <img src="//placehold.it/150" class="m-x-auto img-fluid rounded-circle" alt="avatar" id="profile-img-tag" />
+                                 <img src="//placehold.it/150" class="m-x-auto img-fluid rounded-circle" alt="avatar" width="200px" id="profile-img-tag" />
                                 <h6 class="m-t-2 py-3">Carregar foto de Perfil</h6>
                                 <label class="custom-file w-50 py-2" {{ $errors->has('foto') ? ' has-error' : '' }} >
                                 <input type="file" id="profile-img" name="foto" class="custom-file-input">
