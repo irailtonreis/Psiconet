@@ -71,7 +71,7 @@
 										@else
 											@if(Auth::user())
 												<li class="navitem dropdown mr-5">
-													<h4 class="text-white">Seja bem vindo ao Psiconet</h4>
+													<h4 class="text-white">Seja bem vindo a Psiconet</h4>
 												</li>
 												@if(auth()->user()->type == 0)
 												<li><a class="nav-link" href="clienteLogado">Consulte-se agora</a></li>
@@ -208,11 +208,11 @@
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<p class="footer-links">
-						<a href="#about">Como funciona</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="#showcase-area">Por que usar</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="#pricing">Planos</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="/comofunciona">Como funciona</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#porque-usar">Por que usar</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+						
 						<a href="#team">Nossos Pisicólogos</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="psicologo.php">Seja um Pisicólogos</a>
+						<a href="/paraPsicologo">Seja um Pisicólogos</a>
 					</p>
 				</div>
 			</div>

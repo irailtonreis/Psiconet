@@ -58,6 +58,7 @@
 				</div>
 			</div>
 		</div>
+		<div id="porque-usar"></div>
 	</div>
 </section><!-- about section end -->
 <section class="porque-usar">
@@ -174,7 +175,7 @@
 </section>
 <!-- Section Psicólogos inicio-->
 <!-- team section start -->
-<section class="team-area ptb-90" id="team">
+<section class="team-area mt-5" id="team">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -288,4 +289,7 @@
 		</div>
 	</div>
 </section><!-- team section end -->
+<a href="/login" class="d-flex justify-content-center">
+	<button type="button" class="btn btn-primary btn-block py-2 my-5 badge-pill col-md-4 button-form"><h4 class="text-white">Consulte-se</h4></button>
+</a>
 @endsection

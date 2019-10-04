@@ -8,8 +8,7 @@
 					<div class="hero-area-content">
 						<h2>Esqueça a burocracia e preocupe-se com o que realmente importa: os pacientes</h2>
 						<a href="/register"><button type="button"
-								class="btn btn-primary btn-lg btn-block py-2 my-5 w-75  badge-pill">Cadastrar meu
-								Consultório</button></a>
+								class="btn btn-primary btn-lg btn-block py-2 my-5 w-75  badge-pill">Faça Parte</button></a>
 					</div>
 				</div>
 			</div>
