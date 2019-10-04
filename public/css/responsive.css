@@ -55,6 +55,10 @@
 		color: #fff;
 	}
 
+	.nav-link {
+		padding: 0px;
+	}
+
 	.slicknav_nav li h4 {
 		display: none;
 	}
