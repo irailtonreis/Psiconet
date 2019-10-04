@@ -56,7 +56,7 @@
 									@if (!Auth::user())
 										<li><a class="nav-link" href="/comofunciona">Como Funciona</a></li>
 										<li><a class="nav-link" href="/">Para Você</a></li>
-										<li><a class="nav-link" href="/paraPsicologo">Para Psicólogo</a></li>
+										<li><a class="nav-link" href="paraPsicologo">Para Psicólogo</a></li>
 									@endif
 									<!-- Authentication Links -->
 										@guest
