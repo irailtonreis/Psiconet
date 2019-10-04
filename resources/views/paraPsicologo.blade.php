@@ -74,57 +74,7 @@
 			</div>
 			</div>
 	</section>
-	{{-- <!--Section seja Psicólogo inicio-->
-	<section class="psicologo-duvida py-3">
-		<div class="container">
-			<div class="text-center py-5">
-				<h2>Como faço para fazer parte?</h2>
-			</div>
-			<div class="py-4 mx-5">
-				<div class="row d-flex flex-column">
-					<div class="col-lg-6 col-md-8 col-sm-12 py-4 d-flex">
-						<div class="round-numero flex-fill">
-							<p class="numero">1</p>
-						</div>
-						<div class="numero-text mx-3 flex-">
-							<h3>Cadastro</h3>
-							<p>Insira no cadastro as suas informações pessoais e profissionais</p>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-8 col-sm-12 py-4 d-flex ">
-						<div class="round-numero flex-fill">
-							<p class="numero">2</p>
-						</div>
-						<div class="numero-text mx-3 flex-fill">
-							<h3>Pagamento de plano</h3>
-							<p>Escolha o melhor plano para você e realize o pagamento através do cartão de crédito ou
-								boleto.</p>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-8 col-sm-12 py-4 d-flex">
-						<div class="round-numero">
-							<p class="numero">3</p>
-						</div>
-						<div class="numero-text mx-3">
-							<h3>Aprovação</h3>
-							<p>Vamos checar seus dados em até 2 dia úteis</p>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-8 col-sm-12 py-4 d-flex flex-1">
-						<div class="round-numero">
-							<p class="numero">4</p>
-						</div>
-						<div class="numero-text mx-3">
-							<h3>Seu Perfil está pronto</h3>
-							<p>Seu perfil estará disponível para os pacientes</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="mb-5"><button type="button" class="btn btn-primary btn-lg btn-block py-0 w-50 m-auto"
-					id="btn"><a class="nav-link" href="/cadastroPsicologo">Quero aderir</a></button></div>
-		</div>
-		</div>
+
 	</section> --}}
 	<section>
 		<section class="psicologo-preco ptb-90" id="pricing">
@@ -139,7 +89,7 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4 mt-2">
+					<div class="col-lg-4 mt-2 mb-5 pb-3">
 						<div class="preco-box h-100">
 							<div class="preco-top">
 								<h4>Plano Básico</h4>
@@ -182,7 +132,7 @@
 							<a href="/register"><button type="button" class="align-self-start btn btn-success btn-lg btn-block text-uppercase">Assinar</button></a>
 						</div>
 					</div>
-					<div class="col-lg-4 mt-2">
+					<div class="col-lg-4 mt-2 mb-5 pb-3">
 						<div class="preco-box h-100">
 							<div class="preco-top">
 								<h4>Plano Essencial</h4>
@@ -225,7 +175,7 @@
 							<a href="/register"><button type="button" class="align-self-start btn btn-success btn-lg btn-block text-uppercase">Assinar</button></a>
 						</div>
 						</div>
-					<div class="col-lg-4 mt-2">
+					<div class="col-lg-4 mt-2 mb-5 pb-3">
 						<div class="preco-box h-100">
 							<div class="preco-top">
 								<h4>Profissional</h4>
