@@ -33,7 +33,7 @@
 					<div class="single-team-member">
 						<div class="team-member-img no-hover">
 							<div style="background-image: url({{url($psicologo->foto)}})" class="w-100 member-img"></div>
-							
+
 						</div>
 						<div class="team-member-info d-flex flex-column flex-1">
 							<a href="/perfilPsicologo/{{$psicologo->id}}">
@@ -44,7 +44,7 @@
 						<a class="btn appao-btn my-2" href="/psicologo/{{$psicologo->id}}">Consulte Agora</a>
 					</div>
 				</div>
-				@endforeach				
+				@endforeach
 		</div>
 		</div>
 		@endif
