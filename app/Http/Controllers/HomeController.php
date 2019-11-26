@@ -6,6 +6,7 @@ use App\Psicologo;
 use App\Cliente;
 use App\plano;
 use App\User;
+use App\HistPsicologo;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\MockObject\Stub\ReturnStub;
 
@@ -49,8 +50,8 @@ class HomeController extends Controller
             if($psicologo){
                 return redirect('/psicologoLogado');
             }else{
-                // $planos = Plano::orderBy('id', 'ASC')->get();
-                return view('concluirCadastroPsicologo');
+                $planos = Plano::orderBy('id', 'ASC')->get();
+                return view('concluirCadastroPsicologo', compact('planos'));
             }
 
         }
