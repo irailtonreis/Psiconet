@@ -28,12 +28,12 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {   
-       
-        if(auth()->user()->type == 0){ 
-            
+    {
+
+        if(auth()->user()->type == 0){
+
             $iduser = auth()->user()->id;
-           
+
             $cliente = Cliente::where('id_user', $iduser)->first();
 
             if($cliente){
@@ -41,7 +41,7 @@ class HomeController extends Controller
             } else {
                 return view('concluirCadastroCliente');
             }
-            
+
         }elseif(auth()->user()->type == 1){
 
             $iduser = auth()->user()->id;
