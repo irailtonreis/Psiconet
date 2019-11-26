@@ -56,7 +56,6 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <!-- Tab panes -->
                                         <div class="tab-content">
                                             <div class="row">
                                                 <div class="col-md-6">
@@ -160,7 +159,7 @@
 <div class="container mt-4">
     <div class="my-4">
         @if($histPsicologos->isEmpty())
-            
+
             <div class="row">
                 <table class="table">
                     <thead class="thead-dark">
@@ -195,7 +194,7 @@
                 <tr>
                     {{-- <th >1</th> --}}
                     <td scope="row">{{ date('d-m-Y'), strtotime($histPsicologo->data_sessao) }}</td>
-                    <td>{{$histPsicologo->valor_consulta}}</</td> 
+                    <td>{{$histPsicologo->valor_consulta}}</</td>
                     <td>{{$histPsicologo->cliente->user->name}}</td>
                 </tr>
                 @endforeach
