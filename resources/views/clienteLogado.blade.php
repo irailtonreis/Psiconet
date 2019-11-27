@@ -3,7 +3,7 @@
 @section('content')
 @if ($psicologos->isEmpty())
 <section class="row">
-    <header class="col-12 py-5">
+    <header class="col-12 py-5 mt-5">
         <h1 class="col-12 text-center">Não temos Psicólogos disponíveis na plataforma</h1>
     </header>
 </section>
