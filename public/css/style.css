@@ -440,7 +440,7 @@ input::-webkit-input-placeholder {
 ---------------------------------------*/
 .showcase-area {
 	padding-bottom: 50px;
-    
+
 }
 .single-showcase-box {
 	padding: 0 0 40px;
@@ -591,14 +591,14 @@ input::-webkit-input-placeholder {
 
 .testemonials-box{
     margin: 40px auto;
-    
+
 }
 
 .profile{
     padding: 70px 10px 10px;
     background-color: #EEEEEE;
     height: 350px;
-   
+
 }
 
 .profile img{
@@ -606,7 +606,7 @@ input::-webkit-input-placeholder {
     position: absolute;
     left: calc(50% - 60px);
     border: 2px solid #0861b5;
-    
+
 
 }
 
@@ -631,7 +631,7 @@ input::-webkit-input-placeholder {
     height: 100%;
     margin: 0;
     padding: 0;
-  
+
 }
 
 
@@ -856,13 +856,13 @@ input::-webkit-input-placeholder {
 .single-team-member {
     text-align: center;
     box-shadow: 0 2px 15px -5px #222;
-    transition: all 0.4s;  
+    transition: all 0.4s;
 }
 .single-team-member p {
    max-height: 65px;
    height: 105px;
    overflow: hidden;
-   
+
 }
 .team-member-info h4 {
 	font-size: 20px;
@@ -1018,7 +1018,7 @@ h4.post-title a {
     border: 1px solid #bbb;
 }
 .contact-form button {
-	transition: all 0.4s; 
+	transition: all 0.4s;
 }
 .blog-reply button:hover ,
 .contact-form button:hover {
@@ -1411,7 +1411,7 @@ h4.post-title a {
 ---------------------------------------*/
 .modal-content{
     background-color: #fff;
-    
+
 }
 
 .modal-header{
@@ -1424,7 +1424,7 @@ h4.post-title a {
 .login-container{
     height: 70vh;
     width: 100%;
-    
+
 }
 .login-form {
     max-width: 100%;
@@ -1591,7 +1591,7 @@ h4.post-title a {
 .seja-psicologo-box.active,
 .seja-psicologo-box:hover {
     box-shadow: 0 0 5px #ccc;
-    background-color:#EEEEEE; 
+    background-color:#EEEEEE;
 }
 
 .seja-psicologo-box:hover i::before {
@@ -1659,7 +1659,7 @@ h4.post-title a {
     background: -moz-linear-gradient(left, #000529 1%, #002055 24%, #005db5 67%, #0074d9 100%);
     background: -webkit-linear-gradient(left, #000529 1%,#002055 24%,#005db5 67%,#0074d9 100%);
     background: linear-gradient(to right, #000529 1%,#002055 24%,#005db5 67%,#0074d9 100%);
-} 
+}
 
 
 .preco-box {
@@ -1690,7 +1690,7 @@ h4.post-title a {
     position: relative;
     padding-left: 13px;
     display: inline-block;
-    
+
 }
 .preco h1 span {
     font-size: 14px;
@@ -1706,7 +1706,7 @@ h4.post-title a {
     /* margin: 0 auto 15px; */
     border-bottom: 1px solid #666;
 	transition: all 0.4s;
-} 
+}
 .preco-box p .fa-check{
     font-size: 1.6em;
     color: #036b03;
@@ -1737,11 +1737,11 @@ h4.post-title a {
 
 .list-cadastro{
     background-color: #eeee;
-    
+
 }
 
 .list-cadastro:nth-child(1){
-    background-color: #eeee;   
+    background-color: #eeee;
 }
 .list-cadastro a{
   color: #000;
@@ -1749,8 +1749,8 @@ h4.post-title a {
 
 }
 .list-cadastro .active{
-    background-color: rgba(0,115,216, 0.5); 
-    
+    background-color: rgba(0,115,216, 0.5);
+
 }
 
 .custom-file-control{
@@ -1788,7 +1788,7 @@ h4.post-title a {
     border: solid 1px #666;
     border-radius: 3px;
   }
-  
+
   #panel {
     padding: 50px;
     display: none;
