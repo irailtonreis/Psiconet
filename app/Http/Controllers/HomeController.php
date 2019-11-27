@@ -51,7 +51,7 @@ class HomeController extends Controller
                 return redirect('/psicologoLogado');
             }else{
                 $planos = Plano::orderBy('id', 'ASC')->get();
-                return view('concluirCadastroPsicologo', compact('planos'));
+                return view('concluirCadastroPsicologo', compact('planos', $planos));
             }
 
         }
