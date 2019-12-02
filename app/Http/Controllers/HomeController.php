@@ -43,14 +43,11 @@ class HomeController extends Controller
             }
 
         }elseif(auth()->user()->type == 1){
-
             $iduser = auth()->user()->id;
-            $user = User::find(auth()->user()->id);
             $psicologo = Psicologo::where('id_user', $iduser)->first();
             if($psicologo){
                 return redirect('/psicologoLogado');
             }else{
-                // $planos = Plano::orderBy('id', 'ASC')->get();
                 return redirect('/concluirCadastroPsicologo');
             }
 

@@ -26,7 +26,7 @@
         <div class="container main-secction pr-0">
             <div class="row ml-0">
                 <div class="col-md-12 col-sm-12 col-xs-12 image-section">
-                    <img src="https://png.pngtree.com/thumb_back/fw800/back_pic/00/08/57/41562ad4a92b16a.jpg">
+                    <img src="{{url('img/psicologia-online.jpg')}}">
                 </div>
                 <div class="row user-left-part ml-0">
                     <div class="col-md-3 col-sm-3 col-xs-12 user-profil-part pull-left">
@@ -75,7 +75,7 @@
                                                     <label>Telefone:&nbsp; {{$clientes->telefone}}</label>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@
 <div class="container mt-4">
     <div class="my-4">
         @if($histClientes->isEmpty())
-            
+
             <div class="row">
                 <table class="table">
                     <thead class="thead-dark">
@@ -124,7 +124,7 @@
                     <tr>
                         {{-- <th >1</th> --}}
                         <td scope="row">{{ date('d-m-Y'), strtotime($histCliente->data_sessao)}}</td>
-                        <td>{{$histCliente->valor_consulta}}</</td> 
+                        <td>{{$histCliente->valor_consulta}}</</td>
                         <td>{{$histCliente->Psicologo->user->name}}</td>
                     </tr>
                     @endforeach

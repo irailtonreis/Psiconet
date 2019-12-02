@@ -16,7 +16,7 @@ class ClienteController extends Controller
     }
 
     // public function clienteLogado(){
-        
+
     //     if(auth()->user()){
     //         $cliente = Cliente::find(auth()->user()->id);
     //         return view('/psicologoLogado', compact('cliente', $cliente, 'psicologo', $psicologo));
@@ -36,7 +36,7 @@ class ClienteController extends Controller
             "id_user.required"=>'O campo email é obrigatório'
 
         ]);
-        
+
         $arquivo = $request->file('foto');
 
         if (empty($arquivo)) {
@@ -88,27 +88,27 @@ class ClienteController extends Controller
         if($request->hasFile('foto')){
 
             $arquivo = $request->file('foto');
-    
+
             $nomePasta = "uploads";
-    
+
             $arquivo->storePublicly($nomePasta);
-    
+
             $caminhoAbsoluto = public_path() . "/storage/$nomePasta";
-    
+
             $nomeArquivo = $arquivo->getClientOriginalName();
-    
+
             $caminhoRelativo = "storage/$nomePasta/$nomeArquivo";
-    
+
             $arquivo->move($caminhoAbsoluto, $nomeArquivo);
-            
+
             $cliente->foto = $caminhoRelativo;
         }
             $cliente->usuario = $request->input("usuario");
             $cliente->cpf = $request->input("cpf");
             $cliente->telefone = $request->input("telefone");
-     
+
         $cliente->save();
-    
+
         $user = User::find(auth()->user()->id);
 
         if($_REQUEST){
@@ -147,7 +147,7 @@ class ClienteController extends Controller
     public function perfilCliente($id){
         $clientes = Cliente::where('id_user', $id)->first();
         $histClientes = HistPsicologo::where('cliente_id', $clientes->id)->get();
-        return view('perfilCliente', compact('clientes', 'histClientes'));
+        return view('perfilCliente', compact('clientes', $histClientes));
     }
-        
+
 }
