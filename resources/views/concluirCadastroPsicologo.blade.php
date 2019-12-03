@@ -1,7 +1,5 @@
 @extends('layouts.master')
 @section('content')
-   
-  
     <div class="container pt-5 mt-5">
             @if(count($errors) > 0)
             <div class="alert alert-danger">

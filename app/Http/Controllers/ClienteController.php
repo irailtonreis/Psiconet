@@ -25,6 +25,7 @@ class ClienteController extends Controller
 
     public function salvandoCliente(Request $request){
         $request->validate([
+            "foto" => "required",
             "usuario" => "required",
             "cpf" => "required|min:11",
             "telefone" => "required|min:11",
@@ -147,7 +148,7 @@ class ClienteController extends Controller
     public function perfilCliente($id){
         $clientes = Cliente::where('id_user', $id)->first();
         $histClientes = HistPsicologo::where('cliente_id', $clientes->id)->get();
-        return view('perfilCliente', compact('clientes', $histClientes));
+        return view('perfilCliente', compact('clientes', 'histClientes'));
     }
 
 }
