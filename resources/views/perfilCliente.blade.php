@@ -32,7 +32,7 @@
                     <div class="col-md-3 col-sm-3 col-xs-12 user-profil-part pull-left">
                         <div class="row ml-0">
                             <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
-                                <img src="{{url("$clientes->foto")}}" class="rounded-circle">
+                                <img src="{{url($clientes->foto)}}" class="rounded-circle">
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12 user-detail-section1 text-center">
                                 @if(auth()->user()->type == 0)
