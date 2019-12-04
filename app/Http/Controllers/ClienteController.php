@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Cliente;
 use App\Psicologo;
 use App\User;
-use App\histPsicologo;
+use App\HistPsicologo;
 
 class ClienteController extends Controller
 {
