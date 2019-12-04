@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Psiconet')</title>
     <link rel="icon" type="image/png" href="{{url('img/favicon.png')}}" />
-    <link rel="stylesheet" href="{{url('css/app.css')}}"> 
+    <link rel="stylesheet" href="{{url('css/app.css')}}">
     <link rel="stylesheet" href="{{url('css/style.css')}}">
     <link rel="stylesheet" href="{{url('css/responsive.css')}}">
     <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}">
@@ -28,7 +28,7 @@
 
     <!-- Inicio Tentativa mudança -->
     <link rel="icon" type="image/png" href="{{url('img/favicon.png')}}" />
-    <link rel="stylesheet" href="{{url('css/app.css')}}"> 
+    <link rel="stylesheet" href="{{url('css/app.css')}}">
     <link rel="stylesheet" href="{{url('css/style.css')}}">
     <link rel="stylesheet" href="{{url('css/responsive.css')}}">
     <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}">
@@ -38,7 +38,7 @@
 
 </head>
 <body  >
-         <header class="header"> 
+         <header class="header">
                 <div class="container">
                     <div class="row flexbox-center">
                         <div class="col-lg-2 col-md-3 col-6">
@@ -47,8 +47,8 @@
                                 <a href="/index"><span>Psiconet</a>
                             </div>
 						</div>
-						
-						
+
+
                         <div class="col-lg-10 col-md-9 col-6">
                             <div class="responsive-menu"></div>
                             <div class="mainmenu">
@@ -82,7 +82,7 @@
 												<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 													{{ Auth::user()->name }} <span class="caret"></span>
 												</a>
-				
+
 												<div class="dropdown-menu dropdown-menu-right bg-primary" aria-labelledby="navbarDropdown">
 													@if(auth()->user()->type == 1)
 													<a class="dropdown-item" href="/psicologoLogado"
@@ -91,7 +91,7 @@
 														 {{ __('Perfil') }}
 													 </a>
 													@else
-													<a class="dropdown-item" href="/perfilCliente/{{auth::user()->id}}"
+													<a class="dropdown-item" href="/perfilCliente/{{Auth::user()->id}}"
 													onclick="event.preventDefault();
 																  document.getElementById('perfilCliente').submit();">
 													 {{ __('Perfil') }}
@@ -122,28 +122,28 @@
 													<form id="perfilCliente" action="/perfilCliente/{{auth::user()->id}}" method="GET" style="display: none;">
 														@csrf{{ method_field('GET') }}
 													</form>
-													
+
 													<form id="editarCadastroCliente" action="/editarCadastroCliente/{{auth()->user()->id}}" method="GET" style="display: none;">
 														@csrf
 													</form>
 													@endif
-											
+
 												</div>
 											</li>
 										@endguest
-										
-				
+
+
                                 </ul>
 							</div>
-							
+
                         </div>
                     </div>
                 </div>
             </header><!-- header section end -->
             <main>
                 @yield('content')
-			</main> 
-    
+			</main>
+
 
     <!-- Modal start longin -->
 	<div class="modal fade" id="sitModal" tabindex="-1" role="dialog">
@@ -184,7 +184,7 @@
 							<div class="forgot-link d-flex align-items-center justify-content-center">
 								<a class="alert-link" href="#">Esqueci minha Senha ?</a>
 							</div>
-							
+
 							<button class="button-form btn btn-primary btn-block btn-lg mt-4" id="">Login</button>
 							<div class="resgister d-flex align-items-center justify-content-around mt-4">
 							{{-- <p class="font-weight-normal">Não tem conta!</p> --}}
@@ -201,16 +201,16 @@
 		</div>
 	</div>
     <!-- Modal longin  end-->
-    
+
     <!-- footer section start -->
 	<footer class="footer mt-5 pt-5" id="contact">
-		<div class="container">			
+		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<p class="footer-links">
 						<a href="/comofunciona">Como funciona</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
 						<a href="#porque-usar">Por que usar</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-						
+
 						<a href="#team">Nossos Pisicólogos</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
 						<a href="/paraPsicologo">Seja um Pisicólogos</a>
 					</p>
@@ -235,17 +235,17 @@
 		</div>
 	</footer>
 	<!-- footer section end -->
-	
+
 	<a href="#" class="scrollToTop">
 		<i class="icofont icofont-arrow-up"></i>
     </a>
-    
-    <script  src="{{url('js/jquery.min.js')}}"></script> 
+
+    <script  src="{{url('js/jquery.min.js')}}"></script>
     <script  src="{{url('js/jquery.slicknav.min.js')}}"></script>
-    <script  src="{{url('js/main.js')}}"></script> 
+    <script  src="{{url('js/main.js')}}"></script>
     <script  src="{{url('js/owl.carousel.min.js')}}"></script>
     <script  src="{{url('js/slick.min.js')}}"></script>
-	<script  src="{{url('js/wow-1.3.0.min.js')}}"></script> 
+	<script  src="{{url('js/wow-1.3.0.min.js')}}"></script>
 
 </body>
 </html>
