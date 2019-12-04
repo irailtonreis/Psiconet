@@ -74,7 +74,7 @@
 													<h4 class="text-white">Seja bem vindo a Psiconet</h4>
 												</li>
 												@if(auth()->user()->type == 0)
-												<li><a class="nav-link" href="clienteLogado">Consulte-se agora</a></li>
+												<li><a class="nav-link" href="/clienteLogado">Consulte-se agora</a></li>
 												@endif
 											@endif
 
