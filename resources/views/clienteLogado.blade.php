@@ -32,7 +32,7 @@
             <div class="col-lg-3 col-sm-6 py-3">
                 <div class="single-team-member">
                     <div class="team-member-img no-hover">
-                        <div style="background-image: url({{url($psicologo->foto)}})" class="w-100 member-img"></div>
+                        <div style="background-image: ({{url($psicologo->foto)}})" class="w-100 member-img"></div>
 
                     </div>
                     <div class="team-member-info d-flex flex-column flex-1">
