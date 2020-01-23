@@ -209,7 +209,6 @@ function menuMobile() {
 
     const span = document.querySelector('.slicknav_menutxt');
     if(span){
-        
         span.innerHTML = '';
         const div = document.createElement('div');
         const div1 = document.createElement('div');
@@ -223,7 +222,6 @@ function menuMobile() {
         span.appendChild(div1);
         span.appendChild(div2);
     }
-    console.log(span);
 }
 
 menuMobile();
