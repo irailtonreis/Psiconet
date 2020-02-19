@@ -13,8 +13,6 @@ Route::get('/clienteLogado', 'ClienteController@clientelogado');
 Route::delete('/removerCliente/{id}', 'ClienteController@removendoCliente');
 Route::get('/perfilCliente/{id}', 'ClienteController@perfilCliente');
 
-
-
 Route::get('/cadastroPsicologo', 'PsicologoController@cadastroPsicologo');
 Route::post('/cadastroPsicologo', 'PsicologoController@salvandoPsicologo');
 Route::get('/concluirCadastroPsicologo', 'PsicologoController@concluirCadastroPsicologo');
